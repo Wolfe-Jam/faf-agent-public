@@ -1,53 +1,44 @@
-<!-- faf: faf-agent-public | markdown | doc | Public About Repo for FAF Agent — FAF Agent — the Voice of FAF. Source code private at Wolfe-Jam/faf-agent. -->
+<!-- faf: faf-agent-public | markdown | doc | Public About Repo for faf-agent — The Voice of FAF. Source code private at Wolfe-Jam/faf-agent. -->
 <!-- faf: doc=readme | canonical=project.faf | family=FAF | private_source=Wolfe-Jam/faf-agent -->
 
 # FAF Agent
 
 [![FAF](https://mcpaas.live/badge/Wolfe-Jam/faf-agent-public.svg)](https://builder.faf.one)
 [![IANA Registered](https://img.shields.io/badge/IANA-application%2Fvnd.faf%2Byaml-blue)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-orange)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-**FAF Agent — the Voice of FAF**
+> 📖 **Public About Repo** — this is the public face of [`Wolfe-Jam/faf-agent`](https://github.com/Wolfe-Jam/faf-agent) (source private). Spec, README, format docs, skill manifest, project.faf — no source code. Same shape as Anthropic's [`claude-code`](https://github.com/anthropics/claude-code) repo: public face, private engine.
 
-Apply FAF optimally for any model, agent, human, or team — cite the spec on every answer, refuse out-of-scope, grow organically through legitimate engagement
 
----
+**The Voice of FAF.**
 
-## Public About Repo
+A sensible, reliable agent that knows the most about the FAF format. It validates, scores, and answers questions about `.faf` and `.fafm` documents — always citing the spec or clearly refusing when a question is outside scope.
 
-This is the **public About Repo** for **FAF Agent**. Source code stays private at `Wolfe-Jam/faf-agent`.
+Exactly the size of FAF. No more, no less.
 
-| What's here | What's not |
-|---|---|
-| `README.md` — public description, integration docs, links | Source code |
-| `project.faf` — IANA-registered AI context (FAF-scorable at [builder.faf.one](https://builder.faf.one)) | Internal implementation details |
-| `LICENSE` — Apache 2.0 for public-facing artifacts | Build/CI internals, secrets, KV bindings |
-
-This follows the **private source / public about** pattern — same shape as Anthropic's public `claude-code` repo (docs, examples, install) vs the private Claude Code source. Lets FAF Agent earn a verifiable FAF badge that the public can score, without exposing the engine.
+`.faf 🐘🎙️`
 
 ---
 
-## What FAF Agent is
+**What it does**
+- Validates and scores .faf documents (faf-cli kernel; native in v0.2.0)
+- Answers specification questions with citations
+- Refuses out-of-scope questions cleanly
+- Maintains voice-native memory on a namepoint
 
-FAF Agent — the Voice of FAF
+**What it does not do**
+- General-purpose reasoning or coding
+- Answer questions unrelated to the FAF format
 
-Part of the **FAF Family** — the IANA-registered Foundational Context Layer for AI. `.faf` is the format ([`application/vnd.faf+yaml`](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)), and FAF Agent is one of the products that builds on it.
+**Install**
+```bash
+uvx faf-agent-mcp
+```
 
----
+**Usage**
+```bash
+# Via Claude Code, Cursor, or any MCP host
+```
 
-## Links
-
-- **FAF brand:** [faf.one](https://faf.one)
-- **Score any repo:** [builder.faf.one](https://builder.faf.one)
-- **Standard:** [IANA application/vnd.faf+yaml](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
-- **FAF CLI:** [npm faf-cli](https://www.npmjs.com/package/faf-cli)
-
----
-
-## License
-
-Apache 2.0 — for the public-facing artifacts in this repo. Source code (private) is separately licensed.
-
-**FAF defines. MD instructs. AI codes.**
-
-*format | driven 🏎️⚡️*
+**License**
+MIT

@@ -1,0 +1,10 @@
+# About Repo — ignore any accidental source/build artifacts
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+node_modules/
+dist/
+build/
+.DS_Store
