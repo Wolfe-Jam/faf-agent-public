@@ -142,3 +142,9 @@ monorepo:
   versioning_strategy: slotignored
   shared_configs: slotignored
   remote_cache: slotignored
+
+# About Repo declaration — non-app, displays source's score
+app_type: about
+about:
+  represents: Wolfe-Jam/faf-agent
+  source_score: 100
