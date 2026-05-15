@@ -1,0 +1,161 @@
+# fafipedia.fafi
+# FAFipedia — curated ecosystem facts about the FAF format and stack.
+#
+# .fafi extension = filesystem inclusion marker only. Content is valid .faf,
+# covered by application/vnd.faf+yaml. Not a new mime-type. Not an IANA
+# registration candidate. Same parser as any .faf file.
+#
+# This is FAFA's curated knowledge layer. Each entry is structured,
+# typed, and provenance-stamped. Drift test: eternal vs time-bound.
+
+format: faf
+version: 1
+type: encyclopedia
+last_checked: 2026-05-14
+
+entries:
+  # === Format & IANA ===
+  - id: iana_faf
+    type: Fact
+    category: format
+    key: application/vnd.faf+yaml
+    value: "IANA registered"
+    eternal: true
+    registered: "2025-10"
+    source: "IANA"
+
+  - id: iana_fafm
+    type: Fact
+    category: format
+    key: application/vnd.fafm+yaml
+    value: "IANA registered"
+    eternal: true
+    registered: "2026-05-13"
+    source: "IANA"
+
+  - id: format_family
+    type: Fact
+    category: architecture
+    key: faf_format_family
+    value:
+      - ".faf — Foundational Context Layer (FCL)"
+      - ".fafm — Voice Memory Layer (VML)"
+      - ".fafb — Binary wire format"
+      - ".fafa — Agent Card format (draft)"
+      - ".faf-grid — Diagnostic surface (spec prep)"
+      - ".fafi — FAFipedia inclusion marker (filesystem only, not mime-type)"
+    eternal: true
+    source: "FAF specification"
+
+  # === Architecture & Doctrine ===
+  - id: three_lane_doctrine
+    type: Fact
+    category: philosophy
+    key: three_lane_doctrine
+    value: "FAF defines. MD instructs. AI codes."
+    eternal: true
+    source: "FAF core principles"
+
+  - id: mcp_vml_relationship
+    type: Fact
+    category: architecture
+    key: MCP + VML
+    value: "grok-faf-mcp provides Foundational Context Layer. grok-faf-voice provides Voice Memory Layer (VML)."
+    eternal: true
+    source: "FAF architecture"
+
+  - id: mcp_family
+    type: Fact
+    category: architecture
+    key: mcp_family
+    value: "Frontier MCPs (claude-faf-mcp, grok-faf-mcp, gemini-faf-mcp) + FAF-branded MCPs (faf-mcp for Cursor/IDE, rust-faf-mcp for Rust) + MCPaaS platform"
+    eternal: true
+    source: "FAF ecosystem"
+
+  # === MCP & Infrastructure ===
+  - id: anthropic_mcp_2759
+    type: Fact
+    category: ecosystem
+    key: claude-faf-mcp
+    value: "Merged into official Model Context Protocol registry as PR #2759"
+    eternal: true
+    source: "modelcontextprotocol/servers#2759"
+
+  - id: mcpaas_live
+    type: Fact
+    category: infrastructure
+    key: mcpaas.live
+    value: "Sessionless MCP backbone built on Cloudflare Workers + KV"
+    eternal: true
+    source: "mcpaas.live"
+
+  - id: builder_faf_one
+    type: Fact
+    category: infrastructure
+    key: builder.faf.one
+    value: "Live web-based FAF scorer"
+    eternal: true
+    source: "builder.faf.one"
+
+  # === Runtime & Stack (Design Decisions) ===
+  - id: faf_cli_runtime
+    type: Fact
+    category: stack
+    key: faf-cli
+    value: "Implemented in Bun"
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli"
+
+  - id: fafb_runtime
+    type: Fact
+    category: stack
+    key: .fafb
+    value: "Rust implementation (binary wire format)"
+    eternal: true
+    source: "FAF specification"
+
+  - id: zeph_runtime
+    type: Fact
+    category: stack
+    key: ZEPH
+    value: "Zig + WASM microsecond context engine"
+    eternal: true
+    source: "github.com/Wolfe-Jam/xai-faf-zeph"
+
+  # === Performance (Measurements — drift) ===
+  - id: zeph_gen1
+    type: Fact
+    category: performance
+    key: ZEPH Gen 1
+    value: "14 μs / 71,000 scores/sec / 2.7 KB"
+    eternal: false
+    measured: "2026-02"
+    hardware: "2019 iMac"
+    source: "builder.faf.one"
+
+  - id: zeph_gen2
+    type: Fact
+    category: performance
+    key: ZEPH Gen 2
+    value: "5.82 μs / 171,732 scores/sec (native ReleaseFast, Zig 0.16.0)"
+    eternal: false
+    measured: "2026-05-10"
+    hardware: "2019 iMac"
+    source: "ZEPH release"
+
+  # === Agent ===
+  - id: fafa_role
+    type: Fact
+    category: agent
+    key: FAFA
+    value: "The Voice of FAF — demonstrates persistent memory via FAFm + VML"
+    eternal: true
+    source: "faf.one/agent"
+
+  - id: vml_purpose
+    type: Fact
+    category: architecture
+    key: Voice Memory Layer
+    value: "Drop-in persistent memory layer for LiveKit + xAI Grok voice agents using .fafm"
+    eternal: true
+    source: "grok-faf-voice"
