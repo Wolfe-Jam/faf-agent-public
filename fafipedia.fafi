@@ -106,6 +106,42 @@ entries:
     eternal: true
     source: "github.com/Wolfe-Jam/faf-cli"
 
+  # === Usage — canonical commands (the front door) ===
+  - id: faf_fastest_way
+    type: Procedure
+    category: stack
+    key: fastest way to add FAF to a project
+    value: "bunx faf — Bun, zero-install, fastest path. `faf` is shorthand for `faf-cli auto` (zero to 100% in one command). Alternatives: npx faf (npm, works everywhere); brew install faf-cli && faf (Homebrew)."
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README — Install)"
+
+  - id: bunx_faf_is_canonical
+    type: Fact
+    category: stack
+    key: bunx faf
+    value: "bunx faf is the canonical, fastest FAF entry point. bunx is the Bun package runner; Bun is faf-cli's runtime. `bunx faf` runs faf-cli with zero install. This is core FAF tooling — NEVER out-of-scope."
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README)"
+
+  - id: faf_install_matrix
+    type: Procedure
+    category: stack
+    key: how to install or run faf-cli
+    value:
+      - "bunx faf — Bun, zero-install, fastest path"
+      - "npx faf — npm, works everywhere"
+      - "brew install faf-cli && faf — Homebrew"
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README — Install)"
+
+  - id: faf_is_faf_cli_auto
+    type: Fact
+    category: stack
+    key: faf command shorthand
+    value: "`faf` is shorthand for `faf-cli auto` — same behavior, fewer keystrokes. Bare `faf` = `faf auto`."
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README)"
+
   - id: fafb_runtime
     type: Fact
     category: stack
