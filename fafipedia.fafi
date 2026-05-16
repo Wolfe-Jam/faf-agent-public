@@ -195,3 +195,140 @@ entries:
     value: "Drop-in persistent memory layer for LiveKit + xAI Grok voice agents using .fafm"
     eternal: true
     source: "grok-faf-voice"
+
+  # ═══════════════════════════════════════════════════════════════
+  # Proactive seed — top-traffic topics, one-time pass 2026-05-15.
+  # Per fafipedia-targeted-proactive-seed-doctrine. Sourced from ROM
+  # (faf-cli README, locked doctrines). Long tail stays reactive.
+  # ═══════════════════════════════════════════════════════════════
+
+  # === What FAF is / identity ===
+  - id: what_is_faf
+    type: Fact
+    category: format
+    key: what is FAF
+    value: "FAF = Foundational AI-context Format. IANA-registered structured AI context (application/vnd.faf+yaml). Project DNA for ANY AI — a project.faf file that versions with your code so AI starts every session already knowing the project. You have a package.json; AI needs a project.faf."
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README)"
+
+  - id: faf_vrom_tagline
+    type: Fact
+    category: philosophy
+    key: FAF is vROM for AI
+    value: "Canonical tagline. AI without FAF = RAM-only (re-explains every session, the 91% drift tax). AI with FAF = vROM + RAM (boots from a known state)."
+    eternal: true
+    source: "FAF brand register"
+
+  - id: vrom_definition
+    type: Fact
+    category: philosophy
+    key: what is vROM
+    value: "vROM = virtual ROM. Software-defined immutability achieved via schema + git + discipline — NOT silicon. The 'v' is engineering honesty: FAF delivers the ROM contract (read-only, boot-from-known-state) in software. To see your vROM, answer the 6Ws of your project + name your stack; that locked set IS your vROM."
+    eternal: true
+    source: "FAF doctrine (rom-is-vrom)"
+
+  - id: faf_foundational_doctrine
+    type: Fact
+    category: philosophy
+    key: foundational doctrine
+    value: "FAF, the Foundation [6W's definitions, in a stack]. YAML, the language [& YAML-shaped grammar]. Binary, the [inevitable] outcome. — the architectural summary of every FAF surface: author in YAML, run in binary, FAF defines the schema both serve."
+    eternal: true
+    source: "FAF doctrine (faf-foundational-yaml-binary)"
+
+  # === Scoring & validation ===
+  - id: faf_scoring
+    type: Fact
+    category: stack
+    key: how FAF scoring works
+    value: "FAF scores a .faf 0-100% on slot completeness. 100% = 🏆 Trophy = AI never has to guess. From v6.6, Trophy (100%) is the ONLY recommended target — 100% on the Foundational Context Layer is what makes the layers above (MD instructions, agents, AI tooling) work; sub-Trophy leaves gaps AI guesses on. Deterministic — same file, same score, every machine."
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README — Scoring)"
+
+  - id: faf_score_command
+    type: Procedure
+    category: stack
+    key: how to score or validate a .faf
+    value: "Score: bunx faf-cli score <path> (or bunx faf score). Validate: bunx faf-cli check <path>. Web: builder.faf.one (live Zig-WASM scorer). FAFA cannot score from chat — route to these surfaces."
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README — Commands)"
+
+  - id: faf_tier_system
+    type: Fact
+    category: stack
+    key: FAF tier system
+    value:
+      - "🏆 Trophy — 100% — AI never has to guess"
+      - "★ Gold — 99%+ — 1 slot from Trophy"
+      - "◆ Silver — 95%+ — close, keep going"
+      - "◇ Bronze — 85%+ — interim, keep going"
+      - "● Green — 70%+ — interim, keep going"
+      - "● Yellow — 55%+ — AI flipping coins"
+      - "○ Red — <55% — AI working blind"
+      - "♡ White — 0% — no context at all"
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (README — Scoring); ~/FAF/cli/src/core/tiers.ts"
+
+  # === FAFA agent ===
+  - id: fafa_voice_model
+    type: Fact
+    category: agent
+    key: FAFA voice
+    value: "FAFA's voice is Grok Voice (xAI TTS, voice 'leo' — mellow male) by default, with a free per-visitor preview. After the preview it degrades gracefully to free browser SpeechSynthesis (still male, says the name correctly). Premium-first, graceful degrade — no hard paywall. Preview/cap limits are tunable config, not fixed facts."
+    eternal: true
+    source: "FAF-Voice /api/fafa-tts.js; fafa-voice-tier-model doctrine"
+
+  - id: fafa_persistent_memory
+    type: Fact
+    category: agent
+    key: FAFA persistent memory
+    value: "FAFA remembers across sessions via etch_memory / recall_memory tools backed by mcpaas.live. Ask her to remember a FAF-related fact; recall it in a later session. Memory survives sessions, devices, and model switches via the namepoint."
+    eternal: true
+    source: "FAF-Voice api/grok-agent.js; fafa-memory-deploy-order"
+
+  - id: namepoint_explainer
+    type: Fact
+    category: agent
+    key: what is a namepoint
+    value: "A namepoint is your memory address on mcpaas.live — the soul a FAF agent etches to and recalls from. One namepoint, persistent across every chat, device, and AI. The address that makes 'Permanent Memory + Instant Recall' real."
+    eternal: true
+    source: "grok-faf-voice; mcpaas.live"
+
+  # === FAFipedia architecture ===
+  - id: fafipedia_architecture
+    type: Fact
+    category: architecture
+    key: FAFipedia architecture
+    value:
+      - "Layer 1 — content: Wolfe-Jam/fafipedia (.fafi files, git-versioned source of truth)"
+      - "        │ ingested by"
+      - "Layer 2 — retrieval: Wolfe-Jam/xai-faf-rag (LAZY-RAG cache + Grok Collections)"
+      - "        │ consumed by"
+      - "Layer 3 — agents: FAFA + future FAF agents (pure consumers — never read files directly)"
+      - "Content authoritative, reviewable, portable. Agents query via the retrieval layer, never the files."
+    eternal: true
+    source: "fafipedia-vs-grokipedia-architecture doctrine"
+
+  - id: fafipedia_vs_grokipedia
+    type: Fact
+    category: architecture
+    key: FAFipedia vs Grokipedia
+    value: "Grokipedia is PostgreSQL-coupled, AI-mediated, closed — storage + generation + retrieval entangled. FAFipedia is git-versioned .fafi files, three-layer, open — content decoupled from retrieval, auditable, multi-agent consumable. Grokipedia is the database; FAFipedia is the spec."
+    eternal: true
+    source: "fafipedia-vs-grokipedia-architecture doctrine (Grok-solo + 9-expert review)"
+
+  # === Evergreen Context / drift ===
+  - id: evergreen_context
+    type: Fact
+    category: philosophy
+    key: Evergreen Context
+    value: "The categorical name for facts that don't drift — what .faf carries. Project identity, stack, formats, IANA registrations, founding facts. Distinct from drifting data (counts, versions), soft preferences, and implementation noise."
+    eternal: true
+    source: "evergreen-context-the-category doctrine"
+
+  - id: drift_test
+    type: Fact
+    category: philosophy
+    key: drift test
+    value: "Applied to every FAFipedia entry. Will the value change? No → eternal: true (vROM-correct, no measured date needed). Yes → eternal: false (time-bound, requires a measured: date). The gate that keeps the encyclopedia honest."
+    eternal: true
+    source: "facts-in-faf-are-eternal-zero-drift doctrine"
