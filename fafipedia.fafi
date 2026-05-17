@@ -38,14 +38,14 @@ entries:
     category: architecture
     key: faf_format_family
     value:
-      - ".faf — Foundational Context Layer (FCL)"
-      - ".fafm — Voice Memory Layer (VML)"
-      - ".fafb — Binary wire format"
-      - ".fafa — Agent Card format (draft)"
-      - ".faf-grid — Diagnostic surface (spec prep)"
-      - ".fafi — FAFipedia inclusion marker (filesystem only, not mime-type)"
+      - ".faf — Foundational Context Layer (FCL) — IANA application/vnd.faf+yaml"
+      - ".fafm — Voice Memory Layer (VML) — IANA application/vnd.fafm+yaml"
+      - ".fafb — Binary wire format (Rust) — family extension"
+      - ".fafa — Agent Card format (draft) — family extension"
+      - ".faf-grid (faf-g) — Diagnostic surface (spec-prep) — family extension"
+      - ".fafi — FAFipedia inclusion marker (filesystem only, not a mime-type)"
     eternal: true
-    source: "FAF specification"
+    source: "IANA media-type registry (.faf, .fafm); FAF format-family — extensions ahead of the core .faf SPECIFICATION.md"
 
   # === Architecture & Doctrine ===
   - id: three_lane_doctrine
@@ -248,9 +248,9 @@ entries:
     type: Procedure
     category: stack
     key: how to score or validate a .faf
-    value: "Score: bunx faf-cli score <path> (or bunx faf score). Validate: bunx faf-cli check <path>. Web: builder.faf.one (live Zig-WASM scorer). FAFA cannot score from chat — route to these surfaces."
+    value: "Score: faf score (checks AI-readiness 0-100%). Validate: faf check (validates the .faf file). faf = shorthand for faf-cli auto; run via bunx faf or bunx faf-cli. Web scorer: builder.faf.one. FAFA cannot score from chat — route to these surfaces."
     eternal: true
-    source: "github.com/Wolfe-Jam/faf-cli (README — Commands)"
+    source: "github.com/Wolfe-Jam/faf-cli (README — Commands & Install); builder.faf.one; FAFA voice contract"
 
   - id: faf_tier_system
     type: Fact
