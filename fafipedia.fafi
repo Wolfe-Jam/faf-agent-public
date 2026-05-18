@@ -159,16 +159,6 @@ entries:
     source: "github.com/Wolfe-Jam/xai-faf-zeph"
 
   # === Performance (Measurements — drift) ===
-  - id: zeph_gen1
-    type: Fact
-    category: performance
-    key: ZEPH Gen 1
-    value: "14 μs / 71,000 scores/sec / 2.7 KB"
-    eternal: false
-    measured: "2026-02"
-    hardware: "2019 iMac"
-    source: "builder.faf.one"
-
   - id: zeph_gen2
     type: Fact
     category: performance
