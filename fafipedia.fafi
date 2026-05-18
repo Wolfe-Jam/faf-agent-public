@@ -44,6 +44,7 @@ entries:
       - ".fafa — Agent Card format (draft) — family extension"
       - ".fafg — Grid diagnostic surface (faf-grid, spec-prep) — family extension"
       - ".fafi — FAFipedia inclusion marker (filesystem only, not a mime-type)"
+    aliases: ["fafg", "faf types", "how many faf types", "faf file extensions", "list the faf file extensions", "the faf family", "faf family members"]
     eternal: true
     source: "IANA media-type registry (.faf, .fafm); FAF format-family — extensions ahead of the core .faf SPECIFICATION.md"
 
@@ -53,6 +54,7 @@ entries:
     category: philosophy
     key: three_lane_doctrine
     value: "FAF defines. MD instructs. AI codes. HTML shows."
+    aliases: ["lane doctrine", "faf lane doctrine", "the lanes", "four lane", "4 lane", "lanes doctrine"]
     eternal: true
     source: "FAF core principles"
 
@@ -311,3 +313,23 @@ entries:
     value: "Applied to every FAFipedia entry. Will the value change? No → eternal: true (vROM-correct, no measured date needed). Yes → eternal: false (time-bound, requires a measured: date). The gate that keeps the encyclopedia honest."
     eternal: true
     source: "facts-in-faf-are-eternal-zero-drift doctrine"
+
+  # >>> GENERATED faf_index — gen-fafi-index.mjs · DO NOT hand-edit
+  - id: faf_index
+    type: Index
+    category: architecture
+    key: faf_index
+    aliases: ["index", "a-z", "az", "dictionary", "glossary", "list all", "all entries", "table of contents", "what is in fafipedia", "fafipedia index", "how many entries", "directory", "everything you know"]
+    value:
+      - "A-Z (32 entries) — .fafb, application/vnd.faf+yaml, application/vnd.fafm+yaml, builder.faf.one, bunx faf, claude-faf-mcp, drift test, Evergreen Context, faf command shorthand, FAF is vROM for AI, FAF tier system, faf_format_family, faf-cli, FAFA, FAFA persistent memory, FAFA voice, FAFipedia architecture, FAFipedia vs Grokipedia, fastest way to add FAF to a project, foundational doctrine, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, MCP + VML, mcp_family, mcpaas.live, three_lane_doctrine, Voice Memory Layer, what is a namepoint, what is FAF, what is vROM, ZEPH"
+      - "Category agent (4) — FAFA, FAFA persistent memory, FAFA voice, what is a namepoint"
+      - "Category architecture (6) — faf_format_family, FAFipedia architecture, FAFipedia vs Grokipedia, MCP + VML, mcp_family, Voice Memory Layer"
+      - "Category ecosystem (1) — claude-faf-mcp"
+      - "Category format (3) — application/vnd.faf+yaml, application/vnd.fafm+yaml, what is FAF"
+      - "Category infrastructure (2) — builder.faf.one, mcpaas.live"
+      - "Category philosophy (6) — drift test, Evergreen Context, FAF is vROM for AI, foundational doctrine, three_lane_doctrine, what is vROM"
+      - "Category stack (10) — .fafb, bunx faf, faf command shorthand, FAF tier system, faf-cli, fastest way to add FAF to a project, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, ZEPH"
+    generated: "2026-05-18"
+    eternal: false
+    source: "Generated from fafipedia.fafi entries — deterministic, not hand-maintained (gen-fafi-index.mjs)"
+  # <<< END GENERATED faf_index
