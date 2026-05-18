@@ -48,6 +48,34 @@ entries:
     eternal: true
     source: "IANA media-type registry (.faf, .fafm); FAF format-family — extensions ahead of the core .faf SPECIFICATION.md"
 
+  # === FAF "type" axes — disambiguation (format ≠ CLI ≠ MCP ≠ app_type) ===
+  - id: faf_cli_commands
+    type: Fact
+    category: stack
+    key: faf-cli commands
+    value: "faf-cli registers 35 commands (Bun runtime). Bare `faf` = `faf auto`. Commands: agents, ai, auto, bi-sync, check, clear, compile, conductor, context, convert, cursor, decompile, demo, drift, edit, export, formats, gemini, git, go, info, init, migrate, pro, recover, score, search, share, show, status, sync, taf, validate, wjttc, yolo. Run `faf --help` or `faf <cmd> --help` for usage."
+    aliases: ["faf cli commands", "faf commands", "faf-cli commands", "list faf commands", "what commands does faf have", "cli command list", "faf command list", "how many faf commands"]
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (src/cli.ts registered commands)"
+
+  - id: faf_mcp_tools
+    type: Fact
+    category: architecture
+    key: faf mcp tools
+    value: "FAF MCP tool set (the *-faf-mcp FastMCP servers): validate_faf, score_faf, ask, cite, etch_memory, recall_memory. The FAFA agent surface also exposes fafipedia_query. Distinct from the MCP servers — see mcp_family."
+    aliases: ["faf mcp tools", "mcp tools", "list mcp tools", "what mcp tools", "faf agent tools", "fastmcp tools", "how many mcp tools"]
+    eternal: true
+    source: "faf-agent (FastMCP tool set, CLAUDE.md); FAF-Voice direct-xai/api/grok-agent.js (fafipedia_query)"
+
+  - id: faf_app_types
+    type: Fact
+    category: format
+    key: faf app_type taxonomy
+    value: "FAF `app_type:` taxonomy (.faf slot; slot count scales by category). 19 types: about (0-slot, inherited badge), documentation, encyclopedia, cli, library, sdk, wasm, html, frontend, website, mobile, mcp, backend, fullstack, svelte, framework, mcpaas, saas, enterprise."
+    aliases: ["faf app types", "app types", "app_type", "application types", "project types", "what app types", "list app types", "how many app types"]
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf-cli (src/core/slots.ts APP_TYPE_CATEGORIES)"
+
   # === Architecture & Doctrine ===
   - id: three_lane_doctrine
     type: Fact
@@ -321,14 +349,14 @@ entries:
     key: faf_index
     aliases: ["index", "a-z", "az", "dictionary", "glossary", "list all", "all entries", "table of contents", "what is in fafipedia", "fafipedia index", "how many entries", "directory", "everything you know"]
     value:
-      - "A-Z (32 entries) — .fafb, application/vnd.faf+yaml, application/vnd.fafm+yaml, builder.faf.one, bunx faf, claude-faf-mcp, drift test, Evergreen Context, faf command shorthand, FAF is vROM for AI, FAF tier system, faf_format_family, faf-cli, FAFA, FAFA persistent memory, FAFA voice, FAFipedia architecture, FAFipedia vs Grokipedia, fastest way to add FAF to a project, foundational doctrine, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, MCP + VML, mcp_family, mcpaas.live, three_lane_doctrine, Voice Memory Layer, what is a namepoint, what is FAF, what is vROM, ZEPH"
+      - "A-Z (35 entries) — .fafb, application/vnd.faf+yaml, application/vnd.fafm+yaml, builder.faf.one, bunx faf, claude-faf-mcp, drift test, Evergreen Context, faf app_type taxonomy, faf command shorthand, FAF is vROM for AI, faf mcp tools, FAF tier system, faf_format_family, faf-cli, faf-cli commands, FAFA, FAFA persistent memory, FAFA voice, FAFipedia architecture, FAFipedia vs Grokipedia, fastest way to add FAF to a project, foundational doctrine, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, MCP + VML, mcp_family, mcpaas.live, three_lane_doctrine, Voice Memory Layer, what is a namepoint, what is FAF, what is vROM, ZEPH"
       - "Category agent (4) — FAFA, FAFA persistent memory, FAFA voice, what is a namepoint"
-      - "Category architecture (6) — faf_format_family, FAFipedia architecture, FAFipedia vs Grokipedia, MCP + VML, mcp_family, Voice Memory Layer"
+      - "Category architecture (7) — faf mcp tools, faf_format_family, FAFipedia architecture, FAFipedia vs Grokipedia, MCP + VML, mcp_family, Voice Memory Layer"
       - "Category ecosystem (1) — claude-faf-mcp"
-      - "Category format (3) — application/vnd.faf+yaml, application/vnd.fafm+yaml, what is FAF"
+      - "Category format (4) — application/vnd.faf+yaml, application/vnd.fafm+yaml, faf app_type taxonomy, what is FAF"
       - "Category infrastructure (2) — builder.faf.one, mcpaas.live"
       - "Category philosophy (6) — drift test, Evergreen Context, FAF is vROM for AI, foundational doctrine, three_lane_doctrine, what is vROM"
-      - "Category stack (10) — .fafb, bunx faf, faf command shorthand, FAF tier system, faf-cli, fastest way to add FAF to a project, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, ZEPH"
+      - "Category stack (11) — .fafb, bunx faf, faf command shorthand, FAF tier system, faf-cli, faf-cli commands, fastest way to add FAF to a project, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, ZEPH"
     generated: "2026-05-18"
     eternal: false
     source: "Generated from fafipedia.fafi entries — deterministic, not hand-maintained (gen-fafi-index.mjs)"
