@@ -52,7 +52,7 @@ entries:
     type: Fact
     category: philosophy
     key: three_lane_doctrine
-    value: "FAF defines. MD instructs. AI codes."
+    value: "FAF defines. MD instructs. AI codes. HTML shows."
     eternal: true
     source: "FAF core principles"
 
