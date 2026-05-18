@@ -42,7 +42,7 @@ entries:
       - ".fafm — Voice Memory Layer (VML) — IANA application/vnd.fafm+yaml"
       - ".fafb — Binary wire format (Rust) — family extension"
       - ".fafa — Agent Card format (draft) — family extension"
-      - ".faf-grid (faf-g) — Diagnostic surface (spec-prep) — family extension"
+      - ".fafg — Grid diagnostic surface (faf-grid, spec-prep) — family extension"
       - ".fafi — FAFipedia inclusion marker (filesystem only, not a mime-type)"
     eternal: true
     source: "IANA media-type registry (.faf, .fafm); FAF format-family — extensions ahead of the core .faf SPECIFICATION.md"
