@@ -80,10 +80,46 @@ entries:
     type: Fact
     category: ecosystem
     key: grok-faf-mcp
-    value: "grok-faf-mcp (GFM) — xAI's FAF MCP server (npm i -g grok-faf-mcp). It is the REFERENCE PATTERN for exposing FAFA across FAF tools: the other MCPs (claude-faf-mcp, gemini-faf-mcp, faf-mcp, rust-faf-mcp) and ZEPH follow it. Canonical exposure = the link 'Talk to my Agent →' to faf.one/agent."
-    aliases: ["grok faf mcp", "gfm", "grok mcp", "grok-faf-mcp", "reference pattern", "expose fafa"]
+    value: "grok-faf-mcp (GFM) — xAI's FAF MCP server: persistent project context for Grok. Install: npm i -g grok-faf-mcp."
+    aliases: ["grok faf mcp", "gfm", "grok mcp", "grok-faf-mcp"]
     eternal: true
-    source: "github.com/Wolfe-Jam/faf IMPLEMENTATIONS.md; npmjs.com/package/grok-faf-mcp; faf.one"
+    source: "github.com/Wolfe-Jam/faf IMPLEMENTATIONS.md; npmjs.com/package/grok-faf-mcp"
+
+  - id: claude_faf_mcp
+    type: Fact
+    category: ecosystem
+    key: claude-faf-mcp
+    value: "claude-faf-mcp — FAF MCP server for Claude Desktop: persistent project context, 33 MCP tools, IANA formats (application/vnd.faf+yaml · application/vnd.fafm+yaml), standalone (zero CLI deps), Anthropic MCP #2759 merged. Install: npm i -g claude-faf-mcp."
+    aliases: ["claude faf mcp", "claude-faf-mcp", "claude desktop mcp"]
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf IMPLEMENTATIONS.md; npmjs.com/package/claude-faf-mcp; claude-faf-mcp README"
+
+  - id: faf_mcp_ide
+    type: Fact
+    category: ecosystem
+    key: faf-mcp
+    value: "faf-mcp — FAF MCP server, IDE Edition: persistent project context for Cursor, Windsurf, Cline, VS Code. TypeScript. Install: npm i -g faf-mcp. Define once. Sync everywhere."
+    aliases: ["faf-mcp", "what is faf-mcp", "faf-mcp server", "faf mcp ide", "ide mcp", "cursor mcp", "windsurf mcp", "vs code mcp", "cline mcp"]
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf IMPLEMENTATIONS.md; npmjs.com/package/faf-mcp; faf-mcp README"
+
+  - id: gemini_faf_mcp
+    type: Fact
+    category: ecosystem
+    key: gemini-faf-mcp
+    value: "gemini-faf-mcp — FAF MCP server for Google Gemini: persistent project context. Python. Install: pip install gemini-faf-mcp. Define once. Sync everywhere."
+    aliases: ["gemini faf mcp", "gemini-faf-mcp", "gemini mcp", "google mcp"]
+    eternal: true
+    source: "github.com/Wolfe-Jam/faf IMPLEMENTATIONS.md; pypi.org/project/gemini-faf-mcp; gemini-faf-mcp README"
+
+  - id: rust_faf_mcp
+    type: Fact
+    category: ecosystem
+    key: rust-faf-mcp
+    value: "rust-faf-mcp — FAF MCP server for Rust MCP clients: persistent project context. Native, fast. Install: cargo install rust-faf-mcp (crates.io)."
+    aliases: ["rust faf mcp", "rust-faf-mcp", "rust mcp", "cargo mcp"]
+    eternal: true
+    source: "crates.io/crates/rust-faf-mcp; rust-faf-mcp README"
 
   # === Architecture & Doctrine ===
   - id: three_lane_doctrine
@@ -358,15 +394,15 @@ entries:
     key: faf_index
     aliases: ["index", "a-z", "az", "dictionary", "glossary", "list all", "all entries", "table of contents", "what is in fafipedia", "fafipedia index", "how many entries", "directory", "everything you know"]
     value:
-      - "A-Z (36 entries) — .fafb, application/vnd.faf+yaml, application/vnd.fafm+yaml, builder.faf.one, bunx faf, claude-faf-mcp, drift test, Evergreen Context, faf app_type taxonomy, faf command shorthand, FAF is vROM for AI, faf mcp tools, FAF tier system, faf_format_family, faf-cli, faf-cli commands, FAFA, FAFA persistent memory, FAFA voice, FAFipedia architecture, FAFipedia vs Grokipedia, fastest way to add FAF to a project, foundational doctrine, grok-faf-mcp, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, MCP + VML, mcp_family, mcpaas.live, three_lane_doctrine, Voice Memory Layer, what is a namepoint, what is FAF, what is vROM, ZEPH"
+      - "A-Z (40 entries) — .fafb, application/vnd.faf+yaml, application/vnd.fafm+yaml, builder.faf.one, bunx faf, claude-faf-mcp, claude-faf-mcp, drift test, Evergreen Context, faf app_type taxonomy, faf command shorthand, FAF is vROM for AI, faf mcp tools, FAF tier system, faf_format_family, faf-cli, faf-cli commands, faf-mcp, FAFA, FAFA persistent memory, FAFA voice, FAFipedia architecture, FAFipedia vs Grokipedia, fastest way to add FAF to a project, foundational doctrine, gemini-faf-mcp, grok-faf-mcp, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, MCP + VML, mcp_family, mcpaas.live, rust-faf-mcp, three_lane_doctrine, Voice Memory Layer, what is a namepoint, what is FAF, what is vROM, ZEPH"
       - "Category agent (4) — FAFA, FAFA persistent memory, FAFA voice, what is a namepoint"
       - "Category architecture (7) — faf mcp tools, faf_format_family, FAFipedia architecture, FAFipedia vs Grokipedia, MCP + VML, mcp_family, Voice Memory Layer"
-      - "Category ecosystem (2) — claude-faf-mcp, grok-faf-mcp"
+      - "Category ecosystem (6) — claude-faf-mcp, claude-faf-mcp, faf-mcp, gemini-faf-mcp, grok-faf-mcp, rust-faf-mcp"
       - "Category format (4) — application/vnd.faf+yaml, application/vnd.fafm+yaml, faf app_type taxonomy, what is FAF"
       - "Category infrastructure (2) — builder.faf.one, mcpaas.live"
       - "Category philosophy (6) — drift test, Evergreen Context, FAF is vROM for AI, foundational doctrine, three_lane_doctrine, what is vROM"
       - "Category stack (11) — .fafb, bunx faf, faf command shorthand, FAF tier system, faf-cli, faf-cli commands, fastest way to add FAF to a project, how FAF scoring works, how to install or run faf-cli, how to score or validate a .faf, ZEPH"
-    generated: "2026-05-18"
+    generated: "2026-05-19"
     eternal: false
     source: "Generated from fafipedia.fafi entries — deterministic, not hand-maintained (gen-fafi-index.mjs)"
   # <<< END GENERATED faf_index
