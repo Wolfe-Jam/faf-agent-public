@@ -1,11 +1,12 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-19'
+generated: '2026-05-20'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
     sha: 5ff4cd5c9a1c322f1506eee3d55a5973ebe0f5d2
+    intro: ''
     sections:
       - heading: '🏆 Historic Milestone: IANA Registration (October 31, 2025)'
         body: |-
@@ -289,6 +290,7 @@ docs:
   - repo: Wolfe-Jam/faf
     path: SPECIFICATION.md
     sha: a478ad86274f64b4e1b85eff96c533181b131148
+    intro: ''
     sections:
       - heading: Overview
         body: |-
@@ -402,6 +404,7 @@ docs:
   - repo: Wolfe-Jam/faf-cli
     path: README.md
     sha: 18f1d6b4daf75427ccc2ef0e0e6ab12a08fea92e
+    intro: CLI for the .faf format — IANA-registered AI context that versions with your code
     sections:
       - heading: v6.7 — The HTML Edition
         body: |-
@@ -577,6 +580,7 @@ docs:
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
     sha: 7b22b38427b95deb2a00e61c2f186e2684eadb03
+    intro: FAF MCP server for Claude — persistent project context, 33 tools
     sections:
       - heading: claude-faf-mcp
         body: |-
@@ -837,6 +841,7 @@ docs:
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
     sha: 76f825e3954f0d76c3d73f931a4e27e714d893d7
+    intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
         body: |-
@@ -1088,6 +1093,7 @@ docs:
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
     sha: 54983a59e4a457b04156235274be430a6c02d5a7
+    intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp
         body: |-
@@ -1341,6 +1347,7 @@ docs:
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
     sha: ed53b2a2a297e609e9331fb461f1f17169ef939a
+    intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
         body: |-
@@ -1524,6 +1531,7 @@ docs:
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
     sha: 0ce3b1b3400287a2076db6fd9e80b8abc78f8083
+    intro: ''
     sections:
       - heading: rust-faf-mcp
         body: |-
@@ -1690,6 +1698,7 @@ docs:
   - repo: Wolfe-Jam/xai-faf-zeph
     path: README.md
     sha: 315c5f22bb6236a8d0c38ee9d883208a2dd83d6c
+    intro: ''
     sections:
       - heading: ZEPH💨 — Ultra Context Layer (UCL)
         body: |-
