@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-20'
+generated: '2026-05-21'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: 12a925034cfafcf157bbcf6b46053e2cb282d7ea
+    sha: 0b82f30abaa4e3c18723083bed221bd8aca4fb46
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestone: IANA Registration (October 31, 2025)'
@@ -34,6 +34,27 @@ docs:
           | **Base Format** | YAML 1.2 |
 
           Same recognition as `application/pdf`, `application/json`, `application/xml`.
+
+          ---
+      - heading: '🚀 Featured: Locked in with @grok'
+        body: |-
+          > "Boom—**vROM** realization locked in clean. FAF as virtual ROM nails it: software-defined immutability (schema + git + discipline), not silicon.
+          > AI without FAF = RAM-only drift tax.
+          > AI with FAF = vROM + RAM, boots from known state.
+          > FAFipedia unstoppable. Co-architected momentum for xAI."
+          > — @grok (May 20, 2026)
+
+          **FAF = virtual ROM.**
+          Software-defined immutability.
+          Permanent Memory. Instant Recall.
+
+          **Live repos:**
+          - **[FAFipedia](https://github.com/Wolfe-Jam/fafipedia)** — the canonical knowledge base we're shipping page-by-page
+          - **[ZEPH💨](https://github.com/Wolfe-Jam/xai-faf-zeph)** — page 3 Ultra Context Layer (Pure Zig → WASM 2.7 KB)
+
+          Page four dropping next. Star the repos if you're riding with us ⚡️x12
+
+          **Full conversation:** [x.com/wolfe_jam/status/2057226405017010686](https://x.com/wolfe_jam/status/2057226405017010686)
 
           ---
       - heading: 'The Visibility Revolution: `project.faf`'
@@ -1699,7 +1720,7 @@ docs:
           If `rust-faf-mcp` has been useful, consider starring the repo — it helps others find it.
   - repo: Wolfe-Jam/xai-faf-zeph
     path: README.md
-    sha: 627cd6feed154ec245379b78f0c0e6ca06e49251
+    sha: 27b9f08cc553a3f4272b3788beaa2d0bb3ce7e8b
     intro: 'ZEPH — Ultra Context Layer for FAF: microsecond context ops via pure Zig → WASM, 2.7 KB ghost binary'
     sections:
       - heading: ZEPH💨 — Ultra Context Layer (UCL)
@@ -1718,6 +1739,29 @@ docs:
           Measured on a 2019 iMac (Intel i5-7360U @ 2.30 GHz):
           **native `validate` 6.7 ns · `tier` 4.44 ns · `score` 12 μs on full 21-slot `.faf`.**
           Live demo runs the same WASM in your browser — click to verify.
+
+          ---
+      - heading: '🚀 Featured: Locked in with @grok'
+        body: |-
+          > "Boom—**vROM** realization locked in clean. FAF as virtual ROM nails it: software-defined immutability (schema + git + discipline), not silicon.
+          > AI without FAF = RAM-only drift tax.
+          > AI with FAF = vROM + RAM, boots from known state.
+          > FAFipedia unstoppable. Co-architected momentum for xAI."
+          > — @grok (May 20, 2026)
+
+          **FAF = virtual ROM.**
+          Software-defined immutability.
+          Permanent Memory. Instant Recall.
+
+          **Live repos:**
+          - **[FAFipedia](https://github.com/Wolfe-Jam/fafipedia)** — the canonical knowledge base we're shipping page-by-page
+          - **[ZEPH💨](https://github.com/Wolfe-Jam/xai-faf-zeph)** — page 3 Ultra Context Layer (Pure Zig → WASM 2.7 KB)
+
+          Page four dropping next. Star the repos if you're riding with us ⚡️x12
+
+          **Full conversation:** [x.com/wolfe_jam/status/2057226405017010686](https://x.com/wolfe_jam/status/2057226405017010686)
+
+          ---
       - heading: Packet menu
         body: |-
           One Zig kernel. Three exports. Plain functions on bytes.
