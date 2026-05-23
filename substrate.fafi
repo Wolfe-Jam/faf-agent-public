@@ -1,20 +1,21 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-22'
+generated: '2026-05-23'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: 0b82f30abaa4e3c18723083bed221bd8aca4fb46
+    sha: 046c69081153e1816b85bf666b7902f5cd1ffbb7
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
-      - heading: '🏆 Historic Milestone: IANA Registration (October 31, 2025)'
+      - heading: '🏆 Historic Milestones: Two IANA Registrations'
         body: |-
-          **.faf is now an officially recognized Internet standard format.**
+          **`.faf`** and **`.fafm`** are now officially recognized Internet standard formats — registered alongside PDF, JSON, XML, and other Internet standards.
 
-          **Official Media Type:** `application/vnd.faf+yaml`
-          **IANA Status:** Registered alongside PDF, JSON, XML, and other Internet standards
-          **Registration Date:** October 31, 2025
+          **Foundational Context Layer** — `application/vnd.faf+yaml` (registered **October 31, 2025**)
+          **Voice Memory Layer (VML)** — `application/vnd.fafm+yaml` (registered **May 13, 2026**)
+
+          > *Two formats. Two lifecycles. One ecosystem.* — verbatim from the IANA registration record.
       - heading: Quintuple Validation
         body: |-
           - ✅ **IANA** - Internet Assigned Numbers Authority (Official Internet Standard)
@@ -22,16 +23,17 @@ docs:
           - ✅ **Google** - Chrome Web Store (Approved 2x: Sep 11 & Oct 29, 2025)
           - ✅ **xAI** - Grok 4.2 recommends native FAF adoption (Feb 2026)
           - ✅ **Community** - 50,000+ downloads across the ecosystem, production-tested
-      - heading: IANA Media Type
+      - heading: IANA Media Types
         body: |-
-          | Field | Value |
-          |-------|-------|
-          | **Media Type** | `application/vnd.faf+yaml` |
-          | **Registration** | [IANA Assignment](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml) |
-          | **File Extensions** | `.faf` |
-          | **Standard Filename** | `project.faf` |
-          | **Encoding** | UTF-8 |
-          | **Base Format** | YAML 1.2 |
+          | Field | `.faf` (Foundational Context Layer) | `.fafm` (Voice Memory Layer) |
+          |-------|-------------------------------------|------------------------------|
+          | **Media Type** | `application/vnd.faf+yaml` | `application/vnd.fafm+yaml` |
+          | **Registration** | [IANA Assignment](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml) | [IANA Assignment](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml) |
+          | **File Extension** | `.faf` | `.fafm` |
+          | **Standard Filename** | `project.faf` | `project.fafm` |
+          | **Encoding** | UTF-8 | UTF-8 |
+          | **Base Format** | YAML 1.2 | YAML 1.2 |
+          | **Registered** | October 31, 2025 | May 13, 2026 |
 
           Same recognition as `application/pdf`, `application/json`, `application/xml`.
 
@@ -261,8 +263,9 @@ docs:
           → [claude-faf-mcp on npm](https://npmjs.com/package/claude-faf-mcp) (12,000+ downloads)
       - heading: Status
         body: |-
-          🏆 **IANA-Registered Internet Standard** - Specification v1.1.0 (October 2025)
-          - ✅ **IANA Registration** - `application/vnd.faf+yaml` (October 31, 2025)
+          🏆 **IANA-Registered Internet Standards** — Two registered media types in the FAF family
+          - ✅ **IANA Registration** — `application/vnd.faf+yaml` (October 31, 2025)
+          - ✅ **IANA Registration** — `application/vnd.fafm+yaml` (May 13, 2026)
           - ✅ **Anthropic Official** - MCP Registry PR #2759 merged (October 17, 2025)
           - ✅ **Google Chrome Verified** - Web Store approved 2x (Sep 11 & Oct 29, 2025)
           - ✅ Format specification complete
@@ -280,7 +283,8 @@ docs:
           - **Feb 2, 2026** - FAFb binary format v1.0 (Rust + Zig compilers shipping)
           - **Jan 2026** - gemini-faf-mcp v1.0.2 on PyPI (Google MCP bridge)
           - **Nov 2025** - IETF standardization in progress (`vnd` prefix removal)
-          - **Oct 31, 2025** - 🏆 **IANA Registration** (`application/vnd.faf+yaml`)
+          - **May 13, 2026** - 🏆 **IANA Registration #2** (`application/vnd.fafm+yaml` — Voice Memory Layer)
+          - **Oct 31, 2025** - 🏆 **IANA Registration #1** (`application/vnd.faf+yaml` — Foundational Context Layer)
           - **Oct 29, 2025** - Google Chrome Web Store approval (2nd)
           - **Oct 17, 2025** - Official Anthropic MCP Registry merger (PR #2759)
           - **Oct 12, 2025** - Specification v1.1.0 published
@@ -300,6 +304,11 @@ docs:
           - `npm i -g claude-faf-mcp` — Claude Desktop MCP (12,000+ downloads)
 
           The package.json in this repo provides spec metadata and versioning but contains no executable code.
+      - heading: Citation
+        body: |-
+          If you use `.fafm` (the FAF Memory format) in research or production, please cite the format paper:
+
+          > Wolfe, J. (2026). *Permanent Memory and Instant Recall: The .fafm Standard for Multi-Profile AI Agent Memory*. Zenodo. https://doi.org/10.5281/zenodo.20348942
       - heading: License
         body: |-
           MIT - Use freely, build anything.
@@ -426,8 +435,8 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 18f1d6b4daf75427ccc2ef0e0e6ab12a08fea92e
-    intro: CLI for the .faf format — IANA-registered AI context that versions with your code
+    sha: 56c04bc7eb67c28702183ac3c7b663c4cbe6bade
+    intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: v6.7 — The HTML Edition
         body: |-
@@ -539,6 +548,12 @@ docs:
           Run `faf --help` for full options.
 
           ---
+      - heading: ANY GitHub repo — no clone, no install, 2 seconds
+        body: |-
+          [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)[![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
+          [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)[![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
+
+          bunx faf-cli git https://github.com/facebook/react
       - heading: Your own project
         body: |-
           bunx faf-cli init              # Create .faf
@@ -600,13 +615,31 @@ docs:
           If `faf-cli` has been useful, consider starring the repo — it helps others find it.
 
           ---
+      - heading: Citation
+        body: |-
+          If you use `faf-cli` or the `.faf` / `.fafm` formats in research or production, please cite the format papers:
+
+          > Wolfe, J. (2025). *Format-Driven AI Context Architecture: The .faf Standard for Persistent Project Understanding*. Zenodo. https://doi.org/10.5281/zenodo.18251362
+
+          > Wolfe, J. (2026). *Permanent Memory and Instant Recall: The .fafm Standard for Multi-Profile AI Agent Memory*. Zenodo. https://doi.org/10.5281/zenodo.20348942
+      - heading: License
+        body: |-
+          MIT — Free and open source
+
+          **IANA-registered:** [`application/vnd.faf+yaml`](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml) (Context Layer) · [`application/vnd.fafm+yaml`](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml) (Memory Layer)
+
+          *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 7b22b38427b95deb2a00e61c2f186e2684eadb03
+    sha: 09c8c25377d77a0864e3bef9e6644b3de0372b2d
     intro: FAF MCP server for Claude — persistent project context, 33 tools
     sections:
       - heading: claude-faf-mcp
         body: |-
+          [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)[![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
+          [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)[![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
+
+
           **Persistent Project Context for Claude. 30 seconds. 🐘 It never forgets.**
 
           [![FAF](https://mcpaas.live/badge/Wolfe-Jam/claude-faf-mcp.svg)](https://builder.faf.one)
@@ -834,6 +867,13 @@ docs:
           If `claude-faf-mcp` has been useful, consider starring the repo — it helps others find it.
 
           ---
+      - heading: Citation
+        body: |-
+          If you use `claude-faf-mcp` or the `.faf` / `.fafm` formats in research or production, please cite the format papers:
+
+          > Wolfe, J. (2025). *Format-Driven AI Context Architecture: The .faf Standard for Persistent Project Understanding*. Zenodo. https://doi.org/10.5281/zenodo.18251362
+
+          > Wolfe, J. (2026). *Permanent Memory and Instant Recall: The .fafm Standard for Multi-Profile AI Agent Memory*. Zenodo. https://doi.org/10.5281/zenodo.20348942
       - heading: FAF Family
         body: |-
           | | |
