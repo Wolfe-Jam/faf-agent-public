@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-23'
+generated: '2026-05-24'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: 046c69081153e1816b85bf666b7902f5cd1ffbb7
+    sha: c4f27613af1a367559f5a0aa55ef4562ed9df435
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Two IANA Registrations'
@@ -435,7 +435,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 56c04bc7eb67c28702183ac3c7b663c4cbe6bade
+    sha: ebd9ba43dcc2939ec786d50672faa26f5a47a02f
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: v6.7 — The HTML Edition
@@ -548,12 +548,6 @@ docs:
           Run `faf --help` for full options.
 
           ---
-      - heading: ANY GitHub repo — no clone, no install, 2 seconds
-        body: |-
-          [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)[![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
-          [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)[![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
-
-          bunx faf-cli git https://github.com/facebook/react
       - heading: Your own project
         body: |-
           bunx faf-cli init              # Create .faf
@@ -631,7 +625,7 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 09c8c25377d77a0864e3bef9e6644b3de0372b2d
+    sha: 1678d6f1b8db048a4c84a9d6e0ea81576bf2f9aa
     intro: FAF MCP server for Claude — persistent project context, 33 tools
     sections:
       - heading: claude-faf-mcp
@@ -639,6 +633,8 @@ docs:
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)[![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)[![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
 
+          **Home:** [faf.one/mcp](https://faf.one/mcp)
+          **Live demo:** [claude-faf-mcp.vercel.app](https://claude-faf-mcp.vercel.app)
 
           **Persistent Project Context for Claude. 30 seconds. 🐘 It never forgets.**
 
@@ -903,7 +899,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 76f825e3954f0d76c3d73f931a4e27e714d893d7
+    sha: 888f8887015ac5a5331cb70101a1e3ca5491873c
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -916,16 +912,21 @@ docs:
             <p><strong>Persistent Project Context for xAI Grok.</strong></p>
             <p><code>URL-based • Zero config • Just works</code></p>
 
-            [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Wolfe-Jam/grok-faf-mcp)
+            [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
+            [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)
+          </div>
 
-            [![FAF](https://mcpaas.live/badge/Wolfe-Jam/grok-faf-mcp.svg)](https://builder.faf.one)
-            [![CI](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml)
-            [![NPM Downloads](https://img.shields.io/npm/dt/grok-faf-mcp?label=downloads&color=00CCFF)](https://www.npmjs.com/package/grok-faf-mcp)
-            [![npm version](https://img.shields.io/npm/v/grok-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/grok-faf-mcp)
-            [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-            [![Vercel](https://img.shields.io/badge/Vercel-Live-black?logo=vercel)](https://grok-faf-mcp.vercel.app)
-            [![project.faf](https://img.shields.io/badge/project.faf-inside-00D4D4)](https://github.com/Wolfe-Jam/faf)
-            [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-00D4D4?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
+          **Home:** [faf.one/grok](https://faf.one/grok)
+          **Live demo:** [grok-faf-mcp.vercel.app](https://grok-faf-mcp.vercel.app)
+
+          <div align="center">
+
+          [![FAF](https://mcpaas.live/badge/Wolfe-Jam/grok-faf-mcp.svg)](https://builder.faf.one)
+          [![CI](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml)
+          [![npm version](https://img.shields.io/npm/v/grok-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/grok-faf-mcp)
+          [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+          [![project.faf](https://img.shields.io/badge/project.faf-inside-00D4D4)](https://github.com/Wolfe-Jam/faf)
+          [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-00D4D4?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
           </div>
 
           **FAF defines. MD instructs. AI codes.**
@@ -1409,7 +1410,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: ed53b2a2a297e609e9331fb461f1f17169ef939a
+    sha: 60a6b829312d21996a906eca9932edf26f6b61af
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
