@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-25'
+generated: '2026-05-26'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1410,7 +1410,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 60a6b829312d21996a906eca9932edf26f6b61af
+    sha: 6d9f20546cfd8885984feb96bc02508c2decad60
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
@@ -1526,11 +1526,11 @@ docs:
         body: |-
           | Tier | Score | Status |
           |------|-------|--------|
-          | 🏆 **TROPHY** | 100% | **AI Optimized** — Gold Code |
-          | ★ **GOLD** | 99%+ | Near-perfect context |
-          | ◆ **SILVER** | 95%+ | Excellent |
-          | ◇ **BRONZE** | 85%+ | Production ready |
-          | ● **GREEN** | 70%+ | Solid foundation |
+          | 🏆 **TROPHY** | 100% | AI never has to guess |
+          | ★ **GOLD** | 99%+ | 1 slot from Trophy |
+          | ◆ **SILVER** | 95%+ | Close — keep going |
+          | ◇ **BRONZE** | 85%+ | Interim — keep going |
+          | ● **GREEN** | 70%+ | Interim — keep going |
           | ● **YELLOW** | 55%+ | AI flipping coins |
           | ○ **RED** | <55% | AI working blind |
           | ♡ **WHITE** | 0% | No context at all |
