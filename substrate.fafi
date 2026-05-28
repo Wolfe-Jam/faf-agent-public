@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-27'
+generated: '2026-05-28'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -625,7 +625,7 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: b599598f2d4f673caf8fd785327f95cfbddf9705
+    sha: e39bbf7578af6e2c1e32c56f35b12917a882cde7
     intro: FAF MCP server for Claude — persistent project context, 33 tools
     sections:
       - heading: claude-faf-mcp v5.6
@@ -702,14 +702,14 @@ docs:
 
           **Copy** — paste-prompt to Claude
 
-          > Install the FAF MCP server: `npm install -g claude-faf-mcp`, then add this to my claude_desktop_config.json: `{"mcpServers": {"faf": {"command": "npx", "args": ["-y", "claude-faf-mcp"]}}}` and restart Claude Desktop.
+          > Install the FAF MCP server: `npm install -g claude-faf-mcp`, then add this to my claude_desktop_config.json: `{"mcpServers": {"faf": {"command": "bunx", "args": ["claude-faf-mcp"]}}}` and restart Claude Desktop.
 
           **Paste** — `claude_desktop_config.json`
 
           ```json
           {
             "mcpServers": {
-              "faf": { "command": "npx", "args": ["-y", "claude-faf-mcp"] }
+              "faf": { "command": "bunx", "args": ["claude-faf-mcp"] }
             }
           }
           ```
@@ -902,7 +902,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 8298eb1c766ec8aee671a5d3e836ecb75a09757d
+    sha: 34600d9ae82fb4fc42a6af89ceea349d4aa0012f
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -925,15 +925,40 @@ docs:
           <div align="center">
 
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![FAF](https://mcpaas.live/badge/Wolfe-Jam/grok-faf-mcp.svg)](https://builder.faf.one)
           [![CI](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml)
           [![npm version](https://img.shields.io/npm/v/grok-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/grok-faf-mcp)
           [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
           [![project.faf](https://img.shields.io/badge/project.faf-inside-00D4D4)](https://github.com/Wolfe-Jam/faf)
-          [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-00D4D4?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
+          [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-000000?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
           </div>
 
           **FAF defines. MD instructs. AI codes.**
+
+          ---
+      - heading: Install — one line
+        body: |-
+          Add to `~/.grok/config.toml`:
+
+          ```toml
+          [mcp_servers.grok-faf-mcp]
+          url = "https://mcpaas.live/grok/mcp/v1"
+          ```
+
+          Restart Grok TUI (or `/mcps r`) to refresh. Tools: `faf_score`, `faf_validate`, `faf_get_tier`, `faf_estimate_tokens`, `faf_analyze` (plus soul/memory ops).
+
+          **Hosted on Cloudflare Workers** — sub-ms cold start, no subprocess, edge-served. 4865-byte Zig WASM engine, parity-tested vs the Rust authority (`xai-faf-rust`). Externally validated by Grok S1 + S2 on 2026-05-27.
+
+          **Verify the live contract:**
+
+          ```bash
+          curl https://mcpaas.live/grok/mcp/v1/info
+          ```
+
+          Returns endpoint, protocol versions, engine details, tool list, and the architecture line: `.faf=vROM | AI-in-session=RAM`.
+
+          Sample corpus: [`xai-faf-proof/pilot`](https://github.com/Wolfe-Jam/xai-faf-proof/tree/main/pilot) — 10 records ready to score.
+
+          > **Note on local install:** `bunx grok-faf-mcp` / `npx grok-faf-mcp` are currently broken in published v1.4.0 — the `bin`-field points at `dist/src/index.js`, which prints a detection line and exits cleanly without serving stdio. The hosted endpoint above is the canonical production path; the local-stdio path will be fixed in a future patch publish.
 
           ---
       - heading: The 6 Ws - Quick Reference
@@ -944,10 +969,10 @@ docs:
           |----------|--------|
           | **WHO** is this for? | Grok/xAI developers and teams building with URL-based MCP |
           | **WHAT** is it? | Persistent project context for xAI Grok — URL-first deployment, IANA-registered .faf format |
-          | **WHERE** does it work? | Vercel (production) • Local dev • Any MCP client supporting HTTP-SSE |
-          | **WHY** do you need it? | Zero-config MCP on a URL - Grok asked for it, we built it first |
-          | **WHEN** should you use it? | Grok integration testing, xAI projects, URL-based MCP deployments |
-          | **HOW** does it work? | Point to `https://grok-faf-mcp.vercel.app/sse` — context tools served via MCP SSE |
+          | **WHERE** does it work? | Cloudflare Workers (`mcpaas.live/grok/mcp/v1`) • Any MCP client supporting native `url=` config • Self-deploy to your own CF/Vercel worker |
+          | **WHY** do you need it? | Zero-config MCP on a URL — Grok asked for it, we built it first |
+          | **WHEN** should you use it? | Grok integration, xAI projects, any url-based MCP client |
+          | **HOW** does it work? | `url = "https://mcpaas.live/grok/mcp/v1"` — context tools served from edge via MCPaaS (sub-ms cold start, no subprocess) |
 
           **For AI:** Read the detailed sections below for full context.
           **For humans:** Use this pattern in YOUR README. Answer these 6 questions clearly.
@@ -1003,7 +1028,10 @@ docs:
 
           ---
       - heading: 2. Self-Deploy (Your Own Vercel)
-        body: Click the **Deploy with Vercel** button above. Zero config — get your own instance in 30 seconds.
+        body: |-
+          Click the **Deploy with Vercel** button above. Zero config — get your own instance in 30 seconds.
+
+          ---
       - heading: MCP Tools (21 Core)
         body: |-
           **Create & Detect**
@@ -1082,16 +1110,6 @@ docs:
           | Engine adapter | 35 | CLI detection, fallback behavior |
           | Integration | 40 | End-to-end tool execution |
           | WJTTC certification | 25 | Championship-grade compliance |
-
-          ---
-      - heading: Endpoints
-        body: |-
-          | Endpoint | URL |
-          |----------|-----|
-          | Root | `https://grok-faf-mcp.vercel.app/` |
-          | SSE | `https://grok-faf-mcp.vercel.app/sse` |
-          | Health | `https://grok-faf-mcp.vercel.app/health` |
-          | Info | `https://grok-faf-mcp.vercel.app/info` |
 
           ---
       - heading: Ecosystem
@@ -1415,7 +1433,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 7546585f62d139f9f99ef62f0cabf89f1f7c4e4e
+    sha: 6b08c941109ae5f39746d44097e2459cf912c4a3
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
@@ -1435,13 +1453,13 @@ docs:
       - heading: Quick Start
         body: |-
           ```bash
-          npx faf-mcp
+          bunx faf-mcp
           ```
 
           Add to your MCP config:
 
           ```json
-          {"mcpServers": {"faf": {"command": "npx", "args": ["-y", "faf-mcp"]}}}
+          {"mcpServers": {"faf": {"command": "bunx", "args": ["faf-mcp"]}}}
           ```
 
           | Platform | Config File |
@@ -1459,7 +1477,7 @@ docs:
           |------|--------|----------|
           | **Hosted** | [mcpaas.live](https://mcpaas.live) | Zero-install, point any MCP client to the URL |
           | **Self-Deploy** | [Deploy to Vercel](https://vercel.com/new?repository-url=https://github.com/Wolfe-Jam/faf-mcp) | Your own instance, full control |
-          | **Local** | `npx faf-mcp` | IDE integration via stdio transport |
+          | **Local** | `bunx faf-mcp` | IDE integration via stdio transport |
       - heading: Hosted (mcpaas.live)
         body: Point your MCP client to `https://mcpaas.live/sse` — no install, no config, no maintenance. Served from 300+ Cloudflare edges with sub-ms cold starts via 2.7KB Zig-WASM engine.
       - heading: Self-Deploy (Vercel)
