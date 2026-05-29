@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-28'
+generated: '2026-05-29'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -902,7 +902,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 34600d9ae82fb4fc42a6af89ceea349d4aa0012f
+    sha: 893e210de9ecdfffce10076d13b02584e6deb953
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -920,7 +920,7 @@ docs:
           </div>
 
           **Home:** [faf.one/grok](https://faf.one/grok)
-          **Live demo:** [grok-faf-mcp.vercel.app](https://grok-faf-mcp.vercel.app)
+          **Live demo:** [grok.faf.one](https://grok.faf.one)
 
           <div align="center">
 
@@ -957,8 +957,6 @@ docs:
           Returns endpoint, protocol versions, engine details, tool list, and the architecture line: `.faf=vROM | AI-in-session=RAM`.
 
           Sample corpus: [`xai-faf-proof/pilot`](https://github.com/Wolfe-Jam/xai-faf-proof/tree/main/pilot) — 10 records ready to score.
-
-          > **Note on local install:** `bunx grok-faf-mcp` / `npx grok-faf-mcp` are currently broken in published v1.4.0 — the `bin`-field points at `dist/src/index.js`, which prints a detection line and exits cleanly without serving stdio. The hosted endpoint above is the canonical production path; the local-stdio path will be fixed in a future patch publish.
 
           ---
       - heading: The 6 Ws - Quick Reference
@@ -1027,12 +1025,12 @@ docs:
           At 55%, Grok guesses half the time. At 100%, Grok knows your project.
 
           ---
-      - heading: 2. Self-Deploy (Your Own Vercel)
+      - heading: 2. Hosted (zero install)
         body: |-
-          Click the **Deploy with Vercel** button above. Zero config — get your own instance in 30 seconds.
+          `url = "https://mcpaas.live/grok/mcp/v1"` — edge-served on Cloudflare Workers, no subprocess.
 
           ---
-      - heading: MCP Tools (21 Core)
+      - heading: MCP Tools
         body: |-
           **Create & Detect**
 
@@ -1043,6 +1041,7 @@ docs:
           | `faf_score` | AI-readiness score (0-100%) with breakdown |
           | `faf_status` | Check current AI-readability |
           | `faf_enhance` | Intelligent enhancement |
+          | `refresh_faf` | Re-ground on the live `.faf` — re-read + re-score, report drift, return fresh DNA (drift → refresh → re-grounded). **Requested by Grok.** |
 
           **Sync & Persist**
 
@@ -1075,7 +1074,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          grok-faf-mcp v1.3.1
+          grok-faf-mcp v1.4.1
           ├── api/index.ts              → Vercel serverless (Express + SSE transport)
           ├── src/
           │   ├── server.ts             → MCP server (GrokFafMcpServer)
@@ -1095,21 +1094,22 @@ docs:
           ---
       - heading: Testing
         body: |-
-          179 tests across 7 suites:
+          213 tests across 8 files — 212 pass · 1 todo · 0 fail:
 
           ```bash
-          npm test    # runs all 179
+          npm test    # runs all 213 (bun test)
           ```
 
-          | Suite | Tests | Coverage |
-          |-------|-------|----------|
-          | Desktop-native validation | 10 | Core native functions, security, performance |
-          | MCP protocol | 28 | Tool registration, transport, error handling |
-          | Compiler scoring | 22 | Mk4 engine, type detection, slot counting |
-          | RAG system | 19 | Query, caching, context retrieval |
-          | Engine adapter | 35 | CLI detection, fallback behavior |
-          | Integration | 40 | End-to-end tool execution |
-          | WJTTC certification | 25 | Championship-grade compliance |
+          | Suite | Coverage |
+          |-------|----------|
+          | `desktop-native-validation` | Core native functions, security, performance |
+          | `mcp-conformance` | MCP protocol conformance — tools, transport, errors |
+          | `wjttc-mcp` | WJTTC MCP certification |
+          | `wjttc-bun` | WJTTC bun-migration + integrity |
+          | `wjttc-compiler-scoring` | Compiler scoring — engine, type detection, slots |
+          | `rag-system` | RAG query, caching, context retrieval |
+          | `security` | Input validation + security guards |
+          | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
       - heading: Ecosystem
