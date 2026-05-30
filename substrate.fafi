@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-05-29'
+generated: '2026-05-30'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -902,7 +902,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 893e210de9ecdfffce10076d13b02584e6deb953
+    sha: 9eb9e1efcf572d56cb93617938d8ff1419f426ff
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -1025,9 +1025,39 @@ docs:
           At 55%, Grok guesses half the time. At 100%, Grok knows your project.
 
           ---
-      - heading: 2. Hosted (zero install)
+      - heading: 1. Hosted (zero install — recommended)
         body: |-
-          `url = "https://mcpaas.live/grok/mcp/v1"` — edge-served on Cloudflare Workers, no subprocess.
+          Point your MCP client at the production URL — edge-served on Cloudflare Workers, no subprocess, sub-ms cold start. WASM-pure tools only on this path (scoring, validation, `refresh_faf`).
+
+          ```json
+          {
+            "mcpServers": {
+              "grok-faf": {
+                "url": "https://mcpaas.live/grok/mcp/v1"
+              }
+            }
+          }
+          ```
+      - heading: 2. Local (bunx — for FS-touching workflows)
+        body: |-
+          Use the local stdio path when you need filesystem access (`faf_init`, `faf_sync`, file-mutating tools):
+
+          ```bash
+          bunx grok-faf-mcp
+          ```
+
+          **Or via MCP config:**
+
+          ```json
+          {
+            "mcpServers": {
+              "grok-faf": {
+                "command": "bunx",
+                "args": ["grok-faf-mcp"]
+              }
+            }
+          }
+          ```
 
           ---
       - heading: MCP Tools
@@ -1071,11 +1101,25 @@ docs:
           Plus 34 advanced tools available with `FAF_SHOW_ADVANCED=true`.
 
           ---
+      - heading: Performance
+        body: |-
+          ```
+          Execution:    0.5ms average (97% faster than v1.1)
+          Fastest:      3,360ns (version — nanosecond territory)
+          Slowest:      1.3ms (score — Mk4 WASM)
+          Improvement:  19ms → 0.5ms (3,800% faster)
+          Engine:       Mk4 WASM via faf-scoring-kernel
+          Memory:       Zero leaks
+          Transport:    stdio (local, bunx) · Streamable HTTP (hosted, Cloudflare Workers)
+          ```
+
+          Benchmarked 10x per tool, warmed up, on local stdio execution. Hosted edge adds sub-ms cold start on top.
+
+          ---
       - heading: Architecture
         body: |-
           ```
-          grok-faf-mcp v1.4.1
-          ├── api/index.ts              → Vercel serverless (Express + SSE transport)
+          grok-faf-mcp v1.4.9
           ├── src/
           │   ├── server.ts             → MCP server (GrokFafMcpServer)
           │   ├── handlers/
@@ -1086,18 +1130,21 @@ docs:
           │       └── compiler/
           │           └── faf-compiler.ts    → Mk4 WASM scoring + Mk3.1 fallback
           ├── smithery.yaml             → Smithery listing config
-          └── vercel.json               → Vercel routing
+          ├── api/index.ts              → Vercel catch-site (legacy showcase surface; kept alive)
+          └── vercel.json               → Vercel routing for the catch-site
           ```
+
+          **Production deployment:** Cloudflare Workers via `mcpaas-cf` (serving `mcpaas.live/grok/mcp/v1`). The `api/index.ts` + `vercel.json` paths above stay alive as a catch-site for legacy/bookmarked links — they are no longer the production path.
 
           **Scoring pipeline:** TypeScript compiler parses `.faf` → detects project type → The Bouncer injects `slotignored` for inapplicable slots → `faf-scoring-kernel` (WASM) scores → falls back to Mk3.1 if kernel unavailable.
 
           ---
       - heading: Testing
         body: |-
-          213 tests across 8 files — 212 pass · 1 todo · 0 fail:
+          236 tests across 9 files — 212 pass · 24 skip · 0 fail:
 
           ```bash
-          npm test    # runs all 213 (bun test)
+          npm test    # runs all 236 (bun test)
           ```
 
           | Suite | Coverage |
@@ -1167,15 +1214,6 @@ docs:
           </div>
 
           ---
-      - heading: Get the CLI
-        body: |-
-          > **faf-cli** — The original AI-Context CLI. A must-have for every builder.
-
-          ```bash
-          npx faf-cli auto
-          ```
-
-          **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
     sha: 5590d8f6d644a0719508b8eae939ebb094071e07
