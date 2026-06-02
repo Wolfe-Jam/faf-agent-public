@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-01'
+generated: '2026-06-02'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -902,7 +902,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 44d2a6693f0137b5db884997e9b3ca927e40aac1
+    sha: ddd7fea5b5847bb08febad49cb3dffe5a74d2ef3
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -1166,10 +1166,10 @@ docs:
           ---
       - heading: Testing
         body: |-
-          236 tests across 9 files — 212 pass · 24 skip · 0 fail:
+          27 test files (~518 test declarations) — WJTTC parity (heavy local ↔ light hosted) + full suites (recent runs green on CI):
 
           ```bash
-          npm test    # runs all 236 (bun test)
+          sh scripts/run-tests.sh
           ```
 
           | Suite | Coverage |
