@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-03'
+generated: '2026-06-04'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -902,7 +902,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 9f1c5cc851c2b4178642662aeaa58f6277e1536e
+    sha: c8887f1f7c264d254029806bce794a1e66c5df5a
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -978,6 +978,13 @@ docs:
 
           **For AI:** Read the detailed sections below for full context.
           **For humans:** Use this pattern in YOUR README. Answer these 6 questions clearly.
+      - heading: For the xAI / Grok Build team
+        body: |-
+          Built **for** Grok and shaped by direct Grok feedback.  
+          Open for native Grok Build integration, .fafm memory layer, refresh_faf primitives, or any other context features the team needs.  
+          Live and dogfooded at https://grok.faf.one and https://mcpaas.live/grok/mcp/v1.
+
+          Happy to ship PRs, run private dogfood sessions, or jump on a call. Real software only. Just say the word.
 
           ---
       - heading: The Problem
@@ -1910,7 +1917,7 @@ docs:
           If `rust-faf-mcp` has been useful, consider starring the repo — it helps others find it.
   - repo: Wolfe-Jam/xai-faf-zeph
     path: README.md
-    sha: 27b9f08cc553a3f4272b3788beaa2d0bb3ce7e8b
+    sha: 34219160c1c0352cebcf7b1d15099afd154a02a2
     intro: 'ZEPH — Ultra Context Layer for FAF: microsecond context ops via pure Zig → WASM, 2.7 KB ghost binary'
     sections:
       - heading: ZEPH💨 — Ultra Context Layer (UCL)
@@ -1929,6 +1936,8 @@ docs:
           Measured on a 2019 iMac (Intel i5-7360U @ 2.30 GHz):
           **native `validate` 6.7 ns · `tier` 4.44 ns · `score` 12 μs on full 21-slot `.faf`.**
           Live demo runs the same WASM in your browser — click to verify.
+
+          > **🏆 Dogfood receipt:** ZEPH's engine scores this repo's *own* `project.faf` at **100** — identical to the canonical `faf` CLI. Reproduce in one command: `bun benchmarks/bench_js.mjs`.
 
           ---
       - heading: '🚀 Featured: Locked in with @grok'
@@ -1958,11 +1967,13 @@ docs:
 
           | Packet | Signature | What it does |
           |---|---|---|
-          | `score`    | `(ptr, len) → u8` | Mk4 score (0..100) on a `.faf` input |
-          | `validate` | `(ptr, len) → u8` | FAFb structural check — `0` valid, `1` bad magic, `2` truncated, `3` invalid version |
+          | `score`    | `(ptr, len) → u8` | **Native Zig:** FAFb *structural* score — populated sections (0..21). **WASM engine:** Mk4 score (0..100) on a `.faf`. |
+          | `validate` | `(ptr, len) → u8` | FAFb structural check — `0` valid, `1` bad magic, `2` truncated, `3` unsupported version |
           | `tier`     | `(s: u8) → u8`    | Score → tier byte: 0=White, 1=Red, 2=Yellow, 3=Green, 4=Bronze, 5=Silver, 6=Gold, 7=Trophy |
 
           "Packet" is API / brand language — never a Zig type. The source is plain `pub export fn`'s on byte slices.
+
+          **Two layers, one brand.** The native Zig source in this repo (what `zig fetch` installs) is the **FAFb structural layer** — `validate`, structural `score`, and the `tier` ladder are all real and tested (`zig build test`). The headline **Mk4 `.faf` → 0..100** scoring is delivered by the prebuilt engine artifact `docs/cascade.wasm` (proven by the [Dogfood](#benchmarks) receipt). Same export names, distinct layers — the source never claims to be the Mk4 scorer.
       - heading: Why ZEPH exists
         body: |-
           Context is the highest-leverage knob in the agentic stack.
@@ -1986,6 +1997,32 @@ docs:
           ```
 
           The `cascade.wasm` artifact ships in `docs/`. npm wrapper lives in [`faf-wasm-core`](https://www.npmjs.com/package/faf-wasm-core) v1.1.0 — Stage 2 wiring landed via M7. Both Rust and Zig kernels live behind a single `FafKernel` interface; score parity vs Rust kernel verified.
+      - heading: Use as a dependency (Zig)
+        body: |-
+          ZEPH is a Zig package. Add it to your project (Zig **≥ 0.16**, zero external deps):
+
+          ```sh
+          zig fetch --save "git+https://codeberg.org/wolfejam/zeph#v0.1.0"
+          ```
+
+          Wire the `zeph` module in your `build.zig`:
+
+          ```zig
+          const zeph = b.dependency("zeph", .{});
+          exe.root_module.addImport("zeph", zeph.module("zeph"));
+          ```
+
+          Then call the packet exports — plain functions on bytes:
+
+          ```zig
+          const zeph = @import("zeph");
+
+          const t = zeph.tier(score);              // score (u8) → tier byte (0..7)
+          const ok = zeph.validate(ptr, len);      // FAFb structural check → 0 = valid
+          const s = zeph.score(ptr, len);          // Mk4 score (0..100) on a .faf input
+          ```
+
+          > Repo home for the Zig dependency is **Codeberg** (`codeberg.org/wolfejam/zeph`) — alongside the Zig project's own forge. Mirrored at `github.com/Wolfe-Jam/xai-faf-zeph`.
       - heading: Benchmarks
         body: |-
           Avg time per call. Same input fixtures across runtimes. `score` reads real `.faf` YAML (21-base-slot Mk4 scoring).
@@ -1999,11 +2036,16 @@ docs:
 
           `validate` and `tier` sit deep under 50 ns across every runtime — single-digit ns native, double-digit ns in WASM. `score` cost is roughly constant in populated count (same parser walk; placeholder / `slotignored` checks are cheap).
 
+          **Dogfood — self-score parity.** ZEPH's engine (`docs/cascade.wasm`) scores this repo's own `project.faf` at **100**, matching the canonical `faf` CLI (🏆 Trophy). The harness also prints per-call timing:
+
+          ```sh
+          bun benchmarks/bench_js.mjs    # parity PASS 🏆 + score/validate/tier ns
+          ```
+
           Reproducibility:
-          - Native: `zig build benchmark`
-          - Node: `node benchmarks/bench_js.mjs`
-          - Bun: `bun benchmarks/bench_js.mjs`
-          - Browser: serve repo root (`python3 -m http.server`), open `docs/index.html`, click **RUN ZEPH💨**
+          - **Node / Bun (live):** `node benchmarks/bench_js.mjs` · `bun benchmarks/bench_js.mjs` — loads `docs/cascade.wasm`, runs the dogfood + per-call timing.
+          - **Browser:** serve repo root (`python3 -m http.server`), open `docs/index.html`, click **RUN ZEPH💨**.
+          - **Native Zig:** `zig build benchmark` is a **Phase-1 skeleton** today (the full per-call native harness lands in Phase 2); the native figures above are prior measurements pending that harness.
       - heading: Architecture
         body: |-
           - **FCL (Foundational Context Layer)**: `.faf` + SDKs — the *what* (project DNA)
@@ -2037,6 +2079,16 @@ docs:
             💨 = never delays (ZEPH)
 
           **ZEPH💨 — Context as breeze.**
+
+          ---
+      - heading: 🏎️ The FAF · Zig family
+        body: |-
+          *Bun is built on Zig ⚡ — so are we.*
+
+          - **[ZEPH💨](https://github.com/Wolfe-Jam/xai-faf-zeph)** — Zig → WASM context engine (UCL), 2.7 KB
+          - **[bun-sticky-zig](https://github.com/Wolfe-Jam/bun-sticky-zig)** — Zig-native FAF CLI, 77 KB, zero deps
+          - **[bun-sticky](https://npmjs.com/package/bun-sticky)** — the TypeScript FAF CLI (npm)
+          - **[.faf](https://faf.one)** — the IANA-registered context format (FAF🐘)
 
           ---
 
