@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-05'
+generated: '2026-06-06'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1566,7 +1566,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 6b08c941109ae5f39746d44097e2459cf912c4a3
+    sha: b0d421ecffc684373ed09710589b0cd08bb97f7e
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
