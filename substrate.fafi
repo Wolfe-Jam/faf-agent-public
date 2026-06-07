@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-06'
+generated: '2026-06-07'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
