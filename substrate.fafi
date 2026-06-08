@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-07'
+generated: '2026-06-08'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1311,7 +1311,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 5590d8f6d644a0719508b8eae939ebb094071e07
+    sha: cb3ef408706ee5188c20e041c7910362ee7d0b3d
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp
@@ -1325,11 +1325,12 @@ docs:
           <!-- mcp-name: io.github.Wolfe-Jam/gemini-faf-mcp -->
 
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![FAF](https://mcpaas.live/badge/Wolfe-Jam/gemini-faf-mcp.svg)](https://builder.faf.one)
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
-          [![Downloads](https://img.shields.io/pypi/dm/gemini-faf-mcp?style=for-the-badge&color=blue)](https://pypi.org/project/gemini-faf-mcp/)
           [![Tests](https://img.shields.io/badge/Tests-221%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
-          [![IANA](https://img.shields.io/badge/IANA-registered-informational?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
+          [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
+          [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
+          [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
+          [![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.20348942)
       - heading: Before and after
         body: |-
           ```
@@ -1345,11 +1346,11 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v2.2.0
+      - heading: What's New in v2.4.0 — The Chameleon Edition
         body: |-
-          **Mk4 Championship Scoring Engine** — all 12 tools now use the same scoring algorithm as the Rust compiler and TypeScript CLI. `faf_score` and `faf_validate` return slot-level detail (`populated`, `active`, `total`). Scores match across every FAF tool in every language. 221 tests, 41 new WJTTC championship tests. Dead code removed (`sync_faf.py`).
+          **One command, both modes.** `gemini-faf-mcp` auto-selects its transport: **stdio** locally, **Streamable HTTP** on Cloud Run. Same binary, 12 tools, zero config — and a clean stdio handshake for every MCP client. One binary that's a local MCP server and a hosted one, decided by its environment.
 
-          > **v2.2.1** is a patch release — package description aligned with the canonical "Persistent project context for Google Gemini" wording across PyPI, the Gemini Extensions Gallery, and the MCP Registry. No code changes.
+          > **v2.3.0** moved the hosted path off deprecated SSE onto Streamable HTTP (stateless + JSON) for Cloud Run. **v2.2.0** brought the Mk4 Championship Scoring Engine — all 12 tools share the same scoring algorithm as the Rust compiler and TypeScript CLI (slot-level `populated`/`active`/`total`); 221 tests.
 
           ---
       - heading: 3. Generate your project context
@@ -1357,12 +1358,12 @@ docs:
           In your Gemini CLI:
 
           ```
-          > /gemini-faf-mcp:setup
+          > /faf:setup
           ```
 
           You should see: `Created project.faf — Score: 85% (BRONZE)`. From this point, every Gemini session in this project reads it automatically.
 
-          > **Tip:** A score of 85% (BRONZE) is the minimum where Gemini stops guessing. Run `/gemini-faf-mcp:score` to see what's missing and how to push to 100% (TROPHY).
+          > **Tip:** A score of 85% (BRONZE) is the minimum where Gemini stops guessing. Run `/faf:score` to see what's missing and how to push to 100% (TROPHY).
 
           ---
       - heading: The "One-File" Advantage
@@ -1395,7 +1396,7 @@ docs:
           You don't replace it. `.faf` **generates** it. Run `faf_gemini` and you get a fresh `GEMINI.md` with the structured project data baked in as YAML frontmatter — the same `GEMINI.md` Gemini CLI already reads, but generated from a single source of truth instead of hand-maintained.
 
           ```bash
-          > /gemini-faf-mcp:export
+          > /faf:export
       - heading: Generates GEMINI.md from project.faf
         body: |-
           ```
@@ -1496,8 +1497,8 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v2.2.1
-          ├── server.py              → FastMCP MCP server (12 tools, Mk4 scoring)
+          gemini-faf-mcp v2.4.0
+          ├── server.py              → FastMCP MCP server (12 tools, dual-transport, Mk4 scoring)
           ├── main.py                → Cloud Run REST API (GET/POST/PUT)
           ├── models.py              → 15 project type examples
           └── src/gemini_faf_mcp/    → Python SDK (FAFClient, parser)
