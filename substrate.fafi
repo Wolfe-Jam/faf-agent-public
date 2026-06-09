@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-08'
+generated: '2026-06-09'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -902,7 +902,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **2 IANA registrations:** `vnd.faf+yaml` (Context) · `vnd.fafm+yaml` (Memory) · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: c8887f1f7c264d254029806bce794a1e66c5df5a
+    sha: 39fb1ff20bd9fd6a737c4987a5a96d3f5008794e
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: FAST⚡️AF Context
@@ -1141,7 +1141,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          grok-faf-mcp v1.5.1
+          grok-faf-mcp v1.5.2
           ├── src/
           │   ├── server.ts             → MCP server (GrokFafMcpServer)
           │   ├── handlers/
