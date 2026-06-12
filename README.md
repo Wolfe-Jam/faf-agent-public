@@ -42,3 +42,5 @@ uvx faf-agent-mcp
 
 **License**
 MIT
+
+If `faf-agent` has been useful, consider starring the repo — it helps others find it.
