@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-12'
+generated: '2026-06-13'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -647,10 +647,10 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 95eec7a6341a6b76c31f9d654bf589f134cfb0e8
+    sha: 56075046868ee8d01eb3bd21830d911ad730ebf1
     intro: FAF MCP server for Claude — persistent project context, 35 tools
     sections:
-      - heading: claude-faf-mcp — The Trust Edition
+      - heading: claude-faf-mcp — The Sourced Edition
         body: |-
           [![npm version](https://img.shields.io/npm/v/claude-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/claude-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
@@ -675,9 +675,11 @@ docs:
 
           > ⚡ **New: `/faf` prompt** — type `/faf` in Claude Desktop. It checks your project, scores it, drives it to 100%, and syncs. Relentlessly. One command.
 
+          > 🏆 **v5.9.0 — The Sourced Edition.** Every answer comes from one source. `faf_go` and Turbo-Cat detection now **compose faf-cli's single-source engines** instead of carrying their own copies — fills come from real evidence or stay honestly empty, nothing guessed. The legacy guessing extractor is gone; the `/faf` prompt drives to a *verified* 100% (`faf_trust` + `✪` parity receipt) and keeps it fresh. FAF don't lie, by construction.
+
           > 🏆 **v5.8.0 — The Trust Edition.** Claude Code-native context that just works. A native SessionStart hook opens every session with fresh context and a one-line `✪` heartbeat (`faf: context ✪ 100% — fresh`); tool output is quiet (no emoji, parseable) and typed (`structuredContent` everywhere); every score carries a deterministic parity hash any engine reproduces, sealed in a self-verifying `✪` receipt. Installed explicitly via `faf_setup` — preview first, your settings preserved. Built on the Canonical foundation: path-confined file access, edge-direct remote, 35 tools.
 
-          35 MCP tools. IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`). 1,611 test executions per push.
+          35 MCP tools. IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`). 1,701 test executions per push.
 
           ---
       - heading: The 3Ws — 3 Answers. That's It.
@@ -718,7 +720,7 @@ docs:
         body: |-
           **Click** — one-click `.mcpb`
 
-          [**⬇ Download `claude-faf-mcp-5.7.2.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/latest/download/claude-faf-mcp-5.7.2.mcpb)
+          [**⬇ Download `claude-faf-mcp-5.9.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/latest/download/claude-faf-mcp-5.9.0.mcpb)
 
           Double-click. **No terminal. No JSON config. 35 tools live in 10 seconds.**
 
@@ -1583,7 +1585,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 880fd1c93a937985b6dfe99fc6901e6195b7dbca
+    sha: 4be9a32517cd25db586739387376bdff4f39700b
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
@@ -1756,6 +1758,16 @@ docs:
           - And 40+ more commands...
 
           ---
+      - heading: Ecosystem
+        body: |-
+          - **[claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp)** — Claude Desktop (33 tools)
+          - **[faf-cli](https://npmjs.com/package/faf-cli)** — Terminal CLI
+          - **[faf-wasm](https://www.npmjs.com/package/faf-wasm)** — WASM SDK (<5ms scoring)
+          - **[faf.one](https://faf.one)** — Official website
+
+          ---
+
+          If `faf-mcp` has been useful, consider starring the repo — it helps others find it.
       - heading: License
         body: |-
           MIT License — Free and open source
@@ -1767,7 +1779,7 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: be426b3526d27708190f0b022297299175cc4e62
+    sha: 6c6fcfea58e3af015fff383506fd7015b1ecde5a
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
@@ -1838,7 +1850,7 @@ docs:
             license: MIT
           instant_context:
             what_building: REST API for user management
-            tech_stack: Rust 2021
+            tech_stack: Rust 2024
             key_files:
               - Cargo.toml
               - src/main.rs
@@ -1929,7 +1941,7 @@ docs:
         body: |-
           ```
 
-          **Edition**: 2021 | **LTO**: enabled | **Strip**: symbols
+          **Edition**: 2024 | **LTO**: enabled | **Strip**: symbols
 
           If `rust-faf-mcp` has been useful, consider starring the repo — it helps others find it.
   - repo: Wolfe-Jam/xai-faf-zeph
