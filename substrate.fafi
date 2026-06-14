@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-13'
+generated: '2026-06-14'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,9 +435,18 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: fc1c4e15aa864d03fa00681867b256076d8f887e
+    sha: eb1c3f2a296e64e11bea9cf9beac146fec4b55ce
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
+      - heading: v6.11 — The Ledger Edition
+        body: |-
+          **`faf bench --submit` posts your cold-vs-grounded receipt to the public ledger — the context bench goes public, one command.** Run the grounding benchmark, then submit the full pair receipt:
+
+          ```bash
+          faf bench --submit
+          ```
+
+          The benchmark stops being a private number and becomes a shared, verifiable receipt on the public ledger. Also new: `relentlessContext` / `assembleFreshFaf` and the `buildTableOf8` interview keystone join the public API.
       - heading: v6.10 — The Composed Edition
         body: |-
           **Every FAF MCP composes single-source engines, never reimplements them.** Turbo-Cat (the ~200-format knowledge base) and the bench engine join the public API, alongside scoring and the 6Ws Interview:
@@ -647,7 +656,7 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 56075046868ee8d01eb3bd21830d911ad730ebf1
+    sha: 14d2db89db3052c08e553b757022c522168d156a
     intro: FAF MCP server for Claude — persistent project context, 35 tools
     sections:
       - heading: claude-faf-mcp — The Sourced Edition
@@ -720,7 +729,7 @@ docs:
         body: |-
           **Click** — one-click `.mcpb`
 
-          [**⬇ Download `claude-faf-mcp-5.9.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/latest/download/claude-faf-mcp-5.9.0.mcpb)
+          [**⬇ Download `claude-faf-mcp-5.9.1.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/latest/download/claude-faf-mcp-5.9.1.mcpb)
 
           Double-click. **No terminal. No JSON config. 35 tools live in 10 seconds.**
 
