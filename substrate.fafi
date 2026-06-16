@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-15'
+generated: '2026-06-16'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,9 +435,23 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: eb1c3f2a296e64e11bea9cf9beac146fec4b55ce
+    sha: b06e3e8e3aa19d56ea729954447340e9d20834fb
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
+      - heading: v6.12 — The Single-Source Edition
+        body: |-
+          **faf-cli is now the single source for the registry `_meta`** — it emits the `one.faf/context` block every FAF MCP server composes: `registryMeta`/`registryName`/`fafContextBlock`, one deterministic projection, byte-identical, end-to-end across every surface, verifiable by sha, re-derivable instantly on-demand.
+
+          ```ts
+          import { registryMeta, registryName } from 'faf-cli';
+
+          serverJson.name  = registryName(faf);   // → one.faf/<name>, derived from project.homepage
+          serverJson._meta = registryMeta(faf);   // nests one.faf/context under publisher-provided (4 KB cap)
+          ```
+
+          Honest-first: the block carries `{ faf, mediaType, iana, deterministic, generated }` — **no baked score**. One emitter, every door, byte-identical.
+
+          ---
       - heading: v6.11 — The Ledger Edition
         body: |-
           **`faf bench --submit` posts your cold-vs-grounded receipt to the public ledger — the context bench goes public, one command.** Run the grounding benchmark, then submit the full pair receipt:
@@ -534,9 +548,9 @@ docs:
           | **Language** | TypeScript | TypeScript |
           | **Compile** | Bun bytecode | `bun build --compile` |
 
-          408 tests in ~13s. 296KB bundle in 2.4s. Single portable binary, 4 platforms. npx backward-compatible.
+          880 tests in ~18s. 296KB bundle in 2.4s. Single portable binary, 4 platforms. npx backward-compatible.
 
-          26 commands. 408 tests. WJTTC-tested. 93% smaller than v5.
+          32 commands. 880 tests. WJTTC-tested. 93% smaller than v5.
 
           ```
           commands → interop → core → wasm
@@ -620,7 +634,7 @@ docs:
           > **Robust. Reliable. Next-level WJTTC tested.** — The Foundation Edition.
 
           ```bash
-          bun test                       # 408 tests, 42 files, ~13s
+          bun test                       # 880 tests, 75 files, ~18s
           ```
 
           - **WJTTC Build Resilience** (13) — every regression class locked.
@@ -1594,7 +1608,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 4be9a32517cd25db586739387376bdff4f39700b
+    sha: c9b8ef5c034dc4e90d82df5c989fa87033484afc
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
