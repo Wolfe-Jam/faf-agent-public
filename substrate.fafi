@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-16'
+generated: '2026-06-17'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,9 +435,20 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: b06e3e8e3aa19d56ea729954447340e9d20834fb
+    sha: 3f144a3a612307fcd6a640fe6c712b37e36162ae
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
+      - heading: v6.13 — The Dart Edition
+        body: |-
+          **faf now understands Dart and Flutter projects.** Content-aware `pubspec.yaml` classification — Flutter app vs reusable package · Dart server (Serverpod / Dart Frog / Shelf) / CLI / MCP — pure Dart stays Dart. The single-source engine faf-python-sdk and the MCPs compose, parity-tested across languages.
+
+          ```bash
+          faf auto    # reads pubspec.yaml → Dart/Flutter into project.faf
+          ```
+
+          A pubspec alone no longer means "Flutter": `faf` reads the dependencies and classifies — a Flutter app, a reusable package, a Dart server, a CLI, or a Dart MCP server. The detection knowledge lives in one spec (`dart-detection.json`) that faf-cli, faf-python-sdk, and the MCPs all share.
+
+          ---
       - heading: v6.12 — The Single-Source Edition
         body: |-
           **faf-cli is now the single source for the registry `_meta`** — it emits the `one.faf/context` block every FAF MCP server composes: `registryMeta`/`registryName`/`fafContextBlock`, one deterministic projection, byte-identical, end-to-end across every surface, verifiable by sha, re-derivable instantly on-demand.
@@ -670,7 +681,7 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 14d2db89db3052c08e553b757022c522168d156a
+    sha: 8796311592b1e728cb9028c5c3139f22c85e6e50
     intro: FAF MCP server for Claude — persistent project context, 35 tools
     sections:
       - heading: claude-faf-mcp — The Sourced Edition
@@ -803,7 +814,7 @@ docs:
           At 55%, AI guesses half the time. At 100%, AI knows your project. Same compiler as faf-cli — same score everywhere.
 
           ---
-      - heading: 32 MCP Tools
+      - heading: 35 MCP Tools
         body: |-
           All tools run standalone — zero CLI dependencies, 19ms average execution.
 
@@ -1351,10 +1362,10 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 291595a20b591d2c9b8cfeefdfb4ace12f3b46d6
+    sha: dc931605080b9a886e0debaed6bded41d8b84875
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
-      - heading: gemini-faf-mcp — The Chameleon Edition
+      - heading: gemini-faf-mcp — The Dart Edition
         body: |-
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
 
@@ -1366,7 +1377,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-233%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-243%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1386,13 +1397,19 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v2.4.3
+      - heading: What's New in v2.5.0 — The Dart Edition
         body: |-
-          **`faf_agents` and `faf_gemini` now enhance your files.** The structured `.faf` block is prefixed to the top of AGENTS.md / GEMINI.md for instant AI context, and your Markdown stays in the instruction lane. Re-runs update the block in place — everything you've written below is preserved.
+          **gemini-faf-mcp now understands Dart and Flutter projects.**
 
-          > **v2.4.2 — The Confinement Edition** confined every caller `path` argument (security: reads restricted to `.faf`/`.fafm`, writes to the project root — closes an arbitrary local-file read + `faf_init` write). **v2.4.0 — The Chameleon Edition** auto-selects its transport: **stdio** locally, **Streamable HTTP** on Cloud Run. Same binary, 12 tools, zero config.
+          Detects Dart/Flutter from a `pubspec.yaml` — Flutter app vs package · Dart MCP / backend / CLI / library — by composing faf-python-sdk's detector, the shared engine, not a fork. Zero-Config, 12 exact tools.
+
+          > **v2.4.3** made `faf_agents` / `faf_gemini` non-destructive (inject a structured `.faf` block, preserve your Markdown below). **v2.4.2 — The Confinement Edition** confined every caller `path` argument (security). **v2.4.0 — The Chameleon Edition** auto-selects its transport: stdio locally, Streamable HTTP on Cloud Run. 12 tools, zero config.
 
           ---
+      - heading: 1. Install
+        body: |-
+          ```bash
+          uvx gemini-faf-mcp          # zero-install run via uvx (fetched from PyPI)
       - heading: 3. Generate your project context
         body: |-
           In your Gemini CLI:
@@ -1551,7 +1568,7 @@ docs:
       - heading: Testing
         body: |-
           ```bash
-          pip install -e ".[dev]"
+          pip3 install -e ".[dev]"
           python -m pytest tests/ -v
           ```
 
@@ -1608,7 +1625,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: c9b8ef5c034dc4e90d82df5c989fa87033484afc
+    sha: b87464870a52928ca01fb1dfab0f6209e55fddf0
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
@@ -1677,7 +1694,7 @@ docs:
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **25 MCP tools** (with CLI fallback) · **309 tests** (9 suites) · **7 bundled parsers**
+          **31 MCP tools** (with CLI fallback) · **309 tests** (9 suites) · **7 bundled parsers**
 
           ---
       - heading: Cloud Sync
@@ -1750,7 +1767,7 @@ docs:
           Works on all platforms — stops web search, forces tool usage.
 
           ---
-      - heading: 25 Core MCP Tools
+      - heading: 31 MCP Tools
         body: |-
           | Tool | Purpose |
           |------|---------|
@@ -1774,7 +1791,7 @@ docs:
           | `faf_cloud_search` | Search souls |
           | `faf_cloud_share` | Generate share links |
 
-          **Plus 36 advanced tools and CLI fallback** (via faf-cli v5.0.1):
+          **Plus CLI fallback** (via faf-cli):
           - `faf readme` - Extract 6 Ws from README (+25-35% boost)
           - `faf human-add` - Non-interactive YAML merge (6Ws Builder)
           - `faf git` - GitHub repo analysis without cloning
