@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-18'
+generated: '2026-06-19'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -963,7 +963,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 84af32cb306b519b984f43db98f0ebf15907eb3c
+    sha: 4edc0d93196aa43010bd472ccc83e6a2abd571c6
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1635,7 +1635,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: b87464870a52928ca01fb1dfab0f6209e55fddf0
+    sha: 6c6da9e53fe3c31a804707c4f6eb9cb61f95c3d2
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: Define once. Sync everywhere.
@@ -1704,7 +1704,7 @@ docs:
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **31 MCP tools** (with CLI fallback) · **309 tests** (9 suites) · **7 bundled parsers**
+          **29 MCP tools** (with CLI fallback) · **309 tests** (9 suites) · **7 bundled parsers**
 
           ---
       - heading: Cloud Sync
@@ -1777,7 +1777,7 @@ docs:
           Works on all platforms — stops web search, forces tool usage.
 
           ---
-      - heading: 31 MCP Tools
+      - heading: 29 MCP Tools
         body: |-
           | Tool | Purpose |
           |------|---------|
@@ -1785,7 +1785,6 @@ docs:
           | `faf_score` | Check AI-readiness (0-100%) |
           | `faf_sync` | Sync context across platforms |
           | `faf_bi_sync` | Bi-directional .faf ↔ CLAUDE.md |
-          | `faf_enhance` | Intelligent enhancement |
           | `faf_read` | Parse and validate FAF files |
           | `faf_write` | Create/update FAF with validation |
           | **Interop Tools** | |
