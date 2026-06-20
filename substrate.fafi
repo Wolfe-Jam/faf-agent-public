@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-19'
+generated: '2026-06-20'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -963,7 +963,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 4edc0d93196aa43010bd472ccc83e6a2abd571c6
+    sha: 34db50c7bb2873badd58467c78dc6210791f70fc
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1256,9 +1256,9 @@ docs:
           | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
-      - heading: Status & known limitations (v1.5)
+      - heading: Status & known limitations (v1.6)
         body: |-
-          This release ships the core 1.5 substrate and orchestration primitives, with the new tools available on the local stdio path. Operating it honestly means surfacing what's NOT in v1 alongside what is.
+          v1.6.0 — **The ZEPH Edition** — adds the ZEPH fast path for re-grounding: `refresh_faf` (and transitively `refresh_blend`) can score via the Zig→WASM engine (`cascade.wasm`, ~12µs) when enabled with `USE_ZEPH=1`. It's **flag-gated and off by default** — `faf-cli` stays the canonical scorer, parity is locked in CI (ZEPH returns THE score, just faster). Everything below still applies. Operating it honestly means surfacing what's NOT in here alongside what is.
 
           **What is fully supported:**
           - WASM-pure tools on the hosted endpoint (`https://mcpaas.live/grok/mcp/v1` and client-specific routes) — scoring · validation · `refresh_faf`.
