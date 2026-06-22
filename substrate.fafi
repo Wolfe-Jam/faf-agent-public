@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-21'
+generated: '2026-06-22'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,9 +435,20 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 3f144a3a612307fcd6a640fe6c712b37e36162ae
+    sha: 5783955c7a322160913f6416782b140ca8f60cb2
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
+      - heading: v6.14 — The Loop Edition
+        body: |-
+          **`faf loop` drives any repo to 🏆 100% or the honest human wall** — sourcing every slot it can with provenance, asking only what only you know, never inventing.
+
+          ```bash
+          faf loop    # init → auto → score, then ask only the human-only gaps
+          ```
+
+          The loop sources what detection can, then stops at one of three honest terminals: `done` (🏆 100%), `needs-human` (it asks only the slots only you can answer), or `stuck` (it sourced everything sourceable and nothing's left for a human to add). It never fabricates a slot to reach 100% — sourced 6Ws now carry provenance (`{value, source, confidence}`), so every seeded value is a confirm-or-edit suggestion, never an auto-confirmed guess.
+
+          ---
       - heading: v6.13 — The Dart Edition
         body: |-
           **faf now understands Dart and Flutter projects.** Content-aware `pubspec.yaml` classification — Flutter app vs reusable package · Dart server (Serverpod / Dart Frog / Shelf) / CLI / MCP — pure Dart stays Dart. The single-source engine faf-python-sdk and the MCPs compose, parity-tested across languages.
@@ -681,10 +692,10 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 4678429543c55a4049dd895b37a961cd40e0aabe
-    intro: FAF MCP server for Claude — persistent project context, 12 Core tools (35 total)
+    sha: 7195bee0f34bec6a7740dc6af309b18d0779a46d
+    intro: FAF MCP server for Claude — persistent project context, 13 Core tools (36 total)
     sections:
-      - heading: claude-faf-mcp — The Distilled Edition
+      - heading: claude-faf-mcp — The Proof Edition
         body: |-
           [![npm version](https://img.shields.io/npm/v/claude-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/claude-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
@@ -709,6 +720,8 @@ docs:
 
           > ⚡ **New: `/faf` prompt** — type `/faf` in Claude Desktop. It checks your project, scores it, drives it to 100%, and syncs. Relentlessly. One command.
 
+          > 🏆 **v5.12.0 — The Proof Edition.** `faf_bench` proves FAF's grounding lift in-session — it asks Claude about your repo cold (no context) and with the `.faf`, grades mechanically (no judge), and emits a `✪` receipt showing the delta. Promoted to lead the Core tier (13 tools, 36 total). `faf_go` now bootstraps a cold repo (init → auto → 6Ws), and you can still just **type `faf` to start**. Proof, not pitch.
+
           > 🏆 **v5.11.0 — The Distilled Edition.** claude-faf-mcp, distilled — a curated Core of 12 self-documenting tools, with the interview, README extractor, and server-card all composed from faf-cli's single source (no forks), and faf_go's new Table-of-8 where your goal seeds the 6Ws. Fewer tools, nothing forked, nothing guessed.
 
           > 🏆 **v5.10.0 — The Dart Edition.** claude-faf-mcp now reads Dart & Flutter — it knows a Flutter app from a pure-Dart CLI. Detection by composition: because CFM composes faf-cli's Turbo-Cat (The Sourced Edition), faf-cli 6.13.0's content-aware, pubspec-driven Dart classifier arrives by construction — no forked parser, no drift. 35 tools, npm audit clean.
@@ -717,7 +730,7 @@ docs:
 
           > 🏆 **v5.8.0 — The Trust Edition.** Claude Code-native context that just works. A native SessionStart hook opens every session with fresh context and a one-line `✪` heartbeat (`faf: context ✪ 100% — fresh`); tool output is quiet (no emoji, parseable) and typed (`structuredContent` everywhere); every score carries a deterministic parity hash any engine reproduces, sealed in a self-verifying `✪` receipt. Installed explicitly via `faf_setup` — preview first, your settings preserved. Built on the Canonical foundation: path-confined file access, edge-direct remote, 35 tools.
 
-          12 Core MCP tools (35 with `FAF_TOOLS=all`). IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`). 1,716 test executions per push.
+          13 Core MCP tools (36 with `FAF_TOOLS=all`). IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`). 1,716 test executions per push.
 
           ---
       - heading: The 3Ws — 3 Answers. That's It.
@@ -760,7 +773,7 @@ docs:
 
           [**⬇ Download `claude-faf-mcp-5.11.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/latest/download/claude-faf-mcp-5.11.0.mcpb)
 
-          Double-click. **Zero-Config — no terminal, no JSON config. 12 Core tools live in 10 seconds.**
+          Double-click. **Zero-Config — no terminal, no JSON config. 13 Core tools live in 10 seconds.**
 
           **Copy** — paste-prompt to Claude
 
@@ -818,9 +831,9 @@ docs:
           At 55%, AI guesses half the time. At 100%, AI knows your project. Same compiler as faf-cli — same score everywhere.
 
           ---
-      - heading: MCP Tools — 12 Core, 35 with `FAF_TOOLS=all`
+      - heading: MCP Tools — 13 Core, 36 with `FAF_TOOLS=all`
         body: |-
-          By default claude-faf-mcp advertises a distilled **Core of 12** — the lifecycle tools you reach for, each self-documenting. Set `FAF_TOOLS=all` to expose all 35 (Extended tools stay callable by name regardless). **Core 12:** `faf_init` · `faf_auto` · `faf_go` · `faf_enhance` · `faf_score` · `faf_doctor` · `faf_sync` · `faf_context` · `faf_trust` · `faf_about` · `faf_etch` · `faf_recall`.
+          By default claude-faf-mcp advertises a distilled **Core of 13** — the lifecycle tools you reach for, each self-documenting. Set `FAF_TOOLS=all` to expose all 36 (Extended tools stay callable by name regardless). **Core 13:** `faf_init` · `faf_auto` · `faf_go` · `faf_bench` · `faf_enhance` · `faf_score` · `faf_doctor` · `faf_sync` · `faf_context` · `faf_trust` · `faf_about` · `faf_etch` · `faf_recall`.
 
           All tools run standalone — zero CLI dependencies, 19ms average execution.
 
@@ -839,6 +852,7 @@ docs:
           | Tool | Purpose |
           |------|---------|
           | `faf_score` | AI-readiness score (0-100%) with breakdown |
+          | `faf_bench` | Benchmark AI grounding — cold vs .faf, with a `✪` receipt |
           | `faf_check` | Validate .faf structure |
           | `faf_doctor` | Diagnose and fix common issues |
           | `faf_go` | Guided interview to Gold Code |
