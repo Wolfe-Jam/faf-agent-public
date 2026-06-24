@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-23'
+generated: '2026-06-24'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1680,9 +1680,14 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 6c6da9e53fe3c31a804707c4f6eb9cb61f95c3d2
+    sha: aba19db610e3f1d6703f0cd694e321617cecb51a
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
+      - heading: What's New in 2.3.0 — The Curated Edition
+        body: |-
+          **The tools you actually need, up front.** faf-mcp now leads with **15 essential tools** by default — a clean, focused surface instead of a wall of options. Need everything? Set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way). And every Core tool's description was rewritten so your AI picks the right one, first time.
+
+          ---
       - heading: Define once. Sync everywhere.
         body: |-
           You maintain `.cursorrules`. Your teammate uses `AGENTS.md`. Someone on the team just switched to Gemini. Every AI tool wants its own context file — and they all say the same thing in different formats.
@@ -1749,7 +1754,7 @@ docs:
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **29 MCP tools** (with CLI fallback) · **309 tests** (9 suites) · **7 bundled parsers**
+          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · with CLI fallback · **9 test suites** · **7 bundled parsers**
 
           ---
       - heading: Cloud Sync
