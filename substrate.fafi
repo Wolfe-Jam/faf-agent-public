@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-24'
+generated: '2026-06-25'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,9 +435,21 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 5783955c7a322160913f6416782b140ca8f60cb2
+    sha: 1a84c72da02abb4ce25c7b7e0e5ccb47d93f5152
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
+      - heading: v6.15 — The Copilot Edition
+        body: |-
+          **FAF now writes the file GitHub Copilot reads.**
+
+          ```bash
+          faf export --copilot     # → .github/copilot-instructions.md (every Copilot surface reads it)
+          faf git owner/repo       # instant scored .faf from any GitHub repo (now injection-hardened)
+          ```
+
+          `faf export --copilot` emits GitHub Copilot's repository-wide instruction file — the **widest-surface** one, read by default across web chat, code review, VS Code, JetBrains, the CLI, and the coding agent. `faf git` is now hardened against URL command injection (no-shell `execFileSync` + a strict allowlist). Shipped with an exemplary WJTTC Git suite that adopts the full five tiers — **BRAKE · ENGINE · AERO · TYRE · PIT**.
+
+          ---
       - heading: v6.14 — The Loop Edition
         body: |-
           **`faf loop` drives any repo to 🏆 100% or the honest human wall** — sourcing every slot it can with provenance, asking only what only you know, never inventing.
@@ -692,10 +704,10 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 9806683b4714ee76f50ded71d43bcfee5b2e8be1
+    sha: 9c73103db553439f6f00083afa07f719e21ec962
     intro: FAF MCP server for Claude — persistent project context, 13 Core tools (36 total)
     sections:
-      - heading: claude-faf-mcp — 🧡 The Heartbeat Edition
+      - heading: claude-faf-mcp — The Copilot Edition
         body: |-
           [![npm version](https://img.shields.io/npm/v/claude-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/claude-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
@@ -719,6 +731,8 @@ docs:
           > 🐘 **tri-sync now free for all builders** — `.faf` ↔ `CLAUDE.md` ↔ `MEMORY.md` in one command. Pro feature. Now free.
 
           > ⚡ **New: `/faf` prompt** — type `/faf` in Claude Desktop. It checks your project, scores it, drives it to 100%, and syncs. Relentlessly. One command.
+
+          > **v5.14.0 — The Copilot Edition.** FAF now writes the file GitHub Copilot reads — from inside Claude. `faf_bi_sync` gains a `copilot` flag (`all` includes it), syncing `.github/copilot-instructions.md` — Copilot's **widest-surface** instruction file, read by default across web chat, code review, VS Code, JetBrains, the CLI, and the coding agent — straight from your scored `.faf`. Non-destructive, idempotent.
 
           > 🧡 **v5.13.0 — The Heartbeat Edition.** Persistent Project Context with Memory, looped for you. Every Claude Code session now opens with a one-line heartbeat that carries the intent the code can't: `faf: context ✪ 100% — fresh · +7 intent the code can't carry`. The `+N` is the goal and 6Ws only you can **give or confirm** — so Claude starts each session grounded in what your project *means*, not just what it contains.
 
