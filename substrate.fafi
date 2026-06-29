@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-28'
+generated: '2026-06-29'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1046,7 +1046,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 1f80eb8795969ac2db1cfce04fe14a655bd48890
+    sha: dcbe996cc3e11511e1e77e5ceb148563324851dc
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1339,10 +1339,11 @@ docs:
           | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
-      - heading: Status & known limitations (v1.8)
+      - heading: Status & known limitations (v1.9)
         body: |-
-          v1.8.0 — **The Closed-Loop Edition** — observability writes, token math is honest, FRC contract locked. No surface change; the drift→refresh→re-ground loop can finally be measured. Flags still off by default — existing setups see zero change. Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
+          v1.9.0 — **The ZEPH Default Edition** — the proven-fast Zig→WASM scoring path behind `refresh_faf` is now **default-ON** (same score, cheaper to compute; parity proven byte-identical — CI gate + 91/91 live). Kill switch `USE_ZEPH=0` forces the canonical scorer. No tool-surface change; FRC tools stay opt-in behind `USE_FRC`. Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
 
+          > Earlier: v1.8.0 — **The Closed-Loop Edition** — observability writes, token math is honest, FRC contract locked. The drift→refresh→re-ground loop can finally be measured.
           > Earlier: v1.7.0 — **The Grounded Memory Edition** — ZEPH + the FRC layer over Grok Collections (`faf_gate`/`faf_section`/`faf_memory`), opt-in via `USE_FRC`/`USE_ZEPH`; 12-tool core unchanged.
           > Earlier: v1.6.0 — **The ZEPH Edition** — the ZEPH fast path for re-grounding (`refresh_faf`/`refresh_blend` via Zig→WASM `cascade.wasm`, ~12µs, `USE_ZEPH=1`; `faf-cli` stays canonical, parity locked in CI).
 
