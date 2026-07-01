@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-06-30'
+generated: '2026-07-01'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -730,10 +730,10 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: f5a871848fdfa36e2917c77e4c0ad5407a36d92e
+    sha: c28fa438b35f745cfd39cdab5550eebce7868184
     intro: FAF MCP server for Claude — persistent project context, 13 Core tools (35 total)
     sections:
-      - heading: claude-faf-mcp — The Instructions Edition
+      - heading: claude-faf-mcp — The GitHub Registry Edition
         body: |-
           [![npm version](https://img.shields.io/npm/v/claude-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/claude-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
@@ -757,6 +757,8 @@ docs:
           > 🐘 **tri-sync now free for all builders** — `.faf` ↔ `CLAUDE.md` ↔ `MEMORY.md` in one command. Pro feature. Now free.
 
           > ⚡ **New: `/faf` prompt** — type `/faf` in Claude Desktop. It checks your project, scores it, drives it to 100%, and syncs. Relentlessly. One command.
+
+          > **v5.20.0 — The GitHub Registry Edition.** claude-faf-mcp joins GitHub's MCP Registry — discoverable in VS Code — as **Claude FAF**, its display title now emitted from `project.faf`, single-sourced and idempotent. The registry derives a display name from the server-card `title`; CFM now provides it through the emitter (`name` + `_meta` + `title`, all composed from `project.faf`, never hand-authored — the BRAKE B1 test enforces emitted == live).
 
           > **v5.15.0 — The Instructions Edition.** CFM writes the file Copilot reads — done right. `.github/copilot-instructions.md` is now genuine, distinct Copilot *instructions*: a prose overview, a `## Build & run` command section, and "every request" framing — not the AGENTS.md content reused. The file Copilot actually reads, done to GitHub's spec.
 
@@ -1722,7 +1724,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: aba19db610e3f1d6703f0cd694e321617cecb51a
+    sha: 748ec95cd61970b2519098deca7f89e70d2a7444
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
