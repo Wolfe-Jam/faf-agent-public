@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-03'
+generated: '2026-07-04'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1724,7 +1724,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 748ec95cd61970b2519098deca7f89e70d2a7444
+    sha: c12ca2107c9f47ec8403c0530ce54a34222f5bc1
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
@@ -1748,6 +1748,10 @@ docs:
           ```
       - heading: Quick Start
         body: |-
+          **Cursor — one click:** [![Add .FAF Context to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=faf-mcp&config=eyJjb21tYW5kIjoiYnVueCIsImFyZ3MiOlsiZmFmLW1jcCJdfQ==)
+
+          **Everywhere else:**
+
           ```bash
           bunx faf-mcp
           ```
