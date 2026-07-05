@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-04'
+generated: '2026-07-05'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -730,12 +730,13 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: c28fa438b35f745cfd39cdab5550eebce7868184
+    sha: 5b9cee751a87dfad6ac7f579c6b4a32d7b5621a5
     intro: FAF MCP server for Claude — persistent project context, 13 Core tools (35 total)
     sections:
       - heading: claude-faf-mcp — The GitHub Registry Edition
         body: |-
           [![npm version](https://img.shields.io/npm/v/claude-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/claude-faf-mcp)
+          [![smithery badge](https://smithery.ai/badge/wolfe-jam/claude-faf-mcp)](https://smithery.ai/servers/wolfe-jam/claude-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-008B8B)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)[![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-008B8B)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)[![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
@@ -840,6 +841,8 @@ docs:
           ```bash
           npm install -g claude-faf-mcp
           ```
+
+          **Smithery:** [wolfe-jam/claude-faf-mcp](https://smithery.ai/servers/wolfe-jam/claude-faf-mcp) — hosted at `https://mcpaas.live/claude/mcp/v1`
 
           Restart Claude Desktop.
       - heading: Then
@@ -1048,7 +1051,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: dcbe996cc3e11511e1e77e5ceb148563324851dc
+    sha: 46542df3ddbc2704c1c2c4d3a57f6af566d04b0e
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1073,6 +1076,7 @@ docs:
           <div align="center">
 
           [![npm version](https://img.shields.io/npm/v/grok-faf-mcp?color=00CCFF)](https://www.npmjs.com/package/grok-faf-mcp)
+          [![smithery badge](https://smithery.ai/badge/wolfe-jam/grok-faf-mcp)](https://smithery.ai/servers/wolfe-jam/grok-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
           [![CI](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Wolfe-Jam/grok-faf-mcp/actions/workflows/ci.yml)
           [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -1095,6 +1099,8 @@ docs:
           ```
 
           Restart Grok TUI (or `/mcps r`) to refresh. Tools: `faf_score`, `faf_validate`, `faf_get_tier`, `faf_estimate_tokens`, `faf_analyze` (plus soul/memory ops).
+
+          **Smithery:** [wolfe-jam/grok-faf-mcp](https://smithery.ai/servers/wolfe-jam/grok-faf-mcp) — gateway at `https://grok-faf-mcp--wolfe-jam.run.tools`
 
           **Hosted on Cloudflare Workers** — sub-ms cold start, no subprocess, edge-served. 4865-byte Zig WASM engine, parity-tested vs the Rust authority (`xai-faf-rust`). Externally validated by Grok S1 + S2 on 2026-05-27.
 
@@ -1461,7 +1467,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: dc931605080b9a886e0debaed6bded41d8b84875
+    sha: a44f8593f0dd8a855fef50da2a14641b708383cf
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp — The Dart Edition
@@ -1472,7 +1478,7 @@ docs:
 
           Stop re-explaining your project to every new Gemini session. Every Gemini conversation starts cold — you re-state your stack, your goals, your conventions every single time. `.faf` is one structured file that captures all of it. This package is the MCP server that lets Gemini read it.
 
-          <!-- mcp-name: io.github.Wolfe-Jam/gemini-faf-mcp -->
+          <!-- mcp-name: one.faf/gemini-faf-mcp -->
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
@@ -1498,6 +1504,8 @@ docs:
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
       - heading: What's New in v2.5.0 — The Dart Edition
         body: |-
+          > **v2.5.1** — **one.faf namespace migration:** gemini joins the fleet on `one.faf/gemini-faf-mcp` (registry publish now DNS-authenticated). No tool or behaviour changes.
+
           **gemini-faf-mcp now understands Dart and Flutter projects.**
 
           Detects Dart/Flutter from a `pubspec.yaml` — Flutter app vs package · Dart MCP / backend / CLI / library — by composing faf-python-sdk's detector, the shared engine, not a fork. Zero-Config, 12 exact tools.
