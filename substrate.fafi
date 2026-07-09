@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-08'
+generated: '2026-07-09'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,7 +435,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 582c6e763a924a1246fe33c4e5d43e3479946e4f
+    sha: 09899a1cbf932ff3cc597c1cf1484c20c439a54e
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: v7.1 — The AGENTS.md Edition
@@ -449,6 +449,13 @@ docs:
           ```
 
           ---
+      - heading: Context for AI agents
+        body: |-
+          FAF-CLI generates the files agents read (AGENTS.md, CLAUDE.md, .cursorrules) from real project detection — zero-install via `bunx faf`.
+
+          - [→ FAF-CLI for Grok, xAI & Cursor 👀](docs/faf-cli-for-agents.md)
+          - [→ FAF-CLI for Claude Code 👀](docs/faf-cli-for-claude.md)
+          - [→ FAF-CLI for Bun 👀](docs/faf-cli-for-bun.md)
       - heading: v7.0 — The GIT Version
         body: |-
           **FAF is to Context what Git is to Versions.**
@@ -741,7 +748,7 @@ docs:
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 5b9cee751a87dfad6ac7f579c6b4a32d7b5621a5
+    sha: a3321d46b5369bed62cd6a3e2f84d7aadddd37ae
     intro: FAF MCP server for Claude — persistent project context, 13 Core tools (35 total)
     sections:
       - heading: claude-faf-mcp — The GitHub Registry Edition
@@ -766,7 +773,7 @@ docs:
 
           **FAF defines. MD instructs. AI codes.**
 
-          > 🐘 **tri-sync now free for all builders** — `.faf` ↔ `CLAUDE.md` ↔ `MEMORY.md` in one command. Pro feature. Now free.
+          > 🐘 **tri-sync** | `.faf` ↔ `CLAUDE.md` ↔ `MEMORY.md` in one command.
 
           > ⚡ **New: `/faf` prompt** — type `/faf` in Claude Desktop. It checks your project, scores it, drives it to 100%, and syncs. Relentlessly. One command.
 
@@ -781,6 +788,8 @@ docs:
           > 🏆 **v5.12.0 — The Proof Edition.** `faf_bench` proves FAF's grounding lift in-session — it asks Claude about your repo cold (no context) and with the `.faf`, grades mechanically (no judge), and emits a `✪` receipt showing the delta. Promoted to lead the Core tier (13 tools, 36 total). `faf_go` now bootstraps a cold repo (init → auto → 6Ws), and you can still just **type `faf` to start**. Proof, not pitch.
 
           > 🏆 **v5.11.0 — The Distilled Edition.** claude-faf-mcp, distilled — a curated Core of 12 self-documenting tools, with the interview, README extractor, and server-card all composed from faf-cli's single source (no forks), and faf_go's new Table-of-8 where your goal seeds the 6Ws. Fewer tools, nothing forked, nothing guessed.
+
+          **Context for Claude:** faf-cli keeps this MCP's CLAUDE.md / AGENTS.md in sync from one scored source — `bunx faf sync`. See [FAF-CLI for Claude Code 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-claude.md).
 
           > 🏆 **v5.10.0 — The Dart Edition.** claude-faf-mcp now reads Dart & Flutter — it knows a Flutter app from a pure-Dart CLI. Detection by composition: because CFM composes faf-cli's Turbo-Cat (The Sourced Edition), faf-cli 6.13.0's content-aware, pubspec-driven Dart classifier arrives by construction — no forked parser, no drift. 35 tools, npm audit clean.
 
@@ -1062,7 +1071,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 46542df3ddbc2704c1c2c4d3a57f6af566d04b0e
+    sha: e3258b06fa3e0b8381b6325555f593016c99f385
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1113,6 +1122,12 @@ docs:
 
           **Smithery:** [wolfe-jam/grok-faf-mcp](https://smithery.ai/servers/wolfe-jam/grok-faf-mcp) — gateway at `https://grok-faf-mcp--wolfe-jam.run.tools`
 
+          **Homebrew (local stdio):**
+
+          ```bash
+          brew install wolfe-jam/faf/grok-faf-mcp
+          ```
+
           **Hosted on Cloudflare Workers** — sub-ms cold start, no subprocess, edge-served. 4865-byte Zig WASM engine, parity-tested vs the Rust authority (`xai-faf-rust`). Externally validated by Grok S1 + S2 on 2026-05-27.
 
           **Verify the live contract:**
@@ -1147,7 +1162,7 @@ docs:
           Open for native Grok Build integration, .fafm memory layer, refresh_faf primitives, or any other context features the team needs.  
           Live and dogfooded at https://grok.faf.one and https://mcpaas.live/grok/mcp/v1.
 
-          Happy to ship PRs, run private dogfood sessions, or jump on a call. Real software only. Just say the word.
+          **Context for Grok agents:** faf-cli generates what Grok agents read from real project detection — `bunx faf export --agents`. The existing `src/interop/grok.ts` wires FAF MCP into `.grok/config.toml`. See [FAF-CLI for Grok & xAI agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ---
       - heading: The Problem
@@ -1212,11 +1227,14 @@ docs:
             }
           }
           ```
-      - heading: 2. Local (bunx — for FS-touching workflows)
+      - heading: 2. Local (stdio — for FS-touching workflows)
         body: |-
           Use the local stdio path when you need filesystem access (`faf_init`, `faf_sync`, file-mutating tools):
 
           ```bash
+          brew install wolfe-jam/faf/grok-faf-mcp   # macOS tap
+      - heading: or
+        body: |-
           bunx grok-faf-mcp
           ```
 
@@ -1402,7 +1420,7 @@ docs:
 
           | Package | Platform | Registry |
           |---------|----------|----------|
-          | **grok-faf-mcp** (this) | **xAI Grok** | **npm** |
+          | **grok-faf-mcp** (this) | **xAI Grok** | **npm + Homebrew** |
           | [claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp) | Anthropic | npm + MCP #2759 |
           | [gemini-faf-mcp](https://pypi.org/project/gemini-faf-mcp/) | Google | PyPI |
           | [rust-faf-mcp](https://crates.io/crates/rust-faf-mcp) | Rust | crates.io |
@@ -1743,7 +1761,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: c12ca2107c9f47ec8403c0530ce54a34222f5bc1
+    sha: a89e03d7f9fe8eb67331a156c2489537d140e024
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
@@ -1756,6 +1774,8 @@ docs:
           You maintain `.cursorrules`. Your teammate uses `AGENTS.md`. Someone on the team just switched to Gemini. Every AI tool wants its own context file — and they all say the same thing in different formats.
 
           **faf-mcp is the dedicated MCP server for Cursor, Windsurf, Cline, VS Code, and every non-Claude platform.** One `.faf` file in your repo, synced to every format your team needs.
+
+          **Context for Cursor & IDE agents:** faf-cli (v7.1) generates the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ```
                                 project.faf
