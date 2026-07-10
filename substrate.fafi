@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-09'
+generated: '2026-07-10'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: c4f27613af1a367559f5a0aa55ef4562ed9df435
+    sha: e912326a5426932f1d4a9841861d5c8af3ec952e
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Two IANA Registrations'
@@ -140,9 +140,9 @@ docs:
           | **Scored** | 0-100% | No | No | No | No |
           | **Portable** | Any AI | OpenAI ecosystem | Cursor only | Claude only | Gemini only |
           | **Machine-readable** | Yes (schema) | No (free text) | No (free text) | No (free text) | No (free text) |
-          | **Generates others** | Yes (all 4) | No | No | No | No |
+          | **Authors others** | Yes (all 4) | No | No | No | No |
 
-          FAF is the structured source. The others are prose outputs. `faf bi-sync --all` generates all four from one `project.faf`.
+          FAF is the structured source. The others are prose outputs. `faf bi-sync --all` authors all four from one `project.faf`.
 
           ---
       - heading: The Problem
@@ -167,7 +167,7 @@ docs:
           **Command-Line Tool** - v6.7.1
 
           - 50+ championship commands
-          - AI interop: generates AGENTS.md, .cursorrules, CLAUDE.md, GEMINI.md
+          - AI interop: authors AGENTS.md, .cursorrules, CLAUDE.md, GEMINI.md
           - TURBO-CAT format discovery
           - 25,000+ downloads
 
@@ -215,7 +215,7 @@ docs:
           | [faf-wasm-sdk](https://github.com/Wolfe-Jam/faf-wasm-sdk) | Rust→WASM | 211KB browser runtime |
       - heading: AI Interop
         body: |-
-          One `.faf` file generates all four AI instruction formats:
+          One `.faf` file authors all four AI instruction formats:
 
           ```
           project.faf → AGENTS.md   (OpenAI Codex)
@@ -435,12 +435,59 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 09899a1cbf932ff3cc597c1cf1484c20c439a54e
+    sha: c6407c083a98995c94a6dae4736bdf7864741ae0
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
+      - heading: The context every AI coding agent reads — authored from your repo, never guessed.
+        body: |-
+          **One `.faf` file → `AGENTS.md` · `CLAUDE.md` · `GEMINI.md` · `.cursorrules`,<br>
+          detected from your real stack, scored, and versioned with your code. No drift. No re-explaining.**
+
+          <!-- ① PRIME — the crown receipts -->
+          [![Anthropic MCP #2759](https://img.shields.io/badge/Anthropic_MCP-merged_%232759-blueviolet)](https://github.com/modelcontextprotocol/servers/pull/2759)
+          [![IANA vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-008B8B)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
+          [![IANA vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-008B8B)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
+          [![downloads](https://img.shields.io/npm/dt/faf-cli?color=008B8B&label=downloads)](https://www.npmjs.com/package/faf-cli)
+          [![npm](https://img.shields.io/npm/v/faf-cli?color=00CCFF)](https://www.npmjs.com/package/faf-cli)
+
+          **115,000+ downloads across the FAF ecosystem · IANA-registered · Anthropic-merged (#2759)**
+
+          ⭐ **If faf-cli saves you setup time, a star helps other devs find it** —<br>
+          despite all our downloads, ~3 of 4 developers check stars before adopting.
+
+          <!-- ② papers · funnel · testing — one line -->
+          [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)
+          [![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
+          [![project.faf → faf](https://img.shields.io/badge/project.faf-inside-008B8B)](https://github.com/Wolfe-Jam/faf)
+          [![TAF](./badge.svg)](https://github.com/Wolfe-Jam/faf-taf-git)
+          [![CI](https://github.com/Wolfe-Jam/faf-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/Wolfe-Jam/faf-cli/actions/workflows/ci.yml)
+
+          **[faf.one/cli](https://faf.one/cli)** · FAF defines. MD instructs. AI codes.
+
+          <!-- trophy — bottom of hero -->
+          [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
+
+          </div>
+
+          ```
+          project/
+          ├── package.json     ← npm reads this
+          ├── project.faf      ← AI reads this
+          ├── README.md        ← humans read this
+          └── src/
+          ```
+
+          > **Every building requires a foundation. FAF is AI's foundational layer.**
+          >
+          > You have a `package.json`. AI needs you to add a `project.faf`. Done.
+
+          **Git-Native.** `project.faf` versions with your code — every clone, every fork, every checkout gets full AI context.<br>
+          No setup, no drift, no re-explaining.
+
+          ---
       - heading: v7.1 — The AGENTS.md Edition
         body: |-
-          **`faf export --agents` now generates a complete, best-in-class AGENTS.md for any repo — detected from your code, non-destructive, never stale.**
+          **`faf export --agents` now authors a complete, best-in-class AGENTS.md for any repo — detected from your code, non-destructive, never stale.**
 
           Point it at any repo and it detects your build/test commands, key files, conventions (ESLint/Prettier/strict/ruff/mypy…), and guardrails — then writes the definitive AGENTS.md: orientation, setup, tests, where-things-live, conventions, three-tier guardrails, a Definition of Done composed from your real commands, and secrets handling. Facts, not bloat. Your hand-written content is preserved.
 
@@ -451,7 +498,7 @@ docs:
           ---
       - heading: Context for AI agents
         body: |-
-          FAF-CLI generates the files agents read (AGENTS.md, CLAUDE.md, .cursorrules) from real project detection — zero-install via `bunx faf`.
+          FAF-CLI authors the files agents read (AGENTS.md, CLAUDE.md, .cursorrules) from real project detection — zero-install via `bunx faf`.
 
           - [→ FAF-CLI for Grok, xAI & Cursor 👀](docs/faf-cli-for-agents.md)
           - [→ FAF-CLI for Claude Code 👀](docs/faf-cli-for-claude.md)
@@ -647,12 +694,12 @@ docs:
           | 6 | `faf sync` | `.faf` ↔ CLAUDE.md (bi-sync, mtime auto-direction) |
           | 7 | `faf compile` | `.faf` → `.fafb` binary — sealed, portable, deterministic |
           | 8 | `faf decompile` | `.fafb` → JSON |
-          | 9 | `faf export` | Generate AGENTS.md, .cursorrules, GEMINI.md |
+          | 9 | `faf export` | Author AGENTS.md, .cursorrules, GEMINI.md |
           | 10 | `faf check` | Validate `.faf` file |
           | 11 | `faf edit` | Edit `.faf` fields inline |
           | 12 | `faf convert` | Convert `.faf` to JSON |
           | 13 | `faf drift` | Check context drift |
-          | 14 | `faf context` | Generate context output |
+          | 14 | `faf context` | Author context output |
           | 15 | `faf recover` | Recover `.faf` from CLAUDE.md / AGENTS.md |
           | 16 | `faf migrate` | Migrate `.faf` to latest version |
           | 17 | `faf search` | Search slots and formats |
@@ -746,6 +793,13 @@ docs:
           **IANA-registered:** [`application/vnd.faf+yaml`](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml) (Context Layer) · [`application/vnd.fafm+yaml`](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml) (Memory Layer)
 
           *format | driven 🏎️⚡️ [wolfejam.dev](https://wolfejam.dev)*
+
+          <div align="center">
+
+          [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+          [![Homebrew](https://img.shields.io/badge/Homebrew-faf--cli-orange)](https://github.com/Wolfe-Jam/homebrew-faf)
+
+          </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
     sha: a3321d46b5369bed62cd6a3e2f84d7aadddd37ae
@@ -1071,7 +1125,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: e3258b06fa3e0b8381b6325555f593016c99f385
+    sha: 9ec9d456344fc64d9014468fda68f78c66fd964b
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1162,7 +1216,7 @@ docs:
           Open for native Grok Build integration, .fafm memory layer, refresh_faf primitives, or any other context features the team needs.  
           Live and dogfooded at https://grok.faf.one and https://mcpaas.live/grok/mcp/v1.
 
-          **Context for Grok agents:** faf-cli generates what Grok agents read from real project detection — `bunx faf export --agents`. The existing `src/interop/grok.ts` wires FAF MCP into `.grok/config.toml`. See [FAF-CLI for Grok & xAI agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+          **Context for Grok agents:** faf-cli authors what Grok agents read from real project detection — `bunx faf export --agents`. The existing `src/interop/grok.ts` wires FAF MCP into `.grok/config.toml`. See [FAF-CLI for Grok & xAI agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ---
       - heading: The Problem
@@ -1496,7 +1550,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: a44f8593f0dd8a855fef50da2a14641b708383cf
+    sha: 4774dac230cd4164b20aa6970c9f54812bd5366d
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp — The Dart Edition
@@ -1546,7 +1600,7 @@ docs:
         body: |-
           ```bash
           uvx gemini-faf-mcp          # zero-install run via uvx (fetched from PyPI)
-      - heading: 3. Generate your project context
+      - heading: 3. Author your project context
         body: |-
           In your Gemini CLI:
 
@@ -1586,7 +1640,7 @@ docs:
           > **FAF defines. MD instructs. AI codes.**
       - heading: What about my `GEMINI.md`?
         body: |-
-          You don't replace it. `.faf` **generates** it. Run `faf_gemini` and you get a fresh `GEMINI.md` with the structured project data baked in as YAML frontmatter — the same `GEMINI.md` Gemini CLI already reads, but generated from a single source of truth instead of hand-maintained.
+          You don't replace it. `.faf` **authors** it. Run `faf_gemini` and you get a fresh `GEMINI.md` with the structured project data baked in as YAML frontmatter — the same `GEMINI.md` Gemini CLI already reads, but authored from a single source of truth instead of hand-maintained.
 
           ```bash
           > /faf:export
@@ -1599,7 +1653,7 @@ docs:
           ---
       - heading: Auto-Detect Your Stack
         body: |-
-          `faf_auto` scans your project's manifest files and generates a `.faf` with accurate slot values. No manual entry needed.
+          `faf_auto` scans your project's manifest files and authors a `.faf` with accurate slot values. No manual entry needed.
 
           ```
           > Auto-detect my project stack
@@ -1640,7 +1694,7 @@ docs:
           | Tool | What it does |
           |------|-------------|
           | `faf_init` | Create a starter `.faf` file with project name, goal, and language |
-          | `faf_auto` | Auto-detect stack from manifest files and generate/update `.faf` |
+          | `faf_auto` | Auto-detect stack from manifest files and author/update `.faf` |
           | `faf_discover` | Find `.faf` files in the project tree |
       - heading: Validate & Score
         body: |-
@@ -1761,7 +1815,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: a89e03d7f9fe8eb67331a156c2489537d140e024
+    sha: e2d93d2f1aabee04d165b8b2b5445a16ba63c905
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
@@ -1775,7 +1829,7 @@ docs:
 
           **faf-mcp is the dedicated MCP server for Cursor, Windsurf, Cline, VS Code, and every non-Claude platform.** One `.faf` file in your repo, synced to every format your team needs.
 
-          **Context for Cursor & IDE agents:** faf-cli (v7.1) generates the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+          **Context for Cursor & IDE agents:** faf-cli (v7.1) authors the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ```
                                 project.faf
@@ -1833,7 +1887,7 @@ docs:
           | `faf_cursor` | Cursor IDE | Import/export/sync .cursorrules |
           | `faf_gemini` | Google Gemini | Import/export/sync GEMINI.md |
           | `faf_conductor` | Conductor | Import/export directory structure |
-          | `faf_git` | GitHub | Generate .faf from any repo URL |
+          | `faf_git` | GitHub | Author .faf from any repo URL |
 
           ```bash
       - heading: Generate .faf from any GitHub repo
@@ -1929,7 +1983,7 @@ docs:
           | `faf_cursor` | Import/export/sync .cursorrules |
           | `faf_gemini` | Import/export/sync GEMINI.md |
           | `faf_conductor` | Import/export directory structure |
-          | `faf_git` | Generate .faf from GitHub repo URL |
+          | `faf_git` | Author .faf from GitHub repo URL |
           | **Cloud Tools** | |
           | `faf_cloud_publish` | Upload to mcpaas.live |
           | `faf_cloud_fetch` | Pull from cloud |
