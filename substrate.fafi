@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-10'
+generated: '2026-07-11'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -802,7 +802,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: a3321d46b5369bed62cd6a3e2f84d7aadddd37ae
+    sha: ec454c62876e22ab78c4b8427d7b6e031749e06b
     intro: FAF MCP server for Claude — persistent project context, 13 Core tools (35 total)
     sections:
       - heading: claude-faf-mcp — The GitHub Registry Edition
@@ -826,6 +826,8 @@ docs:
           [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-008B8B?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
 
           **FAF defines. MD instructs. AI codes.**
+
+          **v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md).
 
           > 🐘 **tri-sync** | `.faf` ↔ `CLAUDE.md` ↔ `MEMORY.md` in one command.
 
@@ -1125,7 +1127,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 9ec9d456344fc64d9014468fda68f78c66fd964b
+    sha: eda83ae8eae8fc4435adc303e8b35c00aae2cddb
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1161,6 +1163,8 @@ docs:
           [![Stars](https://img.shields.io/github/stars/Wolfe-Jam/grok-faf-mcp)](https://github.com/Wolfe-Jam/grok-faf-mcp/stargazers) [![Downloads](https://img.shields.io/npm/dt/grok-faf-mcp)](https://www.npmjs.com/package/grok-faf-mcp)
 
           **FAF defines. MD instructs. AI codes.**
+
+          **First v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md) — the open standard co-authored in public with @grok.
 
           ---
       - heading: Install — one line
