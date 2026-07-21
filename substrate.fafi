@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-20'
+generated: '2026-07-21'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -435,7 +435,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: fa8a8310569b6c89063baaf3e514c0088d0b7a75
+    sha: 8fce78f6deb2dcdf6d3c58cad7bb3529c4983dd6
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -492,6 +492,15 @@ docs:
           bunx faf-cli auto              # Zero to 100% in one command
           bunx faf-cli go                # Interactive interview to gold code
           ```
+
+          ---
+      - heading: Nelly Never Forgets
+        body: |-
+          Run `faf` with no arguments:
+
+          ![faf](./nelly.png)
+
+          > **faf-cli dogfoods itself** — [project.faf](./project.faf) is source DNA; [CLAUDE.md](./CLAUDE.md) and [GEMINI.md](./GEMINI.md) are authored from it via `faf`. [AGENTS.md](./AGENTS.md) is the **BETTER** ops briefing (hand-kept for agents; `faf export --agents` still authors AGENTS.md for other repos).
 
           ---
       - heading: Commands
@@ -572,12 +581,12 @@ docs:
           > **Robust. Reliable. Next-level WJTTC tested.** — The Foundation Edition.
 
           ```bash
-          bun test                       # 880 tests, 75 files, ~18s
+          bun test                       # extensive WJTTC + e2e suite
           ```
 
-          - **WJTTC Build Resilience** (13) — every regression class locked.
-          - **WJTTC Kernel Stress** (19) — WASM kernel boundary tests.
-          - **e2e lifecycle** — every command in sequence.
+          - **WJTTC Build Resilience** — regression classes locked.
+          - **WJTTC Kernel Stress** — WASM kernel boundary tests.
+          - **e2e lifecycle** — commands in sequence.
 
           Test reports in `reports/`.
 
@@ -613,7 +622,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: ec454c62876e22ab78c4b8427d7b6e031749e06b
+    sha: 9c01c9393f6a8bc7423a1ce0ffe892e75c60b49b
     intro: FAF MCP server for Claude — persistent project context, 13 Core tools (35 total)
     sections:
       - heading: claude-faf-mcp — The GitHub Registry Edition
@@ -637,6 +646,8 @@ docs:
           [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-008B8B?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
 
           **FAF defines. MD instructs. AI codes.**
+
+          ⭐ **A star helps other devs discover claude-faf-mcp** — despite the downloads, ~3 of 4 devs check stars first.
 
           **v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md).
 
@@ -938,7 +949,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: eda83ae8eae8fc4435adc303e8b35c00aae2cddb
+    sha: 056dc38b1500afd743d5019e5572e8eedba6a819
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -974,6 +985,8 @@ docs:
           [![Stars](https://img.shields.io/github/stars/Wolfe-Jam/grok-faf-mcp)](https://github.com/Wolfe-Jam/grok-faf-mcp/stargazers) [![Downloads](https://img.shields.io/npm/dt/grok-faf-mcp)](https://www.npmjs.com/package/grok-faf-mcp)
 
           **FAF defines. MD instructs. AI codes.**
+
+          ⭐ **A star helps other devs discover grok-faf-mcp** — despite the downloads, ~3 of 4 devs check stars first.
 
           **First v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md) — the open standard co-authored in public with @grok.
 
@@ -1365,7 +1378,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 4774dac230cd4164b20aa6970c9f54812bd5366d
+    sha: 198b8e0642d1f0b766d780ce1a5710aa3460fdcd
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp — The Dart Edition
@@ -1373,6 +1386,8 @@ docs:
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
 
           **FAF defines. MD instructs. AI codes.**
+
+          ⭐ **A star helps other devs discover gemini-faf-mcp** — despite the downloads, ~3 of 4 devs check stars first.
 
           Stop re-explaining your project to every new Gemini session. Every Gemini conversation starts cold — you re-state your stack, your goals, your conventions every single time. `.faf` is one structured file that captures all of it. This package is the MCP server that lets Gemini read it.
 
@@ -1630,7 +1645,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: e2d93d2f1aabee04d165b8b2b5445a16ba63c905
+    sha: 752f1331a4c97ec927ffcfea6faf4b3ae3a2a83b
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
