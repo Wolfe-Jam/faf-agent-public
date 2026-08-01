@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-07-31'
+generated: '2026-08-01'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1859,14 +1859,14 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 4ec7a0ef8c4dcb20ab73108ba7e88e8441d53890
+    sha: f4af4d95de9078582c724ab141eeb35f1a5b221e
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
         body: |-
           **Persistent Project Context for Rust MCP clients. Native. Fast. cargo install**
 
-          **The one.faf Edition (v0.4.0)** — `one.faf/rust-faf-mcp` · rmcp 1.7 · solid cargo-native Rust MCP for Rust devs
+          **The one.faf Edition (v0.4.0)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · solid cargo-native Rust MCP for Rust devs
 
           **FAF defines. MD instructs. AI codes.**
 
@@ -1980,16 +1980,13 @@ docs:
 
           - **Runtime**: `tokio` single-threaded (`current_thread`)
           - **HTTP**: `reqwest` async (only used by `faf_git` for GitHub API)
-          - **SDK**: `faf-rust-sdk` 1.3 for parsing, validation, compression, discovery
-          - **Server**: `rmcp` 1.1 with `#[tool_router]` macro — handles JSON-RPC, schema generation, transport
+          - **SDK**: `faf-rust-sdk` **1.3** (Cargo pin — parse / validate / compress / discover; foundation **3.x** lives in [faf-rust](https://github.com/Wolfe-Jam/faf-rust))
+          - **Server**: **`rmcp` 3.0.1** with `#[tool_router]` / `#[tool_handler]` — JSON-RPC, schema generation, stdio transport (Tier-1 assessed SDK cut)
 
           Tools return `serde_json::Value`. The server adapts them to `Result<String, String>` for rmcp's `IntoCallToolResult`.
-      - heading: Testing
+      - heading: 'Optional: block push on red CI twin'
         body: |-
-          112 tests across 6 files:
-
-          ```bash
-          cargo test    # runs all 112
+          bash scripts/install-hooks.sh
           ```
 
           | File | Tests | Coverage |
