@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-01'
+generated: '2026-08-02'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: e912326a5426932f1d4a9841861d5c8af3ec952e
+    sha: 5a90f79a6a27f9c2d6bd0dcd122da955657c8bf4
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Two IANA Registrations'
@@ -22,7 +22,7 @@ docs:
           - ✅ **Anthropic** - Official MCP Registry (PR #2759 merged)
           - ✅ **Google** - Chrome Web Store (Approved 2x: Sep 11 & Oct 29, 2025)
           - ✅ **xAI** - Grok 4.2 recommends native FAF adoption (Feb 2026)
-          - ✅ **Community** - 50,000+ downloads across the ecosystem, production-tested
+          - ✅ **Community** - Over 100k downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
       - heading: IANA Media Types
         body: |-
           | Field | `.faf` (Foundational Context Layer) | `.fafm` (Voice Memory Layer) |
@@ -108,7 +108,7 @@ docs:
 
           Instead of explaining your project every time, AI reads your .faf once and knows exactly how to help.
 
-          **50,000+ downloads** across the FAF ecosystem ([faf-cli](https://npmjs.com/package/faf-cli), [claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp), [grok-faf-mcp](https://npmjs.com/package/grok-faf-mcp), and more).
+          **Over 100k downloads** — see [faf.one/downloads](https://faf.one/downloads) for latest stats.
 
           ---
       - heading: The 6 Ws — Quick Reference
@@ -169,7 +169,7 @@ docs:
           - 50+ championship commands
           - AI interop: authors AGENTS.md, .cursorrules, CLAUDE.md, GEMINI.md
           - TURBO-CAT format discovery
-          - 25,000+ downloads
+          - Downloads: [faf.one/downloads](https://faf.one/downloads)
 
           ```bash
           npm install -g faf-cli
@@ -184,7 +184,7 @@ docs:
           - 38 tools for Claude
           - Championship scoring (0-100% Trophy)
           - Anthropic MCP Registry (PR #2759)
-          - 12,000+ downloads
+          - Downloads: [faf.one/downloads](https://faf.one/downloads)
 
           ```bash
           npm install -g claude-faf-mcp
@@ -194,16 +194,7 @@ docs:
           </tr>
           </table>
 
-          **Total: 50,000+ downloads across the ecosystem** 🎉
-      - heading: MCP Ecosystem
-        body: |-
-          | Package | Platform | Registry | Downloads |
-          |---------|----------|----------|-----------|
-          | [claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp) | Anthropic | npm | 12,000+ |
-          | [faf-mcp](https://npmjs.com/package/faf-mcp) | Universal | npm | 4,000+ |
-          | [grok-faf-mcp](https://npmjs.com/package/grok-faf-mcp) | xAI | npm | 2,000+ |
-          | [gemini-faf-mcp](https://pypi.org/project/gemini-faf-mcp/) | Google | PyPI | v2.2.5 |
-          | [MCPaaS](https://mcpaas.live) | Infrastructure | mcpaas.live | live |
+          **Live total:** [faf.one/downloads](https://faf.one/downloads) 🎉
       - heading: Compiler Toolchain
         body: |-
           FAF compiles to multiple targets:
@@ -253,14 +244,6 @@ docs:
           - **Project Context:** Create a single .faf file for your entire project
           - **Build Integration:** Companies can create custom implementations
           - **AI Optimization:** Perfect context for any AI tool
-      - heading: Add to Claude Desktop config
-        body: |-
-          ```
-
-          **Universal tools. Zero configuration. Production-ready.**
-
-          → [faf-cli on npm](https://npmjs.com/package/faf-cli) (25,000+ downloads)
-          → [claude-faf-mcp on npm](https://npmjs.com/package/claude-faf-mcp) (12,000+ downloads)
       - heading: Status
         body: |-
           🏆 **IANA-Registered Internet Standards** — Two registered media types in the FAF family
@@ -271,7 +254,7 @@ docs:
           - ✅ Format specification complete
           - ✅ Enhanced with project-level context and AI workflows
           - ✅ Production tools available (faf-cli, claude-faf-mcp)
-          - ✅ 50,000+ combined downloads across ecosystem
+          - ✅ Over 100k downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
           - ✅ WJTTC Championship-grade testing across ecosystem packages
           - ✅ Open source (MIT License)
       - heading: Major Milestones
@@ -300,8 +283,8 @@ docs:
           This repository contains the **format specification only**. For implementations, see **[IMPLEMENTATIONS.md](IMPLEMENTATIONS.md)**.
 
           Most people get FAF through npm:
-          - `npm i -g faf-cli` — CLI tool (25,000+ downloads)
-          - `npm i -g claude-faf-mcp` — Claude Desktop MCP (12,000+ downloads)
+          - `npm i -g faf-cli` — CLI tool · [downloads](https://faf.one/downloads)
+          - `npm i -g claude-faf-mcp` — Claude Desktop MCP · [downloads](https://faf.one/downloads)
 
           The package.json in this repo provides spec metadata and versioning but contains no executable code.
       - heading: Citation
@@ -435,7 +418,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 72119a126cae91f21764b6008595daeb286324eb
+    sha: af6daac74131cd428d06e5eadba31620e541309d
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -452,7 +435,7 @@ docs:
 
           <br>
 
-          **115,000+ downloads across the FAF ecosystem · IANA-registered · Anthropic-merged (#2759)**
+          **Over 100k downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
 
           ⭐ **A star helps other devs find faf-cli** — despite the downloads, ~3 of 4 devs check stars.
 
@@ -533,6 +516,14 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
+      - heading: What's New in v7.4.0 — The C# Edition
+        body: |-
+          - **Content-aware C#** — `.csproj alone ≠ type.` Sdk-first: ASP.NET Core · Worker · MCP · CLI · class library. Classlibs stay classlibs.
+          - **MCP first-class** — `ModelContextProtocol*` on NuGet (official C# SDK).
+          - **Go (7.3.0)** — `go.mod alone ≠ backend` still ships.
+      - heading: Dart/Flutter — knowledge v2 in 7.2.1
+        body: |-
+          **pubspec ≠ Flutter — pure Dart stays Dart.** Same content-aware detection as the [Dart Edition](https://faf.one/blog/dart-edition). **7.2.1** refreshes the single-source knowledge table: Riverpod annotation, Flutter Hooks, Beamer, Routemaster, Jaspr, Relic, and more MCP package names — still **one classifier**, composed by the MCPs.
 
           ---
       - heading: Custom instructions
@@ -544,20 +535,20 @@ docs:
           ---
       - heading: Scoring
         body: |-
-          **🏆 Trophy 100% — all or nothing.** From v6.6.0 onward, faf-cli recommends only Trophy. 100% on the FCL is what makes the layers above (MD instructions, Agents, AI tooling) work — sub-Trophy leaves gaps that AI guesses on. Sub-Trophy tiers are honest interim states on the way to Trophy, not endpoints.
+          **✪ Trophy 100% — all or nothing.** From v6.6.0 onward, faf-cli recommends only Trophy. 100% on the FCL is what makes the layers above (MD instructions, Agents, AI tooling) work — sub-Trophy leaves gaps that AI guesses on. Sub-Trophy tiers (including Bronze 85) remain on the ladder as honest interim states — they are not deleted; we just no longer *aim* for 85 as the goal.
 
           | Tier | Score | Status |
           |------|-------|--------|
-          | 🏆 / ✪ **Trophy** | 100% | AI never has to guess |
+          | ✪ **Trophy** | 100% | AI never has to guess — target |
           | ★ **Gold** | 99%+ | 1 slot from Trophy |
           | ◆ **Silver** | 95%+ | Close — keep going |
-          | ◇ **Bronze** | 85%+ | Interim — keep going |
+          | ◇ **Bronze** | 85%+ | On the ladder (was the old recommend-min; not the target) |
           | ● **Green** | 70%+ | Interim — keep going |
           | ● **Yellow** | 55%+ | AI flipping coins |
           | ○ **Red** | <55% | AI working blind |
           | ♡ **White** | 0% | No context at all |
 
-          **🏆 and ✪ both mean 100%** — the same top score, shown by surface: **✪** (the Proof Seal) on code surfaces — CLI, skills, docs, the hub — and **🏆** on social: posts, blogs, cards. You'll see both around for a while as the ✪ convention settles in.
+          **One score, three glyphs:** ✪ work (CLI · docs · receipts) · 🏆 social (X · blogs) · Trophy Mark PNG (brand). Source of truth: `src/core/tiers.ts`.
 
           ---
       - heading: Recent editions
@@ -568,7 +559,7 @@ docs:
           - **v7.0 — GIT** — context goes git-native: `faf diff` / `log` / `hooks`.
           - **v6.16 — Know Your Stack** — every emitted file labels your stack identically.
           - **v6.15 — Copilot** — `faf export --copilot` writes the file GitHub Copilot reads.
-          - **v6.14 — Loop** — `faf loop` drives any repo to 🏆 100% or the honest human wall.
+          - **v6.14 — Loop** — `faf loop` drives any repo to ✪ 100% or the honest human wall.
           - **v6.7 — HTML** — `faf show` renders a `.faf` to a browsable page. *(FAF defines. MD instructs. AI codes. HTML shows.)*
           - **v6.6 — Trophy** — 100% or nothing.
           - **v6.0 — Bun** — ground-up rewrite; single portable binary, four platforms.
@@ -1655,7 +1646,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 752f1331a4c97ec927ffcfea6faf4b3ae3a2a83b
+    sha: d2a730fc6bdbb4c279f95535e1132200049802aa
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
