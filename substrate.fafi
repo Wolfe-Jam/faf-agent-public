@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-03'
+generated: '2026-08-04'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -418,7 +418,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: af6daac74131cd428d06e5eadba31620e541309d
+    sha: 03386dd74c359d9938f15513b161e94588345e45
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -516,11 +516,12 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v7.4.0 — The C# Edition
+      - heading: What's New in v7.6.0 — The Ruby Edition
         body: |-
-          - **Content-aware C#** — `.csproj alone ≠ type.` Sdk-first: ASP.NET Core · Worker · MCP · CLI · class library. Classlibs stay classlibs.
-          - **MCP first-class** — `ModelContextProtocol*` on NuGet (official C# SDK).
-          - **Go (7.3.0)** — `go.mod alone ≠ backend` still ships.
+          **Content-aware Ruby** — `Gemfile alone ≠ Rails`. Pure gems stay pure gems.
+
+          - **Gems + layout** — Rails · Sinatra · Roda · Grape · Hanami · MCP · CLI · library (static parse — does not execute Gemfile).
+          - **Still shipping** — JVM (7.5.x) `pom`/`gradle` alone ≠ type · C# (7.4.0) `.csproj alone ≠ type` · Go (7.3.0) `go.mod alone ≠ backend`.
       - heading: Dart/Flutter — knowledge v2 in 7.2.1
         body: |-
           **pubspec ≠ Flutter — pure Dart stays Dart.** Same content-aware detection as the [Dart Edition](https://faf.one/blog/dart-edition). **7.2.1** refreshes the single-source knowledge table: Riverpod annotation, Flutter Hooks, Beamer, Routemaster, Jaspr, Relic, and more MCP package names — still **one classifier**, composed by the MCPs.
