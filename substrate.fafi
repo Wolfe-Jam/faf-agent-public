@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-08'
+generated: '2026-08-09'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1852,7 +1852,7 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: f4af4d95de9078582c724ab141eeb35f1a5b221e
+    sha: 2352c0aaa9e66211ae2a965b398fc0f4e963ec32
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
@@ -2016,6 +2016,17 @@ docs:
           **Edition**: 2024 | **LTO**: enabled | **Strip**: symbols
 
           If `rust-faf-mcp` has been useful, consider starring the repo — it helps others find it.
+      - heading: Links
+        body: |-
+          - [crates.io/crates/rust-faf-mcp](https://crates.io/crates/rust-faf-mcp)
+          - [npmjs.com/package/rust-faf-mcp](https://www.npmjs.com/package/rust-faf-mcp) — `npx rust-faf-mcp` (no Rust toolchain; downloads GH Release binary)
+          - [Dual-package publish guide](https://github.com/Wolfe-Jam/mcp-better/blob/main/docs/DUAL-PACKAGE-RUST-MCP.md) — cargo + npm (this server is the product example)
+          - [docs/DUAL-PACKAGE.md](./docs/DUAL-PACKAGE.md) — pointer + OIDC docs for this repo
+          - [faf-rust-sdk](https://crates.io/crates/faf-rust-sdk) — the parser this depends on
+          - [faf.one](https://faf.one) — FAF home
+          - [IANA registration](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml) — `application/vnd.faf+yaml`
+          - MCP Registry name: `mcp-name: one.faf/rust-faf-mcp`
+          - [CHANGELOG](CHANGELOG.md)
   - repo: Wolfe-Jam/xai-faf-zeph
     path: README.md
     sha: 34219160c1c0352cebcf7b1d15099afd154a02a2
