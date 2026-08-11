@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-10'
+generated: '2026-08-11'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: 5a90f79a6a27f9c2d6bd0dcd122da955657c8bf4
+    sha: f61372a741297af1be94a73d732fa3613afe3a6b
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Two IANA Registrations'
@@ -22,7 +22,7 @@ docs:
           - ✅ **Anthropic** - Official MCP Registry (PR #2759 merged)
           - ✅ **Google** - Chrome Web Store (Approved 2x: Sep 11 & Oct 29, 2025)
           - ✅ **xAI** - Grok 4.2 recommends native FAF adoption (Feb 2026)
-          - ✅ **Community** - Over 100k downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
+          - ✅ **Community** - Over 110k+ downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
       - heading: IANA Media Types
         body: |-
           | Field | `.faf` (Foundational Context Layer) | `.fafm` (Voice Memory Layer) |
@@ -108,7 +108,7 @@ docs:
 
           Instead of explaining your project every time, AI reads your .faf once and knows exactly how to help.
 
-          **Over 100k downloads** — see [faf.one/downloads](https://faf.one/downloads) for latest stats.
+          **Over 110k+ downloads** — see [faf.one/downloads](https://faf.one/downloads) for latest stats.
 
           ---
       - heading: The 6 Ws — Quick Reference
@@ -254,11 +254,12 @@ docs:
           - ✅ Format specification complete
           - ✅ Enhanced with project-level context and AI workflows
           - ✅ Production tools available (faf-cli, claude-faf-mcp)
-          - ✅ Over 100k downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
+          - ✅ Over 110k+ downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
           - ✅ WJTTC Championship-grade testing across ecosystem packages
           - ✅ Open source (MIT License)
       - heading: Major Milestones
         body: |-
+          - **August 10, 2026** - FAF ecosystem crosses 110,000+ downloads across npm, PyPI, and crates.io
           - **May 19, 2026** - `grok-faf-mcp` v1.3.1 published — registry-coherent across npm + MCP Registry + GitHub Release
           - **April 2026** - FAF ecosystem crosses 50,000+ downloads across npm, PyPI, and crates.io
           - **Feb 25, 2026** - Grok 4.2 recommends native FAF adoption; integration spec sent to xAI
@@ -418,7 +419,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: ec25c5456dc092ef7a4aa8d6db50f047abc1732c
+    sha: b342a3a032fe1e9071bbd3a74aaf35b05b758ae5
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -435,7 +436,7 @@ docs:
 
           <br>
 
-          **Over 100k downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
+          **Over 110k+ downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
 
           ⭐ **A star helps other devs find faf-cli** — despite the downloads, ~3 of 4 devs check stars.
 
@@ -1648,7 +1649,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: d2a730fc6bdbb4c279f95535e1132200049802aa
+    sha: f246f38a0357c688f520c61cae7ae20f9bd355f0
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
@@ -1837,6 +1838,7 @@ docs:
           - **[faf-cli](https://npmjs.com/package/faf-cli)** — Terminal CLI
           - **[faf-wasm](https://www.npmjs.com/package/faf-wasm)** — WASM SDK (<5ms scoring)
           - **[faf.one](https://faf.one)** — Official website
+          - **[docs/SKILLS-OVER-MCP.md](./docs/SKILLS-OVER-MCP.md)** — J1 Agent Skill `faf-ide` (stdio · skills/list · digests)
 
           ---
 
@@ -1852,7 +1854,7 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 2352c0aaa9e66211ae2a965b398fc0f4e963ec32
+    sha: 3b54711f28333b40bf4936d00c3e1c3d53e5ba81
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
@@ -2022,6 +2024,7 @@ docs:
           - [npmjs.com/package/rust-faf-mcp](https://www.npmjs.com/package/rust-faf-mcp) — `npx rust-faf-mcp` (no Rust toolchain; downloads GH Release binary)
           - [Dual-package publish guide](https://github.com/Wolfe-Jam/mcp-better/blob/main/docs/DUAL-PACKAGE-RUST-MCP.md) — cargo + npm (this server is the product example)
           - [docs/DUAL-PACKAGE.md](./docs/DUAL-PACKAGE.md) — pointer + OIDC docs for this repo
+          - [docs/SKILLS-OVER-MCP.md](./docs/SKILLS-OVER-MCP.md) — J1 Agent Skill `faf-context` (skills/list · digests)
           - [faf-rust-sdk](https://crates.io/crates/faf-rust-sdk) — the parser this depends on
           - [faf.one](https://faf.one) — FAF home
           - [IANA registration](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml) — `application/vnd.faf+yaml`
