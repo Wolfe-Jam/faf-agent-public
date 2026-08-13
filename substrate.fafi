@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-12'
+generated: '2026-08-13'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -419,7 +419,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: b342a3a032fe1e9071bbd3a74aaf35b05b758ae5
+    sha: c85a0d36aa32c36b1f3b8bf29e008df157f8565b
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -438,7 +438,7 @@ docs:
 
           **Over 110k+ downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
 
-          ⭐ **A star helps other devs find faf-cli** — despite the downloads, ~3 of 4 devs check stars.
+          ⭐ Bookmarks it for you, helps other devs find it too.
 
           <!-- ② papers · funnel · testing — one line -->
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)
@@ -625,7 +625,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 64a7847a52039191e631ab4321e94ecb41322712
+    sha: a53f9014837558cc49ca743e1d5e290d96e3fe88
     intro: FAF MCP server for Claude — persistent project context, 12 Core tools (34 total)
     sections:
       - heading: claude-faf-mcp — The Compose Edition
@@ -649,7 +649,7 @@ docs:
 
           **FAF defines. MD instructs. AI codes.**
 
-          ⭐ **A star helps other devs discover claude-faf-mcp** — despite the downloads, ~3 of 4 devs check stars first.
+          ⭐ Bookmarks it for you, helps other devs find it too.
 
           **v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md).
 
@@ -954,7 +954,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: e359374137ee6c894499414ffbb652682851bd44
+    sha: 897a7973b2e938662c21f712b5b40b8d827102a0
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -991,7 +991,7 @@ docs:
 
           **FAF defines. MD instructs. AI codes.**
 
-          ⭐ **A star helps other devs discover grok-faf-mcp** — despite the downloads, ~3 of 4 devs check stars first.
+          ⭐ Bookmarks it for you, helps other devs find it too.
 
           **First v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md) — the open standard co-authored in public with @grok.
 
@@ -1360,8 +1360,6 @@ docs:
           xAI / Grok devs welcome — TL;DR setup at the top, F1-inspired tone throughout.
 
           ---
-
-          If grok-faf-mcp has been useful, consider starring the repo ⭐️ it helps others find it.
       - heading: For xAI / Grok Build team
         body: |-
           Open for deeper native integration, .fafm memory layer, or Grok Build CLI collaboration.  
@@ -1650,7 +1648,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: f246f38a0357c688f520c61cae7ae20f9bd355f0
+    sha: d6b6046fb6232fbbbe2837b825f7ac6a2cf473b1
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
       - heading: What's New in 2.3.0 — The Curated Edition
@@ -1838,6 +1836,8 @@ docs:
           - **[claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp)** — Claude Desktop (33 tools)
           - **[faf-cli](https://npmjs.com/package/faf-cli)** — Terminal CLI
           - **[faf-wasm](https://www.npmjs.com/package/faf-wasm)** — WASM SDK (<5ms scoring)
+          - **[faf-wasm-gen](https://www.npmjs.com/package/faf-wasm-gen)** — Rust→WASM `project.faf` generator, browser/edge (faf-wasm's generate sibling)
+          - **[faf-trinity](https://github.com/Wolfe-Jam/faf-trinity)** — reference MCP server exposing all three IANA FAF formats (context/memory/agent) together
           - **[faf.one](https://faf.one)** — Official website
           - **[docs/SKILLS-OVER-MCP.md](./docs/SKILLS-OVER-MCP.md)** — J1 Agent Skill `faf-ide` (stdio · skills/list · digests)
 
