@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-20'
+generated: '2026-08-21'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -979,7 +979,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: bbfec40221fe0d1cb7801f7d76db69c456d7a2b2
+    sha: 69537219a425428ac1d26744d7ae43bfd2c6741e
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1016,6 +1016,11 @@ docs:
           [![Stars](https://img.shields.io/github/stars/Wolfe-Jam/grok-faf-mcp)](https://github.com/Wolfe-Jam/grok-faf-mcp/stargazers) [![Downloads](https://img.shields.io/npm/dt/grok-faf-mcp)](https://www.npmjs.com/package/grok-faf-mcp)
 
           **FAF defines. MD instructs. AI codes.**
+      - heading: v1.10.0 — The No-Fluff Edition
+        body: |-
+          No fluff in a project.faf. `faf_enhance` is gone. RAG default is `grok-4.6`.
+
+          A `.faf` is facts. Two writers only: the repo (`faf_auto`) and the human (`faf_go`). Empty is honest. There is no enhance.
 
           ⭐ Bookmarks it for you, helps other devs find it too.
 
@@ -1075,7 +1080,7 @@ docs:
           Open for native Grok Build integration, .fafm memory layer, refresh_faf primitives, or any other context features the team needs.  
           Live and dogfooded at https://grok.faf.one and https://mcpaas.live/grok/mcp/v1.
 
-          **Context for Grok agents:** faf-cli authors what Grok agents read from real project detection — `bunx faf export --agents`. The existing `src/interop/grok.ts` wires FAF MCP into `.grok/config.toml`. See [FAF-CLI for Grok & xAI agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+          **Context for Grok agents:** faf-cli authors what Grok agents read from real project detection — `bunx faf export --agents`. faf-cli's `src/interop/grok.ts` wires this MCP into `.grok/config.toml` (that file lives in the faf-cli repo, not here). See [FAF-CLI for Grok & xAI agents](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ---
       - heading: The Problem
@@ -1175,7 +1180,6 @@ docs:
           | `faf_auto` | Auto-detect stack and populate context |
           | `faf_score` | AI-readiness score (0-100%) with breakdown |
           | `faf_status` | Check current AI-readability |
-          | `faf_enhance` | Intelligent enhancement |
           | `refresh_faf` | Re-ground on the live `.faf` — re-read + re-score, report drift, return fresh DNA (drift → refresh → re-grounded). **Requested by Grok.** |
 
           **Drift & Orchestration (1.5 — the prestige release)**
@@ -1289,9 +1293,11 @@ docs:
           | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
-      - heading: Status & known limitations (v1.9)
+      - heading: Status & known limitations (v1.10)
         body: |-
-          v1.9.0 — **The ZEPH Default Edition** — the proven-fast Zig→WASM scoring path behind `refresh_faf` is now **default-ON** (same score, cheaper to compute; parity proven byte-identical — CI gate + 91/91 live). Kill switch `USE_ZEPH=0` forces the canonical scorer. No tool-surface change; FRC tools stay opt-in behind `USE_FRC`. Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
+          v1.10.0 — **The No-Fluff Edition** — no fluff in a project.faf. `faf_enhance` is gone. RAG default is `grok-4.6`. Fill stays on `faf_auto` / `faf_go`. Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
+
+          > Earlier: v1.9.0 — **The ZEPH Default Edition** — the proven-fast Zig→WASM scoring path behind `refresh_faf` is now **default-ON** (same score, cheaper to compute; parity proven byte-identical — CI gate + 91/91 live). Kill switch `USE_ZEPH=0` forces the canonical scorer. FRC tools stay opt-in behind `USE_FRC`.
 
           > Earlier: v1.8.0 — **The Closed-Loop Edition** — observability writes, token math is honest, FRC contract locked. The drift→refresh→re-ground loop can finally be measured.
           > Earlier: v1.7.0 — **The Grounded Memory Edition** — ZEPH + the FRC layer over Grok Collections (`faf_gate`/`faf_section`/`faf_memory`), opt-in via `USE_FRC`/`USE_ZEPH`; 12-tool core unchanged.
@@ -1414,10 +1420,10 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: cc03cf567e6a77f3f41e9b296dd6a89653c98f7b
+    sha: 430e806d11f332937e12d0d3410331e0f2c9fbea
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
-      - heading: gemini-faf-mcp — The Dart Edition
+      - heading: gemini-faf-mcp — The Agent Card Edition
         body: |-
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
 
@@ -1452,15 +1458,13 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v2.5.0 — The Dart Edition
+      - heading: What's New in v2.6.0 — The Agent Card Edition
         body: |-
-          > **v2.5.1** — **one.faf namespace migration:** gemini joins the fleet on `one.faf/gemini-faf-mcp` (registry publish now DNS-authenticated). No tool or behaviour changes.
+          **A real agent.fafa passport, MCP Server Card, and AI Catalog entry — gemini-faf-mcp joins the wider agent-discovery ecosystem.**
 
-          **gemini-faf-mcp now understands Dart and Flutter projects.**
+          `agent.fafa` is authored from live introspection of the server's actual tools, not guessed. Ships alongside an MCP Server Card (SEP-2127) and a fresh AI Catalog entry (spec ratified Nov 2025). GEMINI.md now renders real setup/test/key-files content instead of a thin project/goal/language stub. Not in this release: A2A support — `faf cards --target a2a` correctly refuses to fabricate an endpoint this server doesn't serve; real A2A support is a future release, not a claim made early.
 
-          Detects Dart/Flutter from a `pubspec.yaml` — Flutter app vs package · Dart MCP / backend / CLI / library — by composing faf-python-sdk's detector, the shared engine, not a fork. Zero-Config, 12 exact tools.
-
-          > **v2.4.3** made `faf_agents` / `faf_gemini` non-destructive (inject a structured `.faf` block, preserve your Markdown below). **v2.4.2 — The Confinement Edition** confined every caller `path` argument (security). **v2.4.0 — The Chameleon Edition** auto-selects its transport: stdio locally, Streamable HTTP on Cloud Run. 12 tools, zero config.
+          > **v2.5.1** — one.faf namespace migration: gemini joins the fleet on `one.faf/gemini-faf-mcp` (registry publish now DNS-authenticated). **v2.5.0 — The Dart Edition** detects Dart/Flutter from `pubspec.yaml` — Flutter app vs package · Dart MCP / backend / CLI / library. **v2.4.3** made `faf_agents` / `faf_gemini` non-destructive (inject a structured `.faf` block, preserve your Markdown below). **v2.4.2 — The Confinement Edition** confined every caller `path` argument (security). **v2.4.0 — The Chameleon Edition** auto-selects its transport: stdio locally, Streamable HTTP on Cloud Run. 12 tools, zero config.
 
           ---
       - heading: 1. Install
@@ -1905,16 +1909,16 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 950d025161f24829b5ff99486a2c347c1a9e9036
+    sha: d10d763cc2419d3d27ad13def3c4927635485e41
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
         body: |-
           **Persistent Project Context for Rust MCP clients. Native. Fast. cargo install**
 
-          **The one.faf Edition (v0.4.2)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · solid cargo-native Rust MCP for Rust devs
+          **The one.faf Edition (v0.4.3)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · solid cargo-native Rust MCP for Rust devs
 
-          **v0.4.2** — Registry card now emits the same context block as the JS fleet.
+          **v0.4.3** — npm Trusted Publishing (OIDC) fixed — the dummy `NODE_AUTH_TOKEN` `setup-node` injected was 404ing the OIDC token exchange; CI now publishes npm clean.
 
           **FAF defines. MD instructs. AI codes.**
 
