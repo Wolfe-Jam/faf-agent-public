@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-08-31'
+generated: '2026-09-01'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -424,7 +424,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: c3aee868d3d10af802fc21cc2e90f83d2a4268b9
+    sha: 5566860a2305e243eed267ff7eadd9269720d1cf
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
