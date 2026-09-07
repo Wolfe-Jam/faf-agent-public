@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-06'
+generated: '2026-09-07'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1426,10 +1426,10 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 430e806d11f332937e12d0d3410331e0f2c9fbea
+    sha: 2a145d8fd737be520fa88667dd55b4e79bf4a270
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
-      - heading: gemini-faf-mcp — The Agent Card Edition
+      - heading: gemini-faf-mcp — The Full-Facts Edition
         body: |-
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
 
@@ -1443,7 +1443,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-243%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-262%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1455,7 +1455,7 @@ docs:
           Without FAF                           With FAF (.faf at 85%+ Bronze)
           ─────────────────────────             ─────────────────────────
           You: "I'm using FastAPI with...       You: "Add a /users/me endpoint"
-                PostgreSQL, pytest, and..."     Gemini: [generates correct code,
+                PostgreSQL, pytest, and..."     Gemini: [writes correct code,
           Gemini: "Got it. What's the              uses your auth pattern,
                   codebase like?"                  matches your test style]
           You: "It's a REST API for..."
@@ -1464,13 +1464,15 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v2.6.0 — The Agent Card Edition
+      - heading: What's New in v2.8.0 — The Full-Facts Edition
         body: |-
-          **A real agent.fafa passport, MCP Server Card, and AI Catalog entry — gemini-faf-mcp joins the wider agent-discovery ecosystem.**
+          **`faf_auto` now grounds its detection in the repo's own files, and every `faf_model` reference template scores 100% Trophy.**
 
-          `agent.fafa` is authored from live introspection of the server's actual tools, not guessed. Ships alongside an MCP Server Card (SEP-2127) and a fresh AI Catalog entry (spec ratified Nov 2025). GEMINI.md now renders real setup/test/key-files content instead of a thin project/goal/language stub. Not in this release: A2A support — `faf cards --target a2a` correctly refuses to fabricate an endpoint this server doesn't serve; real A2A support is a future release, not a claim made early.
+          `faf_auto` used to read only the root manifest (`pyproject.toml`, `package.json`, …). It now also reads the files that carry the real stack: **docker-compose service images** map onto `database` / `cache` / `search` / `storage` (a running Postgres service *is* the database — it beats a dependency guess), **Makefile / justfile targets** map onto the `commands` block (`test` / `build` / `check-all`, root file or a nested `backend/Makefile`), and **`.github/workflows/`** sets `cicd`. A polyglot repo that reported `library` / `JavaScript` now reports its real Postgres + Redis + FastAPI stack. In parity with faf-cli 7.10.
 
-          > **v2.5.1** — one.faf namespace migration: gemini joins the fleet on `one.faf/gemini-faf-mcp` (registry publish now DNS-authenticated). **v2.5.0 — The Dart Edition** detects Dart/Flutter from `pubspec.yaml` — Flutter app vs package · Dart MCP / backend / CLI / library. **v2.4.3** made `faf_agents` / `faf_gemini` non-destructive (inject a structured `.faf` block, preserve your Markdown below). **v2.4.2 — The Confinement Edition** confined every caller `path` argument (security). **v2.4.0 — The Chameleon Edition** auto-selects its transport: stdio locally, Streamable HTTP on Cloud Run. 12 tools, zero config.
+          Separately: the **15 `faf_model` reference templates were scoring 48–57%** — they filled 4 stack slots and used `null`. All rewritten to the full 21-slot schema; every one is 100% Trophy now, and a test keeps it that way. **13 tools · 262 tests.**
+
+          > **v2.7.1 / v2.7.0 — The Interop Edition** — `faf_agents` / `faf_gemini` rewritten as `faf-python-sdk` authoring-tool wrappers (were 4-field stubs); new `faf_migrate` brings a `.faf` up to the current format. **v2.6.0 — The Agent Card Edition** added a real `agent.fafa` passport, an MCP Server Card (SEP-2127), and an AI Catalog entry. **v2.5.0 — The Dart Edition** detects Dart/Flutter from `pubspec.yaml`. **v2.4.2 — The Confinement Edition** confined every caller `path` argument. **v2.4.0 — The Chameleon Edition** auto-selects its transport: stdio locally, Streamable HTTP on Cloud Run.
 
           ---
       - heading: 1. Install
@@ -1497,7 +1499,7 @@ docs:
           ```yaml
       - heading: project.faf — your project, machine-readable
         body: |-
-          faf_version: '2.5.0'
+          faf_version: "3.0"
           project:
             name: my-api
             goal: REST API for user management
@@ -1517,11 +1519,11 @@ docs:
           > **FAF defines. MD instructs. AI codes.**
       - heading: What about my `GEMINI.md`?
         body: |-
-          You don't replace it. `.faf` **authors** it. Run `faf_gemini` and you get a fresh `GEMINI.md` with the structured project data baked in as YAML frontmatter — the same `GEMINI.md` Gemini CLI already reads, but authored from a single source of truth instead of hand-maintained.
+          You don't replace it. `.faf` **authors** it. Run `faf_gemini` and you get a fresh `GEMINI.md` in Gemini CLI's own hierarchical, `@file`-importable convention — setup, verify, key files, stack, confirm-first actions — authored from a single source of truth instead of hand-maintained. Your hand-written content outside the faf-managed block is preserved.
 
           ```bash
           > /faf:export
-      - heading: Generates GEMINI.md from project.faf
+      - heading: Authors GEMINI.md from project.faf
         body: |-
           ```
 
@@ -1530,7 +1532,7 @@ docs:
           ---
       - heading: Auto-Detect Your Stack
         body: |-
-          `faf_auto` scans your project's manifest files and authors a `.faf` with accurate slot values. No manual entry needed.
+          `faf_auto` scans your project's manifest files **and its docker-compose services, Makefile targets, and CI config**, then authors a `.faf` with accurate slot values. No manual entry needed.
 
           ```
           > Auto-detect my project stack
@@ -1540,30 +1542,36 @@ docs:
           {
             "detected": {
               "main_language": "Python",
-              "package_manager": "pip",
-              "build_tool": "setuptools",
-              "framework": "FastMCP",
-              "api_type": "MCP",
-              "database": "BigQuery"
+              "package_manager": "uv",
+              "framework": "FastAPI",
+              "api_type": "REST",
+              "database": "PostgreSQL",
+              "cache": "Redis",
+              "hosting": "Docker Compose",
+              "cicd": "GitHub Actions",
+              "commands": { "test": "make test", "build": "make build", "lint": "make check-all" }
             },
-            "score": 100,
-            "tier": "TROPHY"
+            "score": 79,
+            "tier": "GREEN"
           }
           ```
+
+          `database` and `cache` came from `docker-compose.yml`, `commands` from the `Makefile`, `cicd` from `.github/workflows/` — none of which the manifest scan sees. Fill in the six W's and you are at Trophy.
 
           **What it scans:**
 
           | File | Detects |
           |------|---------|
-          | `pyproject.toml` | Python + build system + frameworks (FastAPI, Django, Flask, FastMCP) + databases |
+          | `pyproject.toml` | Python + build system + frameworks (FastAPI, Django, Flask, FastMCP) |
           | `package.json` | JavaScript/TypeScript + frameworks (React, Vue, Next.js, Express) |
           | `Cargo.toml` | Rust + cargo + frameworks (Axum, Actix) |
           | `go.mod` | Go + go modules + frameworks (Gin, Echo) |
-          | `requirements.txt` | Python (fallback) |
-          | `Gemfile` | Ruby |
-          | `composer.json` | PHP |
+          | `requirements.txt` / `Gemfile` / `composer.json` | Python (fallback) / Ruby / PHP |
+          | **`docker-compose.yml`** | **`database` / `cache` / `search` / `storage` from service images (Postgres, Redis, Elasticsearch, MinIO, ClickHouse, Qdrant, …)** |
+          | **`Makefile` / `justfile`** | **`test` / `build` / `lint` commands from targets (root, or a nested `backend/` dir)** |
+          | **`.github/workflows/`** | **`cicd: GitHub Actions` (also GitLab CI, CircleCI)** |
 
-          **Priority rule:** `pyproject.toml` / `Cargo.toml` / `go.mod` take priority over `package.json`. Only sets values that are actually detected — no hardcoded defaults.
+          **Priority rule:** `pyproject.toml` / `Cargo.toml` / `go.mod` take priority over `package.json`. File-facts (a real compose service, a Makefile target) win over dependency guesses. Only sets values that are actually detected — no hardcoded defaults.
 
           ---
       - heading: Create & Detect
@@ -1590,8 +1598,13 @@ docs:
         body: |-
           | Tool | What it does |
           |------|-------------|
-          | `faf_gemini` | Export `GEMINI.md` with YAML frontmatter for Gemini CLI |
-          | `faf_agents` | Export `AGENTS.md` for OpenAI Codex, Cursor, and other AI tools |
+          | `faf_gemini` | Export `GEMINI.md` in Gemini CLI's hierarchical convention (non-destructive) |
+          | `faf_agents` | Export a BETTER-shaped `AGENTS.md` for OpenAI Codex, Cursor, and other AI tools (non-destructive) |
+      - heading: Migrate
+        body: |-
+          | Tool | What it does |
+          |------|-------------|
+          | `faf_migrate` | Bring a `.faf` up to the current format version (3.0); `dry_run` to preview |
       - heading: Reference
         body: |-
           | Tool | What it does |
@@ -1621,15 +1634,17 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v2.4.2
-          ├── server.py              → FastMCP MCP server (12 tools, dual-transport, Mk4 scoring)
+          gemini-faf-mcp v2.8.0
+          ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
+          ├── inject.py              → non-destructive faf-managed-block injection
+          ├── interrogate.py         → Full-Facts grounding (docker-compose + Makefile signals)
           ├── main.py                → Cloud Run REST API (GET/POST/PUT)
           ├── models.py              → 15 project type examples
           └── src/gemini_faf_mcp/    → Python SDK (FAFClient, parser)
           ```
 
-          The MCP server delegates to `faf-python-sdk` for parsing, validation, and Mk4 scoring. Stack detection in `faf_auto` is Python-native — no external CLI dependencies.
+          The MCP server delegates to `faf-python-sdk` for parsing, validation, Mk4 scoring, and AGENTS.md / GEMINI.md authoring. Stack detection in `faf_auto` — including the Full-Facts grounding — is Python-native, no external CLI dependencies.
 
           ---
       - heading: Testing
@@ -1639,7 +1654,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          233 tests passing across 9 WJTTC tiers (137 MCP server + 55 Cloud Function + 41 Mk4 WJTTC championship). Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          262 tests passing (129 FastMCP server · 55 Cloud Function · 41 Mk4 WJTTC championship · 15 Full-Facts grounding · 22 path-confinement, write-guard, model-parity, and Dart detection). Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
