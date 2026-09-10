@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-09'
+generated: '2026-09-10'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -424,7 +424,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 4b7a86c59e0ce3577387e88d7efb3228c4b17d9d
+    sha: 34d1c04172767e874e8b0357443985177548ce54
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -524,20 +524,23 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v7.11.0 — The VS Code Edition
+      - heading: What's New in v7.12.0 — The Open Renderers Edition
         body: |-
-          **faf-cli becomes a library a VS Code extension can import — `computeDrift()` joins the public API and `faf drift --json` mirrors it on the CLI. Plus `faf export --llms`.**
+          **faf-cli opens its renderers, injector and `faf auto` update chain as public exports — consumers compose instead of port — and `faf export --agents` is idempotent again: one block, every run.**
 
           ```ts
-          import { computeDrift, scoreFafYaml, findFafFile, renderProjectHtml } from 'faf-cli';
+          import { renderAgentsMd, enrichFromRepo, injectFafBlock, updateExistingFaf, writeFaf } from 'faf-cli';
           ```
 
-          - **`computeDrift(fafPath, dir?)`** — the context-drift check is now a pure exported function, not just a command. A VS Code extension reads the mtime relationship between `project.faf` and its `CLAUDE.md` / `AGENTS.md` / `.cursorrules` / `GEMINI.md` directly, in process.
-          - **`faf drift --json`** — the CLI mirror: a `faf_version` / `project` / `source` header over the report, raw `*_ms` mtimes and deltas (the consumer formats its own "5d ago"). No `project.faf` → `{ error, hint }` JSON, exit 2. Bare `faf drift` is unchanged.
-          - **`faf export --llms`** — writes `llms.txt` (llmstxt.org shape) from the authored 6 Ws. Opt-in, like `--grok`.
+          - **Renderers are public** — `renderAgentsMd` · `renderGeminiMd` · `renderCursorrules` · `renderClaudeMd` · `renderCopilotInstructions` and their `write*` pairs. An MCP server or an editor extension writes the same bytes `faf export` writes, instead of carrying its own copy that drifts.
+          - **`enrichFromRepo(dir, data)`** — the repo-facts step `faf export --agents` runs first (commands, key files, secrets location) is exported too. Hand-authored values win; detection fills the gaps.
+          - **`updateExistingFaf(dir, existing)`** — the exact chain `faf auto` runs on an existing `project.faf`: existing wins, then interrogated → detected → Turbo-Cat → Relentless fill the empties. `faf auto` itself now calls it. `writeFaf` / `serializeFaf` write the file the way faf-cli does.
+          - **One injector, one rule** — `injectFafBlock` / `findFafBlock` locate the managed block by whole marker lines at column 0. Fenced examples are skipped, an unbalanced fence inside the block cannot hide the end marker, CRLF and BOM survive. A block that lost its end marker is prefixed, never overwritten.
+          - **Fixed: `faf export --agents` stacked its own output.** 7.1.4–7.11.0 quoted the marker tokens in prose and matched them as substrings, so every re-run appended the old block's tail (58 → 107 → 156 lines). Fixed at both ends; a file already stacked is repaired on its next export.
 
           **Recent sprint**
 
+          - 🧩 [7.12.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.12.0) The Open Renderers Edition
           - 🖥️ [7.11.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.11.0) The VS Code Edition
           - 📚 [7.10.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.10.0) The Full-Facts Edition
           - 🌱 [7.9.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.9.0) The Git-Flow Edition
@@ -1712,12 +1715,20 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: aadc7f87acf35faf78f1670cd865cee389676e83
+    sha: fcdeefdeb1a0fb47a4a6654d202ee5b276f35abc
     intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
     sections:
-      - heading: What's New in 2.3.0 — The Curated Edition
+      - heading: What's New in 3.0.0 — The Compose Edition
         body: |-
-          **The tools you actually need, up front.** faf-mcp now leads with **15 essential tools** by default — a clean, focused surface instead of a wall of options. Need everything? Set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way). And every Core tool's description was rewritten so your AI picks the right one, first time.
+          **Compose, don't port: faf-mcp 3.0 runs on faf-cli 7.12 in-process — one scorer, one set of renderers, one injector — and every number, file and claim this package makes is true. Local stdio, 29 tools, Node 22+.**
+
+          - **Composes faf-cli 7.12.** AGENTS.md, GEMINI.md, .cursorrules and CLAUDE.md are written by faf-cli's own renderers, repo enrichment and block injector — the same bytes `faf export` and `faf sync` write. `faf_auto` runs faf-cli's own update chain. The hand-ported renderers, the pre-v3 CLAUDE.md template and the local injector are gone.
+          - **One score function.** `faf_auto`, `faf_go`, `faf_dna`, `faf_doctor` and `faf_bi_sync` all report faf-cli's scorer on the bytes on disk — no local heuristics, no frozen birth score, no "0%".
+          - **Nothing shells out.** The `which faf` detector, the exec fallback and the "install faf-cli first" banner are gone; nothing under `src/` imports `child_process`. A machine with an unrelated `faf` on PATH is no longer a problem.
+          - **Every tool contract matches its handler.** Descriptions say what the tools do, schemas declare only flags that are read, failures carry their reason.
+          - **The Mk3 engine is deleted.** 44 unreachable modules, ~15,900 lines; the tarball halves. `prebuild` clears `dist/` so nothing deleted ever ships again.
+          - **Resource URIs** are `faf://context` and `faf://status`; `claude-faf://` remains readable as an alias for this release.
+          - **Node 22 or newer.** 18 and 20 are end of life; the CI matrix runs 22 and 24 and a guard keeps the floor honest.
 
           ---
       - heading: Define once. Sync everywhere.
@@ -1726,7 +1737,7 @@ docs:
 
           **faf-mcp is the dedicated MCP server for Cursor, Windsurf, Cline, VS Code, and every non-Claude platform.** One `.faf` file in your repo, synced to every format your team needs.
 
-          **Context for Cursor & IDE agents:** faf-cli (v7.1) authors the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+          **Context for Cursor & IDE agents:** faf-cli (v7.12) authors the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ```
                                 project.faf
@@ -1761,21 +1772,16 @@ docs:
           | **Claude Desktop** | Use [claude-faf-mcp](https://github.com/Wolfe-Jam/claude-faf-mcp) |
 
           ---
-      - heading: Three Ways to Deploy
+      - heading: Run It
         body: |-
-          | Door | Method | Best For |
-          |------|--------|----------|
-          | **Hosted** | [mcpaas.live](https://mcpaas.live) | Zero-install, point any MCP client to the URL |
-          | **Self-Deploy** | [Deploy to Vercel](https://vercel.com/new?repository-url=https://github.com/Wolfe-Jam/faf-mcp) | Your own instance, full control |
-          | **Local** | `bunx faf-mcp` | IDE integration via stdio transport |
-      - heading: Hosted (mcpaas.live)
-        body: Point your MCP client to `https://ide.faf.one/mcp/v1` — no install, no config, no maintenance. Served from 300+ Cloudflare edges with sub-ms cold starts via 2.7KB Zig-WASM engine.
-      - heading: Self-Deploy (Vercel)
-        body: |-
-          Deploy your own MCP server on Vercel in one click. Once deployed, your server exposes:
-          - `/health` — Health check
-          - `/info` — Server metadata + tool list
-          - `/mcp/v1` — MCP Streamable HTTP transport
+          faf-mcp runs locally over stdio. Point your IDE at one of these commands.
+
+          | Method | Command |
+          |--------|---------|
+          | **npm** | `npx faf-mcp` |
+          | **Bun** | `bunx faf-mcp` |
+
+          ---
       - heading: Interop Tools
         body: |-
           | Tool | Platform | Action |
@@ -1787,35 +1793,12 @@ docs:
           | `faf_git` | GitHub | Author .faf from any repo URL |
 
           ```bash
-      - heading: Generate .faf from any GitHub repo
+      - heading: Author .faf from any GitHub repo
         body: |-
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · with CLI fallback · **9 test suites** · **7 bundled parsers**
-
-          ---
-      - heading: Cloud Sync
-        body: |-
-          Share your FAF context globally via [mcpaas.live](https://mcpaas.live):
-
-          | Tool | Purpose |
-          |------|---------|
-          | `faf_cloud_publish` | Upload to cloud, get shareable URL |
-          | `faf_cloud_fetch` | Pull context from cloud |
-          | `faf_cloud_list` | List available souls |
-          | `faf_cloud_search` | Search across souls |
-          | `faf_cloud_share` | Generate share links |
-
-          **Example Workflow:**
-          ```bash
-      - heading: Anyone can fetch it
-        body: |-
-          faf_cloud_fetch { soul_name: "my-project" }
-          → Context merged into local project.faf
-          ```
-
-          **Zero-install sharing** - Recipients need no MCP setup. Served from 300+ Cloudflare edges with <1ms cold starts via 2.7KB Zig-WASM engine.
+          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **9 test suites** · **7 bundled parsers**
 
           ---
       - heading: Eternal Bi-Sync
@@ -1871,8 +1854,8 @@ docs:
           |------|---------|
           | `faf_init` | Initialize project.faf |
           | `faf_score` | Check AI-readiness (0-100%) |
-          | `faf_sync` | Sync context across platforms |
-          | `faf_bi_sync` | Bi-directional .faf ↔ CLAUDE.md |
+          | `faf_sync` | Reconcile project.faf with package.json / git (dry-run; `apply:true` writes) |
+          | `faf_bi_sync` | Write CLAUDE.md (+ AGENTS.md, .cursorrules, GEMINI.md) from project.faf |
           | `faf_read` | Parse and validate FAF files |
           | `faf_write` | Create/update FAF with validation |
           | **Interop Tools** | |
@@ -1881,26 +1864,16 @@ docs:
           | `faf_gemini` | Import/export/sync GEMINI.md |
           | `faf_conductor` | Import/export directory structure |
           | `faf_git` | Author .faf from GitHub repo URL |
-          | **Cloud Tools** | |
-          | `faf_cloud_publish` | Upload to mcpaas.live |
-          | `faf_cloud_fetch` | Pull from cloud |
-          | `faf_cloud_list` | List souls |
-          | `faf_cloud_search` | Search souls |
-          | `faf_cloud_share` | Generate share links |
 
-          **Plus CLI fallback** (via faf-cli):
-          - `faf readme` - Extract 6 Ws from README (+25-35% boost)
-          - `faf human-add` - Non-interactive YAML merge (6Ws Builder)
-          - `faf git` - GitHub repo analysis without cloning
-          - And 40+ more commands...
+          **Built on faf-cli.** Every tool composes the bundled [faf-cli](https://www.npmjs.com/package/faf-cli) in-process — the same scorer, the same renderers, the same block injector the CLI uses. Nothing shells out to a `faf` on your PATH.
 
           ---
       - heading: Ecosystem
         body: |-
-          - **[claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp)** — Claude Desktop (33 tools)
+          - **[claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp)** — Claude Desktop
           - **[faf-cli](https://npmjs.com/package/faf-cli)** — Terminal CLI
           - **[faf-wasm](https://www.npmjs.com/package/faf-wasm)** — WASM SDK (<5ms scoring)
-          - **[faf-wasm-gen](https://www.npmjs.com/package/faf-wasm-gen)** — Rust→WASM `project.faf` generator, browser/edge (faf-wasm's generate sibling)
+          - **[faf-wasm-gen](https://www.npmjs.com/package/faf-wasm-gen)** — Rust→WASM `project.faf` authoring engine, browser/edge (faf-wasm's authoring sibling)
           - **[faf-trinity](https://github.com/Wolfe-Jam/faf-trinity)** — reference MCP server exposing all three IANA FAF formats (context/memory/agent) together
           - **[faf.one](https://faf.one)** — Official website
           - **[docs/SKILLS-OVER-MCP.md](./docs/SKILLS-OVER-MCP.md)** — J1 Agent Skill `faf-ide` (stdio · skills/list · digests)
