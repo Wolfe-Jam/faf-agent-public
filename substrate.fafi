@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-10'
+generated: '2026-09-11'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -424,7 +424,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 34d1c04172767e874e8b0357443985177548ce54
+    sha: 7c2eeebcb7ab82ca6cb5624d9da274093065f77a
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -524,7 +524,13 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v7.12.0 — The Open Renderers Edition
+      - heading: What's New in v7.12.1 — The Open Renderers Edition
+        body: |-
+          **`faf sync` is the one name: "bi-sync" is gone from its help, its output and the footer every rendered CLAUDE.md carries.**
+
+          - **One word for one command.** `faf sync` works as before: it writes CLAUDE.md from `project.faf`. `faf sync --direction pull` backfills name, goal and language into `.faf`, and only at ✪ Trophy. `faf bi-sync` still runs as a hidden alias.
+          - **Tools built on faf-cli follow automatically.** Anything that composes `renderClaudeMd` writes the new `STATUS: SYNC ACTIVE` footer on its next sync, with no release of its own.
+      - heading: v7.12.0 — the Edition release
         body: |-
           **faf-cli opens its renderers, injector and `faf auto` update chain as public exports — consumers compose instead of port — and `faf export --agents` is idempotent again: one block, every run.**
 
@@ -1715,15 +1721,25 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: fcdeefdeb1a0fb47a4a6654d202ee5b276f35abc
-    intro: FAF MCP IDE Edition — persistent project context for Cursor, Windsurf, Cline, VS Code
+    sha: b121ae9399af24b3511ead243cb38fd8a7696049
+    intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
-      - heading: What's New in 3.0.0 — The Compose Edition
+      - heading: What's New in 3.0.2 — The Compose Edition
+        body: |-
+          **Tools that say what they do: `faf_git` scores with faf-cli and asks before overwriting, `faf_sync` previews each change, and imports say when nothing was written.**
+
+          - **`faf_git` has one scorer.** It reports faf-cli's score of the file it authored, writes the slots faf-cli scores, and asks before replacing an existing `project.faf`.
+          - **`faf_sync` previews each change.** The dry run lists every field it would update and names `apply: true`.
+          - **Imports say when nothing was written,** and `merge: true` with no `project.faf` fails clearly.
+          - **Descriptions, annotations and errors match the code.** No CLI commands or terminal colour codes in tool output.
+
+          3.0.1 renamed `faf_bi_sync` to `faf_claude` and made `faf_init` write what `faf init` writes. The full history is in the [CHANGELOG](CHANGELOG.md).
+      - heading: The Compose Edition (3.0)
         body: |-
           **Compose, don't port: faf-mcp 3.0 runs on faf-cli 7.12 in-process — one scorer, one set of renderers, one injector — and every number, file and claim this package makes is true. Local stdio, 29 tools, Node 22+.**
 
           - **Composes faf-cli 7.12.** AGENTS.md, GEMINI.md, .cursorrules and CLAUDE.md are written by faf-cli's own renderers, repo enrichment and block injector — the same bytes `faf export` and `faf sync` write. `faf_auto` runs faf-cli's own update chain. The hand-ported renderers, the pre-v3 CLAUDE.md template and the local injector are gone.
-          - **One score function.** `faf_auto`, `faf_go`, `faf_dna`, `faf_doctor` and `faf_bi_sync` all report faf-cli's scorer on the bytes on disk — no local heuristics, no frozen birth score, no "0%".
+          - **One score function.** `faf_auto`, `faf_go`, `faf_dna`, `faf_doctor` and `faf_claude` all report faf-cli's scorer on the bytes on disk — no local heuristics, no frozen birth score, no "0%".
           - **Nothing shells out.** The `which faf` detector, the exec fallback and the "install faf-cli first" banner are gone; nothing under `src/` imports `child_process`. A machine with an unrelated `faf` on PATH is no longer a problem.
           - **Every tool contract matches its handler.** Descriptions say what the tools do, schemas declare only flags that are read, failures carry their reason.
           - **The Mk3 engine is deleted.** 44 unreachable modules, ~15,900 lines; the tarball halves. `prebuild` clears `dist/` so nothing deleted ever ships again.
@@ -1792,37 +1808,37 @@ docs:
           | `faf_conductor` | Conductor | Import/export directory structure |
           | `faf_git` | GitHub | Author .faf from any repo URL |
 
-          ```bash
+          ```text
       - heading: Author .faf from any GitHub repo
         body: |-
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **9 test suites** · **7 bundled parsers**
+          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **25 test suites** · **7 bundled parsers**
 
           ---
-      - heading: Eternal Bi-Sync
+      - heading: Eternal Sync
         body: |-
-          Your `.faf` file and your platform context files stay synchronized in milliseconds.
+          `project.faf` is the source. faf-mcp writes every tool's context file from it in milliseconds.
 
           ```
-          project.faf  ←── 8ms ──→  .cursorrules / AGENTS.md / CLAUDE.md / GEMINI.md
+          project.faf  ──── 8ms ───→  CLAUDE.md / AGENTS.md / .cursorrules / GEMINI.md
                               Single source of truth
           ```
 
-          - Update either side → both stay aligned
-          - `--all` flag syncs to all four formats at once
-          - Zero manual maintenance
+          - `faf_claude { all: true }` writes all four formats at once
+          - `faf_agents`, `faf_cursor` and `faf_gemini` can also import an existing file: `merge: true` merges it into `project.faf`
+          - Content outside the faf-managed block is preserved, byte for byte
           - Works across teams, branches, sessions
 
-          AI assistants forget. They drift. Every new session, AI starts guessing again. Bi-sync means **context never goes stale**.
+          AI assistants forget. They drift. Every new session, AI starts guessing again. One source means **context never goes stale**.
 
           ---
       - heading: 'Tier System: From Blind to Optimized'
         body: |-
           | Tier | Score | Status |
           |------|-------|--------|
-          | 🏆 **TROPHY** | 100% | AI never has to guess |
+          | ✪ **TROPHY** | 100% | AI never has to guess |
           | ★ **GOLD** | 99%+ | 1 slot from Trophy |
           | ◆ **SILVER** | 95%+ | Close — keep going |
           | ◇ **BRONZE** | 85%+ | Interim — keep going |
@@ -1850,20 +1866,28 @@ docs:
           ---
       - heading: 29 MCP Tools
         body: |-
+          The 15 Core tools, shown by default:
+
           | Tool | Purpose |
           |------|---------|
-          | `faf_init` | Initialize project.faf |
-          | `faf_score` | Check AI-readiness (0-100%) |
-          | `faf_sync` | Reconcile project.faf with package.json / git (dry-run; `apply:true` writes) |
-          | `faf_bi_sync` | Write CLAUDE.md (+ AGENTS.md, .cursorrules, GEMINI.md) from project.faf |
-          | `faf_read` | Parse and validate FAF files |
-          | `faf_write` | Create/update FAF with validation |
+          | `faf_init` | Create a new `project.faf` (use `faf_auto` to enhance an existing one) |
+          | `faf_auto` | One-call setup: init or merge, stack detection, CLAUDE.md, score |
+          | `faf_go` | Guided interview that fills the missing human-context and goal fields toward 100% |
+          | `faf_score` | AI-readiness score (0-100%) and tier; `details:true` adds a slot-by-slot breakdown |
+          | `faf_doctor` | Diagnose a low score: missing files, slot counts, config issues, each with a fix |
+          | `faf_check` | Rate each `human_context` field empty / generic / good |
+          | `faf_trust` | Validate the required fields and `about.*` block with faf-cli's validator |
+          | `faf_sync` | Reconcile `project.faf` with package.json (dry-run; `apply:true` writes) |
+          | `faf_context` | Set or show the active project path |
+          | `faf_about` | What the IANA-registered `.faf` format is, in plain language |
           | **Interop Tools** | |
-          | `faf_agents` | Import/export/sync AGENTS.md |
-          | `faf_cursor` | Import/export/sync .cursorrules |
-          | `faf_gemini` | Import/export/sync GEMINI.md |
-          | `faf_conductor` | Import/export directory structure |
-          | `faf_git` | Author .faf from GitHub repo URL |
+          | `faf_claude` | Write CLAUDE.md from `project.faf` (`all:true` also writes AGENTS.md, .cursorrules, GEMINI.md) |
+          | `faf_agents` | Import AGENTS.md into `project.faf`, or write it from `project.faf` |
+          | `faf_cursor` | Import .cursorrules into `project.faf`, or write it from `project.faf` |
+          | `faf_gemini` | Import GEMINI.md into `project.faf`, or write it from `project.faf` |
+          | `faf_git` | Author a `project.faf` from a public GitHub repo URL |
+
+          **+14 more with `FAF_TOOLS=all`:** `faf_status` · `faf_what` · `faf_guide` · `faf_debug` · `faf_clear` · `faf_list` · `faf_read` (read a file within the allowed roots: cwd, the OS temp dir, or `FAF_ALLOWED_ROOTS`) · `faf_write` (write a file within the same roots) · `faf_readme` · `faf_human_add` · `faf_quick` · `faf_formats` · `faf_dna` · `faf_conductor`
 
           **Built on faf-cli.** Every tool composes the bundled [faf-cli](https://www.npmjs.com/package/faf-cli) in-process — the same scorer, the same renderers, the same block injector the CLI uses. Nothing shells out to a `faf` on your PATH.
 
@@ -1894,7 +1918,7 @@ docs:
 
           ---
 
-          **Zero drift. Eternal sync. AI optimized.** 🏆
+          **Zero drift. Eternal sync. AI optimized.** ✪
 
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
