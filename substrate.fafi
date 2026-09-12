@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-11'
+generated: '2026-09-12'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1429,7 +1429,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 4fbdd897d25a4a3218f6f43c944f6d8d96187ceb
+    sha: 54dc648e339354506cd547f946903aee1a059683
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp — The Full-Facts Edition
@@ -1446,7 +1446,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-262%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-265%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1467,15 +1467,19 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v2.8.1 — The Full-Facts Edition
+      - heading: What's New in v2.8.2 — The Full-Facts Edition
         body: |-
-          **`faf_auto` now grounds its detection in the repo's own files, and every `faf_model` reference template scores 100% Trophy.**
+          **Privacy patch — `FAFClient`'s start-up ping is now opt-in (`FAF_TELEMETRY=1`).**
 
-          > **v2.8.1** is a dependency patch — `faf-python-sdk` floor `>=1.4.0`, where the interop functions are now named `author_agents_md` / `author_gemini_md`. Authored AGENTS.md / GEMINI.md output is byte-identical. The v2.8.0 feature set below is unchanged.
+          `FAFClient` (the Python SDK client — the MCP server never used it) sent a start-up ping, package name and version, by default, and the opt-out wasn't documented. It now sends only when you set `FAF_TELEMETRY=1`; `FAF_TELEMETRY_OFF` still turns it off. See [faf.one/privacy](https://faf.one/privacy).
+
+          > **v2.8.1** was a dependency patch — `faf-python-sdk` floor `>=1.4.0`, where the interop functions are now named `author_agents_md` / `author_gemini_md`. Authored AGENTS.md / GEMINI.md output is byte-identical.
+
+          **v2.8.0** — `faf_auto` now grounds its detection in the repo's own files, and every `faf_model` reference template scores 100% Trophy.
 
           `faf_auto` used to read only the root manifest (`pyproject.toml`, `package.json`, …). It now also reads the files that carry the real stack: **docker-compose service images** map onto `database` / `cache` / `search` / `storage` (a running Postgres service *is* the database — it beats a dependency guess), **Makefile / justfile targets** map onto the `commands` block (`test` / `build` / `check-all`, root file or a nested `backend/Makefile`), and **`.github/workflows/`** sets `cicd`. A polyglot repo that reported `library` / `JavaScript` now reports its real Postgres + Redis + FastAPI stack. In parity with faf-cli 7.10.
 
-          Separately: the **15 `faf_model` reference templates were scoring 48–57%** — they filled 4 stack slots and used `null`. All rewritten to the full 21-slot schema; every one is 100% Trophy now, and a test keeps it that way. **13 tools · 262 tests.**
+          Separately: the **15 `faf_model` reference templates were scoring 48–57%** — they filled 4 stack slots and used `null`. All rewritten to the full 21-slot schema; every one is 100% Trophy now, and a test keeps it that way. **13 tools · 265 tests.**
 
           > **v2.7.1 / v2.7.0 — The Interop Edition** — `faf_agents` / `faf_gemini` rewritten as `faf-python-sdk` authoring-tool wrappers (were 4-field stubs); new `faf_migrate` brings a `.faf` up to the current format. **v2.6.0 — The Agent Card Edition** added a real `agent.fafa` passport, an MCP Server Card (SEP-2127), and an AI Catalog entry. **v2.5.0 — The Dart Edition** detects Dart/Flutter from `pubspec.yaml`. **v2.4.2 — The Confinement Edition** confined every caller `path` argument. **v2.4.0 — The Chameleon Edition** auto-selects its transport: stdio locally, Streamable HTTP on Cloud Run.
 
@@ -1639,7 +1643,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v2.8.1
+          gemini-faf-mcp v2.8.2
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1659,7 +1663,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          262 tests passing (129 FastMCP server · 55 Cloud Function · 41 Mk4 WJTTC championship · 15 Full-Facts grounding · 22 path-confinement, write-guard, model-parity, and Dart detection). Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          265 tests passing across the FastMCP server, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
@@ -1686,6 +1690,15 @@ docs:
           data = parse_faf("project.faf")
           result = validate_faf(data)
           print(f"Score: {result['score']}%, Tier: {result['tier']}")
+      - heading: Or use the Cloud Run endpoint
+        body: |-
+          client = FAFClient()
+          dna = client.get_project_dna()
+          ```
+
+          `FAFClient` sends no telemetry unless you set `FAF_TELEMETRY=1`, which adds one start-up ping (package name and version). `FAF_TELEMETRY_OFF` always turns it off. Remote mode sends your requests to the Cloud Run endpoint. Privacy: [faf.one/privacy](https://faf.one/privacy).
+
+          ---
       - heading: Cloud Run REST API
         body: |-
           Live endpoint for badges, multi-agent context brokering, and voice-to-FAF mutations.
