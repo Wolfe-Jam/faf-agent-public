@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-13'
+generated: '2026-09-14'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -424,7 +424,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 7801d2a26d74db0910d2819d8f26b78524621b05
+    sha: 53f63cdd58ab79e49a789a5e02d201a5b8a0e76b
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -524,43 +524,20 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v7.13.1 — The Co-Author Edition
+      - heading: What's New in v7.14.0 — The Passport Edition
         body: |-
-          **A security patch: faf-cli's detection no longer follows a link out of your project, so a hostile repo can't pull a file like `~/.aws/credentials` into project.faf or your AI's context.**
+          **The A2A Agent Card's FAF extension carries real agent identity now — an `agentId`, a `passport` URL, and the full FAF media-type family — not just project provenance.**
 
-          - **Detection reads stay inside the project.** A README.md, package.json or any other repo file that links outside the project is treated as absent. Links inside the project still work.
-          - **`faf git` clones with symlinks off**, and never reads a link's path as a file's content.
-          - **`faf cards` reads `agent.fafa` safely**: a link out of its folder is refused.
-          - **`slotignored` is shown as `slotignored`**, never N/A.
-      - heading: v7.13.0 — the Edition release
-        body: |-
-          **You and your AI co-author project.faf — AI fills the tech facts from your repo, you write the 6Ws — and faf-cli only touches what it wrote: links can't lead it outside your project, a failed write keeps the original, and your comments, values and notes stay as you left them.**
-
-          - **faf writes its block, you write the rest.** faf touches only its managed block and its own section. A file with no faf markers is always prefixed, never taken over, even one that starts with faf's old stamp.
-          - **`project.faf` edits keep your file as written.** Comments, exact values (`1.10` stays `1.10`), anchors and keys faf doesn't know all survive. An edit changes only what it changes, and a no-op writes nothing.
-          - **If it's a fact, faf fills the slot.** A typed `None` or `N/A` is an empty slot, and the app-type decides which slots count.
-            - `faf auto` fills a tech slot only from a repo fact. With no fact, the slot stays empty; only `project.type` falls back to `library`, and says so on its line.
-            - With no fact, your words stay in a slot the app-type uses, and that slot scores 0 until filled.
-            - In a slot the app-type leaves out, `faf auto` writes `slotignored`: not required, not scored.
-            - The 6Ws stay yours: faf never replaces your words there, and `faf go` asks for the empty ones.
-          - **`faf ai enhance` is retired.** project.faf isn't enhanced: tech slots come from repo facts, and the 6Ws come from you.
-          - **Links and encodings are checked first.** faf refuses, in one line, to write:
-            - through a link that leaves the project;
-            - into `.git`, beyond its own hook section and diff driver;
-            - over a whole file faf didn't render;
-            - over a file that isn't UTF-8.
-          - **A whole file faf renders is replaced only when it's still exactly what faf wrote.** project.html and the Server and A2A cards now carry a render hash. If you edited one, faf leaves it and says so; `--force` replaces it.
-          - **One-time step when upgrading:** faf can't tell whether a project.html, Server Card or A2A card written before 7.13 was edited. The first run that would change one refuses it once, and that run exits 1. Check the file for hand edits, then run the same command once with `--force`; after that faf recognises its own output.
-          - **A failed write keeps the original.** faf writes to a temp file and renames it into place, so a full disk or a killed process leaves your file as it was. A file you edit while faf is writing is left alone.
-          - **Memory stays yours.**
-            - `soul.fafm` keeps its curated index, its facts and its comments, and etching an id that already exists merges into that fact.
-            - Tri-sync (`FAF_PRO=1`) writes Claude Code's own memory file as one section on top, and Claude's notes stay.
-          - **Detection stays inside the project.** Turbo-Cat no longer reads parent folders, so a monorepo root's stack no longer leaks into a package.
-          - **For builders.** New exports: `resolveInside`, `safeWriteFile`, `updateFafFile`, `writeClaudeMemory`, `FafDNAManager`, `authorFafFromRepo`, `registryTitle`, `isNonProjectRoot` and `scoreText`. `writeFaf` on an existing file now merges; pass `{ replace: true }` for the old overwrite.
-          - **Node 22+.** The engine floor matches CI (22 and 24).
+          - **The extension moved to `https://faf.one/ext/context/v1`** and its `params` gained `fafaSpecVersion`, `agentId` (from `.fafa` `agent.id`), the full `mediaTypes` family, and a `passport` URL — nested `provenance.faf`/`provenance.mediaType` replace the old flat pointer fields.
+          - **`defaultInputModes` reflects what your skills actually cite.** Any FAF media type a capability's `cites_spec` names now shows up there, and on that skill's own `inputModes`.
+          - **`provider` is optional again.** It's emitted only when both `agent.vendor` and `agent.homepage` are present — no longer a hard requirement.
+          - **`capabilities.streaming` stays honest at `false`.** Having an A2A endpoint was never proof it supports streaming; this only flips once a real per-door signal exists to key off.
+          - Breaking for anything reading the old flat A2A extension shape or the old `https://faf.one/context` URI. MCP Server Cards and registry entries are unaffected.
 
           **Recent sprint**
 
+          - 🛂 [7.14.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.14.0) The Passport Edition
+          - 🛡️ [7.13.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.13.1) security: detection reads stay inside the project
           - 🤝 [7.13.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.13.0) The Co-Author Edition
           - 🧩 [7.12.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.12.0) The Open Renderers Edition
           - 🖥️ [7.11.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.11.0) The VS Code Edition
@@ -1942,16 +1919,16 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 33e7164c11a2a0907981a0508ff1f7fdc4cc6484
+    sha: d718e611304d2d002ef321ff098fc0936d2bcb10
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
         body: |-
           **Persistent Project Context for Rust MCP clients. Native. Fast. cargo install**
 
-          **The Table-of-8 Edition (v0.7.1)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · **faf-rust-sdk 3.1** (the same always-33 kernel `faf-wasm-sdk` uses) · solid cargo-native Rust MCP for Rust devs
+          **The Lineage Edition (v0.8.0)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · **faf-rust-sdk 3.1** (the same always-33 kernel `faf-wasm-sdk` uses) · solid cargo-native Rust MCP for Rust devs
 
-          **v0.7.1** — Pin the install. PATH `rust-faf-mcp` is not the pin. See [CHANGELOG](./CHANGELOG.md#071---2026-09-02--the-table-of-8-edition).
+          **v0.8.0** — `.faf-dna` lineage, the same file as faf-cli and fafb: `faf_init` births it, `faf_auto` grows it, `faf_dna` shows the journey. fafb scores all 33 slots for monorepos and teams. See [CHANGELOG](./CHANGELOG.md#080---2026-09-13--the-lineage-edition).
 
           **FAF defines. MD instructs. AI codes.**
 
@@ -1966,7 +1943,7 @@ docs:
           Rust-native [MCP](https://modelcontextprotocol.io) (Model Context Protocol) server for [FAF](https://faf.one) — structured AI project context in YAML (`application/vnd.faf+yaml`). Single binary, stdio transport, 4.3 MB stripped. Built on [`rmcp`](https://crates.io/crates/rmcp) and [`faf-rust-sdk`](https://crates.io/crates/faf-rust-sdk).
       - heading: Claude Code
         body: |-
-          claude mcp add faf -- npx --yes rust-faf-mcp@0.7.1
+          claude mcp add faf -- npx --yes rust-faf-mcp@0.8.0
           ```
 
           ```jsonc
@@ -1975,13 +1952,13 @@ docs:
             "mcpServers": {
               "faf": {
                 "command": "npx",
-                "args": ["--yes", "rust-faf-mcp@0.7.1"]
+                "args": ["--yes", "rust-faf-mcp@0.8.0"]
               }
             }
           }
           ```
 
-          After `cargo install rust-faf-mcp --version 0.7.1`, `"command": "rust-faf-mcp"` is the install. Until you have proven that binary, use the npx pin.
+          After `cargo install rust-faf-mcp --version 0.8.0`, `"command": "rust-faf-mcp"` is the install. Until you have proven that binary, use the npx pin.
 
           No flags, no config files, no network listener. Pure stdio JSON-RPC.
 
@@ -2046,7 +2023,7 @@ docs:
           | `faf_auto` | Setup if missing, sync `CLAUDE.md`, score — Confirm setup (sweeps); does not invent 6Ws |
           | `faf_init` | Setup: first write from the tree. Refuses if the file exists. Confirm setup (sweeps). 6Ws stay empty |
           | `faf_go` | Table-of-8 + Confirm setup (sweeps). 6Ws score after ☑. Below 100: add Human Context. After 100: courtesy check every 30 days (90 max) |
-          | `faf_git` | Generate `project.faf` from any GitHub repo URL — no clone needed |
+          | `faf_git` | Author `project.faf` from any GitHub repo URL — no clone needed |
           | `faf_discover` | Walk up the directory tree to find the nearest `project.faf` |
       - heading: Score & Validate
         body: |-
@@ -2054,7 +2031,7 @@ docs:
           |------|-------------|
           | `faf_score` | Score AI-readiness 0-100% with field-level breakdown |
           | `faf_sync` | Sync `project.faf` → `CLAUDE.md` (preserves existing content) |
-          | `faf_agents` | Generate `AGENTS.md` from `project.faf` (non-destructive, preserves hand-written content) |
+          | `faf_agents` | Author `AGENTS.md` from `project.faf` (non-destructive, preserves hand-written content) |
       - heading: Optimize
         body: |-
           | Tool | What it does |
@@ -2062,6 +2039,11 @@ docs:
           | `faf_read` | Parse and display `project.faf` contents |
           | `faf_compress` | Compress `.faf` for token-limited contexts (`minimal` / `standard` / `full`) |
           | `faf_tokens` | Estimate token count at each compression level |
+      - heading: Lineage
+        body: |-
+          | Tool | What it does |
+          |------|-------------|
+          | `faf_dna` | Your FAF DNA journey from `.faf-dna`: Birth DNA to now, with history. `faf_init` births it, `faf_auto` records growth — the same file as faf-cli |
 
           `faf_init` will not overwrite an existing file. Setup occupies mechanical facts; Confirm setup (sweeps) is the walk. Empty human slots stay empty until `faf_go`.
       - heading: Architecture
@@ -2076,15 +2058,15 @@ docs:
           - **Runtime**: `tokio` single-threaded (`current_thread`)
           - **HTTP**: `reqwest` async (only used by `faf_git` for GitHub API)
           - **SDK**: `faf-rust-sdk` **3.1** (Cargo pin — the facade over `faf-kernel`/`faf-fafb` in [faf-rust](https://github.com/Wolfe-Jam/faf-rust); `score()` for the real Mk4 number, `validate()` for structural checks only)
-          - **Server**: **`rmcp` 3.0.1** with `#[tool_router]` / `#[tool_handler]` — JSON-RPC, schema generation, stdio transport (Tier-1 assessed SDK cut)
+          - **Server**: **`rmcp` 3.0.1** with `#[tool_router]` / `#[tool_handler]` — JSON-RPC, JSON Schema from the param types, stdio transport (Tier-1 assessed SDK cut)
 
           Tools return `serde_json::Value`. The server adapts them to `Result<String, String>` for rmcp's `IntoCallToolResult`.
       - heading: Testing
         body: |-
-          171 tests (136 integration + 35 unit):
+          190 tests (143 integration + 47 unit):
 
           ```bash
-          cargo test    # runs all 171
+          cargo test    # runs all 190
       - heading: 'Optional: block push on red CI twin'
         body: |-
           bash scripts/install-hooks.sh
@@ -2099,7 +2081,8 @@ docs:
           | `tier3_edge_cases.rs` | 10 | Unicode, CJK, score boundaries, unknown fields, GitHub URL parsing |
           | `tier4_aero.rs` | 22 | Manifest structure, version sync, server.json, context block, manifest-server cross-validation |
           | `wjttc_setup.rs` | 16 | Setup / Confirm setup (sweeps) — BRAKE · ENGINE · AERO · TYRE · PIT |
-          | `src` unit | 35 | setup sweep, skills digest, `agents::`, `inject::`, intent, app-type |
+          | `wjttc_faf_dna.rs` | 7 | `.faf-dna` lineage — `faf_init` birth, `faf_auto` growth, `faf_dna`, faf-cli's lines |
+          | `src` unit | 47 | setup sweep, skills digest, `agents::`, `inject::`, intent, app-type, `dna::` lineage + faf-cli fixtures |
 
           Tests spawn the compiled binary as a subprocess and communicate via stdin/stdout JSON-RPC — true integration tests against the real server.
       - heading: FAF Ecosystem
@@ -2129,7 +2112,7 @@ docs:
       - heading: Links
         body: |-
           - [crates.io/crates/rust-faf-mcp](https://crates.io/crates/rust-faf-mcp)
-          - [npmjs.com/package/rust-faf-mcp](https://www.npmjs.com/package/rust-faf-mcp) — `npx --yes rust-faf-mcp@0.7.1` (no Rust toolchain; downloads GH Release binary)
+          - [npmjs.com/package/rust-faf-mcp](https://www.npmjs.com/package/rust-faf-mcp) — `npx --yes rust-faf-mcp@0.8.0` (no Rust toolchain; downloads GH Release binary)
 
           - [Dual-package publish guide](https://github.com/Wolfe-Jam/mcp-better/blob/main/docs/DUAL-PACKAGE-RUST-MCP.md) — cargo + npm (this server is the product example)
           - [docs/DUAL-PACKAGE.md](./docs/DUAL-PACKAGE.md) — pointer + OIDC docs for this repo
