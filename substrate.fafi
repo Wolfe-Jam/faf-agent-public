@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-16'
+generated: '2026-09-17'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -424,7 +424,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 9e1e19fa9962d71dbd7b73b5f856a57bf4e52b98
+    sha: a5c4c6819e75816e43943f7a55006a3cb06513c1
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -443,7 +443,7 @@ docs:
 
           <br>
 
-          **133k+ downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
+          **144.4k downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
 
           ⭐ Bookmarks it for you, helps other devs find it too.
 
@@ -534,6 +534,7 @@ docs:
 
           **Recent sprint**
 
+          - 🧭 [7.16.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.1) `faf` back in step with `faf-cli`
           - 🧭 [7.16.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.0) The Discoverable Edition
           - 🎴 [7.15.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.15.0) The Pack Edition
           - 🛂 [7.14.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.14.0) The Passport Edition
@@ -572,6 +573,17 @@ docs:
           | ♡ **White** | 0% | No context at all |
 
           **One score, three glyphs:** ✪ work (CLI · docs · receipts) · 🏆 social (X · blogs) · Trophy Mark PNG (brand). Source of truth: `src/core/tiers.ts`.
+
+          ---
+      - heading: Docs
+        body: |-
+          The full manual lives at **[docs.faf.one](https://docs.faf.one)** — facts for devs, faf-cli first. One-page overview: **[faf-cli.vercel.app](https://faf-cli.vercel.app)**.
+
+          - [Getting started](https://docs.faf.one/getting-started) — install · run · use
+          - [Cards](https://docs.faf.one/cards) — one `.fafa` → A2A · Server Card · registry · AI Catalog · ARD
+          - [Custom rules](https://docs.faf.one/custom-rules) — pin instructions your AI must follow
+
+          For a specific agent: [Grok, xAI & Cursor 👀](docs/faf-cli-for-agents.md) · [Claude Code 👀](docs/faf-cli-for-claude.md) · [Bun 👀](docs/faf-cli-for-bun.md)
 
           ---
       - heading: Recent editions
