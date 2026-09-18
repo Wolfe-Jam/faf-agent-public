@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-17'
+generated: '2026-09-18'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: 421ba6ee0cd7092bd372dad9966000953db68eee
+    sha: d937959e2fbc07706ed796732062288aa2a34dc0
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Universal, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Three IANA Registrations'
@@ -198,13 +198,13 @@ docs:
           **Live total:** [faf.one/downloads](https://faf.one/downloads) 🎉
       - heading: Compiler Toolchain
         body: |-
-          FAF compiles to multiple targets:
+          FAFb **wire v2** is the brick. Spec: [`BINARY-FORMAT.md` in faf-rust](https://github.com/Wolfe-Jam/faf-rust/blob/main/crates/faf-fafb/BINARY-FORMAT.md) · human page [faf.one/spec](https://faf.one/spec). This repo’s `BINARY-FORMAT.md` is a retired v1 pointer, not the live spec.
 
           | Component | Language | Output |
           |-----------|----------|--------|
-          | [xai-faf-rust](https://github.com/Wolfe-Jam/xai-faf-rust) | Rust | Native + .fafb binary |
-          | [xai-faf-zig](https://github.com/Wolfe-Jam/xai-faf-zig) | Zig→WASM | 2.7KB ghost binary |
-          | [faf-wasm-sdk](https://github.com/Wolfe-Jam/faf-wasm-sdk) | Rust→WASM | 211KB browser runtime |
+          | [faf-fafb](https://crates.io/crates/faf-fafb) | Rust | FAFb v2 brick |
+          | [faf-cli](https://www.npmjs.com/package/faf-cli) | TypeScript + WASM | `faf compile` via the scoring kernel |
+          | [faf-wasm-sdk](https://crates.io/crates/faf-wasm-sdk) | Rust→WASM | same v2 engine, browser and edge |
       - heading: AI Interop
         body: |-
           One `.faf` file authors all four AI instruction formats:
@@ -265,7 +265,7 @@ docs:
           - **April 2026** - FAF ecosystem crosses 50,000+ downloads across npm, PyPI, and crates.io
           - **Feb 25, 2026** - Grok 4.2 recommends native FAF adoption; integration spec sent to xAI
           - **Feb 24, 2026** - faf-cli v4.5.0 "The AGENTS.md Edition" (AI interop across 4 formats)
-          - **Feb 2, 2026** - FAFb binary format v1.0 (Rust + Zig compilers shipping)
+          - **Feb 2, 2026** - FAFb v1 pre-release wire (retired). Live spec is **wire v2** in [faf-rust](https://github.com/Wolfe-Jam/faf-rust/blob/main/crates/faf-fafb/BINARY-FORMAT.md)
           - **Jan 2026** - gemini-faf-mcp v1.0.2 on PyPI (Google MCP bridge)
           - **Nov 2025** - IETF standardization in progress (`vnd` prefix removal)
           - **May 13, 2026** - 🏆 **IANA Registration #2** (`application/vnd.fafm+yaml` — Voice Memory Layer)
@@ -424,7 +424,7 @@ docs:
           *Maintained by [wolfejam.dev](https://wolfejam.dev) | [faf.one](https://faf.one)*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: a5c4c6819e75816e43943f7a55006a3cb06513c1
+    sha: 08332cb6724a5cffd045ba64fa29e56f2fe34e22
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -508,7 +508,7 @@ docs:
           | `faf memory` | `.fafm` soul ops — convert Claude memory, etch, recall, ls, show |
           | `faf diff` / `log` | Semantic context diff + score timeline across git history |
           | `faf hooks --install` | Pre-commit guard against context regression |
-          | `faf compile` / `decompile` | `.faf` → `.fafb` sealed binary; `decompile` shows a `.fafb`'s sections as JSON |
+          | `faf compile` / `decompile` | `.faf` → `.fafb` **v2** sealed brick; `decompile` shows sections as JSON |
           | `faf check` | Validate a `.faf` file |
           | `faf recover` | Rebuild `.faf` from an existing `CLAUDE.md` / `AGENTS.md` |
           | `faf show` | Render `project.faf` to a browsable HTML page |
@@ -526,6 +526,8 @@ docs:
           ```
       - heading: What's New in v7.16.0 — The Discoverable Edition
         body: |-
+          **`faf compile` emits FAFb wire v2 — same bytes as the faf-fafb golden.** (7.16.2)
+
           **A card nobody can find is not a card. The catalog `faf cards` writes now names who publishes it, keys every row the way the specs say to, and can be written as the ARD manifest agent search engines read.**
 
           - **`faf cards --target ard`** writes `.well-known/ard.json`: the catalog rows carrying the search hints ARD reads from the `.fafa` — `metadata.cards.keywords` as `tags`, `metadata.cards.examples` as `representativeQueries`. A manifest with no `representativeQueries` is valid and unfindable, so `faf cards` says so and names the key to fill in.
@@ -534,6 +536,7 @@ docs:
 
           **Recent sprint**
 
+          - 🧱 [7.16.2](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.2) `faf compile` emits FAFb wire v2 — same bytes as the faf-fafb golden
           - 🧭 [7.16.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.1) `faf` back in step with `faf-cli`
           - 🧭 [7.16.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.0) The Discoverable Edition
           - 🎴 [7.15.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.15.0) The Pack Edition
