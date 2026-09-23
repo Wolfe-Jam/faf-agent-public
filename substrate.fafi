@@ -352,7 +352,7 @@ docs:
           Let's RACE 🏎️⚡️🏁
   - repo: Wolfe-Jam/faf
     path: SPECIFICATION.md
-    sha: c62e1fb56ba26abf41c77265005d1f8ff12202b8
+    sha: 97614239c6fdaf1777c40261a162ee5d6d4f3497
     intro: .faf Format Specification — the authoritative source for application/vnd.faf+yaml. Defines the file, the 33 slots, and how a score is worked out.
     sections:
       - heading: .faf Format Specification
@@ -521,7 +521,8 @@ docs:
           Schema: <https://faf.one/schemas/faf.schema.json>
 
           Siblings, each IANA-registered in its own right: `.fafm` (memory), `.fafa` (agents).
-          The compiled binary form is `.fafb` — `application/vnd.fafb`.
+          The compiled binary form is `.fafb` — `application/vnd.fafb`. That one is private and
+          carries no registration of its own; it builds on the registered `.faf`.
       - heading: Version history
         body: |-
           **3.3.0** — "the 33". States the format as implemented: the 33 slots, `app_type`
