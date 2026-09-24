@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-23'
+generated: '2026-09-24'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: e727a2c0d6659ac06ffe60bc83885407f2574b03
+    sha: bdbb63970a6411253f084017dc3d2ef4b1231e99
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Portable, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Three IANA Registrations'
@@ -207,7 +207,7 @@ docs:
           **Live total:** [faf.one/downloads](https://faf.one/downloads) 🎉
       - heading: Compiler Toolchain
         body: |-
-          FAFb **wire v2** is the brick. Spec: [`BINARY-FORMAT.md` in faf-rust](https://github.com/Wolfe-Jam/faf-rust/blob/main/crates/faf-fafb/BINARY-FORMAT.md) · human page [faf.one/spec](https://faf.one/spec). This repo’s `BINARY-FORMAT.md` is a retired v1 pointer, not the live spec.
+          FAFb **wire v2** is the brick. Spec: [`BINARY-FORMAT.md` in faf-rust](https://github.com/Wolfe-Jam/faf-rust/blob/main/crates/faf-fafb/BINARY-FORMAT.md) · human page [faf.one/spec](https://faf.one/spec) · the tour [faf.one/bricks](https://faf.one/bricks). This repo’s `BINARY-FORMAT.md` is a retired v1 pointer, not the live spec.
 
           | Component | Language | Output |
           |-----------|----------|--------|
