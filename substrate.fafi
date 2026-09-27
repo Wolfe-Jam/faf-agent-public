@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-26'
+generated: '2026-09-27'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -794,8 +794,8 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 9ce0e7d4cd033ac1b29244e1bafacdf9e805da2c
-    intro: '**6.0.0 is a major release.** It needs Node 22 or later. faf_clear, faf_friday, faf_guide and faf_write are retired, and so are the AGENTS.md / .cursorrules / GEMINI.md / conductor imports into project.faf. The .mcpb now runs the server bundled inside it. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 6.x on its next start: check your Node before you upgrade. Every change is in the CHANGELOG.'
+    sha: f647436171c2e479b7d4102e41a13dec14d84d66
+    intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
         body: |-
@@ -826,7 +826,7 @@ docs:
 
           > ⚡ **The `faf` prompt** — pick it from your host's prompt list (Claude Code shows it as `/mcp__<server name>__faf`). It scores your project, fills what the repo can, asks you only what only you can answer, verifies, and syncs.
 
-          > **6.0.0 is a major release.** It needs Node 22 or later. `faf_clear`, `faf_friday`, `faf_guide` and `faf_write` are retired, and so are the AGENTS.md / .cursorrules / GEMINI.md / conductor imports into project.faf. The `.mcpb` now runs the server bundled inside it. The npx config and the SessionStart hook are not pinned to a version, so an install that runs `npx -y claude-faf-mcp` moves to 6.x on its next start: check your Node before you upgrade. Every change is in the [CHANGELOG](./CHANGELOG.md).
+          > **7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8's always-33 engine. A `.faf` without the 12 enterprise `slotignored` markers counts them as empty (21 filled = 64%): run `faf_auto` and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs `npx -y claude-faf-mcp` moves to 7.x on its next start. Every change is in the [CHANGELOG](./CHANGELOG.md).
 
           **Context for Claude:** faf-cli writes this repo's CLAUDE.md from its scored `project.faf` — `faf_sync` here, `faf sync` in faf-cli. See [FAF-CLI for Claude Code 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-claude.md).
 
@@ -835,7 +835,16 @@ docs:
           Core 14 MCP tools (30 with `FAF_TOOLS=all`). IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`).
 
           ---
-      - heading: What's New in v6.0.0 — The Earned Badge Edition
+      - heading: What's New in v7.0.0 — The Always33 Edition
+        body: |-
+          **One engine, one number: claude-faf-mcp 7 scores all 33 slots with faf-cli 8's always-33 kernel — the same score faf-cli and faf-kernel give.**
+
+          - **The always-33 engine.** Every tool scores with faf-cli 8.0.0 — all 33 Mk4 slots, one Rust kernel. Checked live: faf-python-sdk 56, mcp-context-card 56, faf-cli ✪ 100, the same numbers faf-cli and the reference scorer give.
+          - **Your 21 slots, and the 12 enterprise slots in view.** The enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. `faf_score` scores against all 33; `slotignored` slots drop out of the denominator.
+          - **Upgrading:** a `.faf` without the 12 markers now scores against 33. **Run `faf_auto`** — it writes them and your score returns (56% → ✪ 100% on a real v7-era file).
+
+          ---
+      - heading: v6.0.0 — The Earned Badge Edition
         body: |-
           **Every badge earned, none claimed: claude-faf-mcp 6.0 composes faf-cli, touches only what it wrote, and every tool tells the truth — one score, facts from repo, nothing from your PATH.**
 
@@ -896,7 +905,7 @@ docs:
           ---
       - heading: Claude Desktop — one click
         body: |-
-          [**⬇ Download `claude-faf-mcp-6.0.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v6.0.0/claude-faf-mcp-6.0.0.mcpb)
+          [**⬇ Download `claude-faf-mcp-7.0.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.0.0/claude-faf-mcp-7.0.0.mcpb)
 
           Open it in Claude Desktop. The extension runs the server bundled inside it (no npx, no network at start) and lists the Core 14 tools.
       - heading: Claude Desktop — config
@@ -970,7 +979,7 @@ docs:
           | ○ **RED** | <55% | AI working blind |
           | ♡ **WHITE** | 0% | No context at all |
 
-          At 55%, AI guesses half the time. At 100%, AI knows your project. The score is faf-cli's `scoreFafYaml` — the number `faf score` prints for the same file.
+          At 55%, AI guesses half the time. At 100%, AI knows your project. The score is faf-cli's `scoreFafYaml` — the always-33 number `faf score` prints for the same file.
 
           ---
       - heading: MCP Tools — Core 14, 30 with `FAF_TOOLS=all`
@@ -1863,10 +1872,17 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: b121ae9399af24b3511ead243cb38fd8a7696049
+    sha: a7d9efc0d907518309e901c733dc902a2070badc
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
-      - heading: What's New in 3.0.2 — The Compose Edition
+      - heading: What's New in 4.0.0 — The Always33 Edition
+        body: |-
+          **One engine, one number: faf-mcp 4 scores all 33 slots with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-kernel give.**
+
+          - **The always-33 engine.** Every tool scores with faf-cli 8.0.0 — all 33 Mk4 slots, one Rust kernel, one copy of it. Checked live: faf-python-sdk 56, mcp-context-card 56, faf-cli ✪ 100.
+          - **Your 21 slots, and the 12 enterprise slots in view.** The enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. `faf_score` scores against all 33; `slotignored` slots drop out of the denominator.
+          - **Upgrading from 3.x:** a `.faf` without the 12 markers now scores against 33. **Run `faf_auto`** — it writes them and your score returns.
+      - heading: 3.0.2 — The Compose Edition
         body: |-
           **Tools that say what they do: `faf_git` scores with faf-cli and asks before overwriting, `faf_sync` previews each change, and imports say when nothing was written.**
 
@@ -1956,7 +1972,7 @@ docs:
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **25 test suites** · **7 bundled parsers**
+          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **26 test suites** · **7 bundled parsers**
 
           ---
       - heading: Eternal Sync
