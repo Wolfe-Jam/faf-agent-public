@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-27'
+generated: '2026-09-28'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1126,7 +1126,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 66e5c595ea481b1063068ef18214b56785e5e9b0
+    sha: 6f5a09755031ef34760f07305b9ad3b20ad807f1
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1163,11 +1163,15 @@ docs:
           [![Stars](https://img.shields.io/github/stars/Wolfe-Jam/grok-faf-mcp)](https://github.com/Wolfe-Jam/grok-faf-mcp/stargazers) [![Downloads](https://img.shields.io/npm/dt/grok-faf-mcp)](https://www.npmjs.com/package/grok-faf-mcp)
 
           **FAF defines. MD instructs. AI codes.**
-      - heading: v1.10.0 — The No-Fluff Edition
+      - heading: v2.0.0 — The Always33 Edition
         body: |-
-          No fluff in a project.faf. `faf_enhance` is gone. RAG default is `grok-4.6`.
+          **One engine, one number: grok-faf-mcp 2 scores all 33 slots with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-mcp 4 give, on npm and on mcpaas.live.**
 
-          A `.faf` is facts. Two writers only: the repo (`faf_auto`) and the human (`faf_go`). Empty is honest. There is no enhance.
+          - **Always-33, everywhere you install it.** Every score — `faf_score`, `refresh_faf`, `faf_trust`, the resources — is faf-cli 8's `scoreFafYaml`: all 33 slots, one Rust kernel. The hosted endpoint below scores with the same kernel.
+          - **Your 21 slots, and the 12 enterprise slots in view.** faf-cli fills the 21 base slots; the 12 enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. Scored against all 33; `slotignored` slots drop out of the denominator.
+          - **ZEPH is opt-in** (`USE_ZEPH=1`, or `FAF_ZEPH=1` / `ZEPH=1`) until the Zig engine gives the always-33 number on every file — fast never means a different score.
+          - **Scoring never uses a `faf` from your PATH** — `faf_trust` and the resources run faf-cli in-process. `faf_init` writes a real project.faf and reports its real score.
+          - **Upgrading from 1.x:** a `.faf` without the 12 markers now scores against 33. `faf auto` writes the markers and re-scores.
 
           ⭐ Bookmarks it for you, helps other devs find it too.
 
@@ -1183,7 +1187,7 @@ docs:
           url = "https://mcpaas.live/grok/mcp/v1"
           ```
 
-          Restart Grok TUI (or `/mcps r`) to refresh. Tools: `faf_score`, `faf_validate`, `faf_get_tier`, `faf_estimate_tokens`, `faf_analyze` (plus soul/memory ops).
+          Restart Grok TUI (or `/mcps r`) to refresh. The hosted endpoint scores always-33 — the same number as the npm package. Tools: `faf_score`, `faf_validate`, `faf_get_tier`, `faf_estimate_tokens`, `faf_analyze` (plus soul/memory ops).
 
           **Smithery:** [wolfe-jam/grok-faf-mcp](https://smithery.ai/servers/wolfe-jam/grok-faf-mcp) — gateway at `https://grok-faf-mcp--wolfe-jam.run.tools`
 
@@ -1193,7 +1197,7 @@ docs:
           brew install wolfe-jam/faf/grok-faf-mcp
           ```
 
-          **Hosted on Cloudflare Workers** — sub-ms cold start, no subprocess, edge-served. 4865-byte Zig WASM engine, parity-tested vs the Rust authority (`xai-faf-rust`). Externally validated by Grok S1 + S2 on 2026-05-27.
+          **Hosted on Cloudflare Workers** — sub-ms cold start, no subprocess, edge-served. Scores and validates with the faf-kernel WASM (always-33, the same engine as the npm package) since mcpaas-cf 1.8.1; a Zig WASM engine handles token estimates and tier. Externally validated by Grok S1 + S2 on 2026-05-27.
 
           **Verify the live contract:**
 
@@ -1373,7 +1377,7 @@ docs:
           Fastest:      3,360ns (version — nanosecond territory)
           Slowest:      1.3ms (score — Mk4 WASM)
           Improvement:  19ms → 0.5ms (3,800% faster)
-          Engine:       Mk4 WASM via faf-scoring-kernel
+          Engine:       faf-cli 8 (faf-scoring-kernel 3.0.0, always-33)
           Memory:       Zero leaks
           Transport:    stdio (local, bunx) · Streamable HTTP (hosted, Cloudflare Workers)
           ```
@@ -1393,7 +1397,7 @@ docs:
           │   │   ├── championship-tools.ts  → 55+ tool definitions
           │   │   ├── tool-registry.ts       → Visibility filtering (core/advanced)
           │   │   └── engine-adapter.ts      → FAF engine bridge
-          │   ├── faf-core/compiler/faf-compiler.ts → Mk4 WASM scoring + Mk3.1 fallback
+          │   ├── faf-core/commands/score.ts → faf-cli scoreFafYaml (always-33)
           │   ├── types/                     → Canonical type substrate (1.5)
           │   │   ├── drift-signals.ts       → DriftSignal · Contradiction · RepeatOffender
           │   │   ├── refresh.ts             → RefreshMode
@@ -1417,12 +1421,12 @@ docs:
 
           **Production deployment:** Cloudflare Workers via `mcpaas-cf` (serving `mcpaas.live/grok/mcp/v1`). The `api/index.ts` + `vercel.json` paths above stay alive as a catch-site for legacy/bookmarked links — they are no longer the production path.
 
-          **Scoring pipeline:** TypeScript compiler parses `.faf` → detects project type → The Bouncer injects `slotignored` for inapplicable slots → `faf-scoring-kernel` (WASM) scores → falls back to Mk3.1 if kernel unavailable.
+          **Scoring pipeline:** faf-cli's `scoreFafYaml` → the always-33 kernel (`faf-scoring-kernel`, Rust → WASM) scores the file as written: 33 slots, `slotignored` slots drop out of the denominator. No per-type rewriting, no fallback scorer — the same number faf-cli, claude-faf-mcp and faf-mcp give.
 
           ---
       - heading: Testing
         body: |-
-          27 test files (~518 test declarations) — WJTTC parity (heavy local ↔ light hosted) + full suites (recent runs green on CI):
+          WJTTC parity (heavy local ↔ light hosted) + full suites (green on CI):
 
           ```bash
           sh scripts/run-tests.sh
@@ -1434,15 +1438,18 @@ docs:
           | `mcp-conformance` | MCP protocol conformance — tools, transport, errors |
           | `wjttc-mcp` | WJTTC MCP certification |
           | `wjttc-bun` | WJTTC bun-migration + integrity |
-          | `wjttc-compiler-scoring` | Compiler scoring — engine, type detection, slots |
           | `rag-system` | RAG query, caching, context retrieval |
           | `security` | Input validation + security guards |
           | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
-      - heading: Status & known limitations (v1.10)
+      - heading: Status & known limitations (v2.0)
         body: |-
-          v1.10.0 — **The No-Fluff Edition** — no fluff in a project.faf. `faf_enhance` is gone. RAG default is `grok-4.6`. Fill stays on `faf_auto` / `faf_go`. Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
+          v2.0.0 — **The Always33 Edition** — one engine, one number: faf-cli 8's always-33 kernel on npm and on mcpaas.live. ZEPH is opt-in until the Zig engine is always-33. FafCompiler upgraded to the Always33 fafb model — parity across frontier models, Enterprise/Teams ready.
+
+          Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
+
+          > Earlier: v1.10.0 — **The No-Fluff Edition** — no fluff in a project.faf. `faf_enhance` is gone. RAG default is `grok-4.6`. Fill stays on `faf_auto` / `faf_go`.
 
           > Earlier: v1.9.0 — **The ZEPH Default Edition** — the proven-fast Zig→WASM scoring path behind `refresh_faf` is now **default-ON** (same score, cheaper to compute; parity proven byte-identical — CI gate + 91/91 live). Kill switch `USE_ZEPH=0` forces the canonical scorer. FRC tools stay opt-in behind `USE_FRC`.
 
@@ -1451,7 +1458,7 @@ docs:
           > Earlier: v1.6.0 — **The ZEPH Edition** — the ZEPH fast path for re-grounding (`refresh_faf`/`refresh_blend` via Zig→WASM `cascade.wasm`, ~12µs, `USE_ZEPH=1`; `faf-cli` stays canonical, parity locked in CI).
 
           **What is fully supported:**
-          - WASM-pure tools on the hosted endpoint (`https://mcpaas.live/grok/mcp/v1` and client-specific routes) — scoring · validation · `refresh_faf`.
+          - 19 tools on the hosted endpoint (`https://mcpaas.live/grok/mcp/v1` and client-specific routes) — scoring · validation · `refresh_faf` · a content-in `faf_orchestrate_recommendation` · the FRC trio · souls and search. The live list is at `…/grok/mcp/v1/info`.
           - `refresh_faf` and `refresh_fafm` as explicit, callable re-grounding primitives.
           - `refresh_blend` as the baked-in two-intensity refresh (Cmd+R / Cmd+Shift+R analog).
           - `faf_orchestrate_recommendation` — the heavy orchestrator that composes drift signals, recurrence, receipts, and take-a-hint into an advisory recommendation.
@@ -1460,7 +1467,7 @@ docs:
 
           **Current limitations:**
 
-          - **`faf_orchestrate_recommendation`, `faf_get_orchestration_policy`, `refresh_fafm`, and `refresh_blend` require filesystem access** and are only available via the local stdio path (`bunx grok-faf-mcp` / `npx grok-faf-mcp`). They are not exposed on the hosted WASM-pure endpoint. The hosted path serves the existing WASM-pure subset only (`refresh_faf` + scoring + validation).
+          - **`faf_get_orchestration_policy`, `refresh_fafm`, `refresh_blend`, `faf_init` and `faf_sync` need filesystem access** and run only on the local stdio path (`bunx grok-faf-mcp` / `npx grok-faf-mcp`). The hosted `faf_orchestrate_recommendation` takes file contents instead of reading your repo, and has no receipts or recurrence history (it reports those under `partial[]`).
           - **Receipt storage — cwd-relative JSON, pull-discoverable.** Three append-only JSON files live at the repo root with stable schemas:
             ```
             .faf-drift-index.json              ← RepeatOffenderTracker — per-slot recurrence counts
