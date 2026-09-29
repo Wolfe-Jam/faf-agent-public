@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-28'
+generated: '2026-09-29'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1574,7 +1574,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 54dc648e339354506cd547f946903aee1a059683
+    sha: a040078e742e8e197bfa1b4c271c6de9b21df893
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp — The Full-Facts Edition
@@ -1591,7 +1591,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-265%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-266%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1612,7 +1612,12 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v2.8.2 — The Full-Facts Edition
+      - heading: What's New in v3.0.0 — The Always33 Edition
+        body: |-
+          One engine, one number: gemini-faf-mcp scores all 33 slots exactly like faf-kernel — the same score faf-cli 8, claude-faf-mcp 7, faf-mcp 4 and grok-faf-mcp 2 give.
+
+          Built on `faf-python-sdk>=2.0.0`. The 12 enterprise slots count unless marked `slotignored`: 21 slots filled with no markers scores 64% (21/33); the same file plus the 12 markers scores 100% (21/21). `faf auto` (faf-cli) writes the markers. The 15 `faf_model` templates carry them and stay 100% Trophy.
+      - heading: v2.8.2 — The Full-Facts Edition
         body: |-
           **Privacy patch — `FAFClient`'s start-up ping is now opt-in (`FAF_TELEMETRY=1`).**
 
@@ -1788,7 +1793,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v2.8.2
+          gemini-faf-mcp v3.0.0
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1808,7 +1813,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          265 tests passing across the FastMCP server, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          266 tests passing across the FastMCP server, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
