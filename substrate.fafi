@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-09-30'
+generated: '2026-10-01'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 9d9bba07fe585c50384ab32ce9f02d297138d723
+    sha: 54ceeb514f0397a588653e57fb3b842aad49d8d9
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -643,9 +643,16 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.0.0 — The Always33 Edition
+      - heading: What's New in v8.0.1 — The Always33 Edition
         body: |-
-          **One engine, one number: faf-cli v8 scores all 33 slots with the always-33 kernel — the same score faf-kernel, faf-rust-sdk and rust-faf-mcp give.**
+          **pnpm installs work: faf-cli depends on faf-scoring-kernel from npm, not a vendored folder.**
+
+          - **The fix.** 8.0.0 pointed at a `vendor/` folder inside faf-cli. npm found it; pnpm looked in your project instead and stopped with `ERR_PNPM_LINKED_PKG_DIR_NOT_FOUND`. faf-cli now gets `faf-scoring-kernel` from npm, the same files byte for byte.
+          - **Run without installing:** `bunx faf`, `npx faf` and now `pnpm dlx faf`.
+          - **Checked on every change:** CI installs the packed package with npm, pnpm and bun, then runs `faf --version` and `faf score`.
+      - heading: The Always33 Edition (8.0)
+        body: |-
+          **One engine, one number: faf-cli v8 scores with the always-33 kernel — the same score faf-kernel, faf-rust-sdk and rust-faf-mcp give.**
 
           - **The always-33 engine.** Every `.faf` is scored against all 33 Mk4 slots by one Rust kernel (`faf-scoring-kernel` 3.0.0, WASM). Verified identical to the reference always-33 scorer on the `project.faf` of all 80 FAF repos.
           - **Your 21 slots, and the 12 enterprise slots in view.** faf-cli fills the 21 base slots. The 12 enterprise slots — infra, app, ops — are marked `slotignored` unless your app-type uses them, and `faf score` shows all 33.
@@ -663,6 +670,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.0.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.0.1) pnpm installs work — faf-scoring-kernel from npm
           - ✪ [8.0.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.0.0) The Always33 Edition — one engine, one number
           - 🧱 [7.16.2](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.2) `faf compile` emits FAFb wire v2 — same bytes as the faf-fafb golden
           - 🧭 [7.16.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v7.16.1) `faf` back in step with `faf-cli`
@@ -723,7 +731,7 @@ docs:
         body: |-
           Pivotal releases — full history in [CHANGELOG.md](./CHANGELOG.md):
 
-          - **v8.0 — Always33** — one engine, one number: every `.faf` scored against all 33 slots.
+          - **v8.0 — Always33** — one engine, one number: the same score everywhere.
           - **v7.1 — AGENTS.md** — `faf export --agents` authors a complete, non-destructive `AGENTS.md`.
           - **v7.0 — GIT** — context goes git-native: `faf diff` / `log` / `hooks`.
           - **v6.16 — Know Your Stack** — every emitted file labels your stack identically.
@@ -794,7 +802,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: f647436171c2e479b7d4102e41a13dec14d84d66
+    sha: 4077f3ce66d75222be22367982c6fe68604f595c
     intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
@@ -835,9 +843,15 @@ docs:
           Core 14 MCP tools (30 with `FAF_TOOLS=all`). IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`).
 
           ---
-      - heading: What's New in v7.0.0 — The Always33 Edition
+      - heading: What's New in v7.0.1 — The Always33 Edition
         body: |-
-          **One engine, one number: claude-faf-mcp 7 scores all 33 slots with faf-cli 8's always-33 kernel — the same score faf-cli and faf-kernel give.**
+          **faf-cli 8.0.1 inside: pnpm installs work, and fast-uri is out of two moderate advisories.**
+
+          - **pnpm installs work.** faf-cli 8.0.1 gets its scoring kernel from npm, so pnpm (and Glama's build) install claude-faf-mcp cleanly. The Claude Desktop `.mcpb` carries it too.
+          - **fast-uri 4.2.1**, out of two moderate advisories; `npm audit` is clean.
+      - heading: The Always33 Edition (7.0)
+        body: |-
+          **One engine, one number: claude-faf-mcp 7 scores with faf-cli 8's always-33 kernel — the same score faf-cli and faf-kernel give.**
 
           - **The always-33 engine.** Every tool scores with faf-cli 8.0.0 — all 33 Mk4 slots, one Rust kernel. Checked live: faf-python-sdk 56, mcp-context-card 56, faf-cli ✪ 100, the same numbers faf-cli and the reference scorer give.
           - **Your 21 slots, and the 12 enterprise slots in view.** The enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. `faf_score` scores against all 33; `slotignored` slots drop out of the denominator.
@@ -905,7 +919,7 @@ docs:
           ---
       - heading: Claude Desktop — one click
         body: |-
-          [**⬇ Download `claude-faf-mcp-7.0.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.0.0/claude-faf-mcp-7.0.0.mcpb)
+          [**⬇ Download `claude-faf-mcp-7.0.1.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.0.1/claude-faf-mcp-7.0.1.mcpb)
 
           Open it in Claude Desktop. The extension runs the server bundled inside it (no npx, no network at start) and lists the Core 14 tools.
       - heading: Claude Desktop — config
@@ -1126,7 +1140,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 6f5a09755031ef34760f07305b9ad3b20ad807f1
+    sha: e09b0b29a2e73dc1a377ab66b9c485f6705a3fca
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp — FAST⚡️AF Edition
@@ -1165,7 +1179,7 @@ docs:
           **FAF defines. MD instructs. AI codes.**
       - heading: v2.0.0 — The Always33 Edition
         body: |-
-          **One engine, one number: grok-faf-mcp 2 scores all 33 slots with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-mcp 4 give, on npm and on mcpaas.live.**
+          **One engine, one number: grok-faf-mcp 2 scores with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-mcp 4 give, on npm and on mcpaas.live.**
 
           - **Always-33, everywhere you install it.** Every score — `faf_score`, `refresh_faf`, `faf_trust`, the resources — is faf-cli 8's `scoreFafYaml`: all 33 slots, one Rust kernel. The hosted endpoint below scores with the same kernel.
           - **Your 21 slots, and the 12 enterprise slots in view.** faf-cli fills the 21 base slots; the 12 enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. Scored against all 33; `slotignored` slots drop out of the denominator.
@@ -1574,7 +1588,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: a040078e742e8e197bfa1b4c271c6de9b21df893
+    sha: 10c1deef838c4a66a7ce9ccb2d5f08d7d9a8550e
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp — The Full-Facts Edition
@@ -1614,7 +1628,7 @@ docs:
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
       - heading: What's New in v3.0.0 — The Always33 Edition
         body: |-
-          One engine, one number: gemini-faf-mcp scores all 33 slots exactly like faf-kernel — the same score faf-cli 8, claude-faf-mcp 7, faf-mcp 4 and grok-faf-mcp 2 give.
+          One engine, one number: gemini-faf-mcp scores with the always-33 engine, exactly like faf-kernel — the same score faf-cli 8, claude-faf-mcp 7, faf-mcp 4 and grok-faf-mcp 2 give.
 
           Built on `faf-python-sdk>=2.0.0`. The 12 enterprise slots count unless marked `slotignored`: 21 slots filled with no markers scores 64% (21/33); the same file plus the 12 markers scores 100% (21/21). `faf auto` (faf-cli) writes the markers. The 15 `faf_model` templates carry them and stay 100% Trophy.
       - heading: v2.8.2 — The Full-Facts Edition
@@ -1884,12 +1898,12 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: a7d9efc0d907518309e901c733dc902a2070badc
+    sha: be511624a94241b6e9f5b8016658c744d2097625
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
       - heading: What's New in 4.0.0 — The Always33 Edition
         body: |-
-          **One engine, one number: faf-mcp 4 scores all 33 slots with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-kernel give.**
+          **One engine, one number: faf-mcp 4 scores with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-kernel give.**
 
           - **The always-33 engine.** Every tool scores with faf-cli 8.0.0 — all 33 Mk4 slots, one Rust kernel, one copy of it. Checked live: faf-python-sdk 56, mcp-context-card 56, faf-cli ✪ 100.
           - **Your 21 slots, and the 12 enterprise slots in view.** The enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. `faf_score` scores against all 33; `slotignored` slots drop out of the denominator.
