@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-04'
+generated: '2026-10-05'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 0611b94aa0d785c8797339f22ec6fa5549c088e1
+    sha: ea505c9dee106ba9ae11db727b29a328df4c0ffa
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -562,7 +562,7 @@ docs:
 
           <br>
 
-          **144.4k downloads** · see [faf.one/downloads](https://faf.one/downloads) for latest stats · **IANA-registered · Anthropic-merged (#2759)**
+          [![FAF downloads](https://img.shields.io/endpoint?url=https://faf.one/api/downloads.json)](https://faf.one/downloads) · across npm, PyPI and crates.io · **IANA-registered · Anthropic-merged (#2759)**
 
           ⭐ Bookmarks it for you, helps other devs find it too.
 
@@ -643,21 +643,34 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.1.0 — The Always33+ Edition
+      - heading: What's New in v8.1.1 — The Always33+ Edition
+        body: |-
+          **faf-cli reads SvelteKit 3 projects: SvelteKit, its adapter and its hosting, from vite.config and devDependencies.**
+
+          ```bash
+          npx faf-cli@latest auto     # in a SvelteKit 3 app
+          ```
+
+          ```text
+          frontend: SvelteKit · backend: SvelteKit · hosting: Cloudflare · build: Vite 8
+          ```
+
+          - **SvelteKit 3 moved its config into `vite.config`.** faf-cli reads the adapter there (and still in `svelte.config.js` for SvelteKit 2), and finds the kit in devDependencies, where SvelteKit apps list it.
+          - **The build slot names Vite's major version:** `Vite 8`.
+      - heading: The Always33+ Edition (8.1)
         body: |-
           **From nothing to listed in one command: `faf card init` asks seven questions and writes your agent.fafa, your AI Catalog entry and your ARD entry.**
 
           The same always-33 engine, plus cards.
 
           ```bash
-          npx faf-cli@latest card init     # seven questions → agent.fafa → AI Catalog + ARD
+          npx faf-cli@latest card init     # seven questions → agent.fafa → A2A card, AI Catalog, ARD
           ```
 
-          | You have | `faf cards` gives you |
-          |---|---|
-          | `agent.fafa` | AI Catalog + ARD |
-          | + `project.faf` | + A2A, MCP and registry cards |
-          | `project.faf` filled out | the full context behind every card |
+          | You have | `faf cards` gives you | Rung |
+          |---|---|---|
+          | `agent.fafa` | A2A card, MCP Server Card, registry, AI Catalog, ARD (as its endpoints allow) | BETTER |
+          | + `project.faf` | the same cards, with FAF context | BEST |
 
           - **Scripts ask nothing:** every answer is a flag (`--name`, `--domain`, `--url` or `--package`, `--skill`, `--example`, `--set-version`).
           - **Help says what each command touches,** with a "What touches what" footer and [docs.faf.one/side-effects](https://docs.faf.one/side-effects).
@@ -681,6 +694,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.1.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.1.1) SvelteKit 3 read in full — kit, adapter, Vite 8
           - ✪ [8.1.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.1.0) The Always33+ Edition — from nothing to listed in one command
           - ✪ [8.0.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.0.1) pnpm installs work — faf-scoring-kernel from npm
           - ✪ [8.0.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.0.0) The Always33 Edition — one engine, one number
@@ -1152,10 +1166,10 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: e09b0b29a2e73dc1a377ab66b9c485f6705a3fca
+    sha: 00027850435b0eb6e55971bba5da6aa0c52a0e4d
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
-      - heading: grok-faf-mcp — FAST⚡️AF Edition
+      - heading: grok-faf-mcp v2.1 — The New Era Edition
         body: |-
           <div align="center">
             <img src="https://www.faf.one/orange-smiley.svg" alt="FAF" width="80" />
@@ -1188,18 +1202,20 @@ docs:
 
           [![Stars](https://img.shields.io/github/stars/Wolfe-Jam/grok-faf-mcp)](https://github.com/Wolfe-Jam/grok-faf-mcp/stargazers) [![Downloads](https://img.shields.io/npm/dt/grok-faf-mcp)](https://www.npmjs.com/package/grok-faf-mcp)
 
-          **FAF defines. MD instructs. AI codes.**
-      - heading: v2.0.0 — The Always33 Edition
+          **FAF defines. AGENTS.md instructs. AI codes.**
+      - heading: v2.1.0 — The New Era Edition
         body: |-
-          **One engine, one number: grok-faf-mcp 2 scores with faf-cli 8's always-33 kernel — the same score faf-cli, claude-faf-mcp 7 and faf-mcp 4 give, on npm and on mcpaas.live.**
+          **Glass-box tools: every Grok tool now says what it does — reads, writes or rewrites — so your client knows when to ask first. New card, new look at grok.faf.one.**
 
-          - **Always-33, everywhere you install it.** Every score — `faf_score`, `refresh_faf`, `faf_trust`, the resources — is faf-cli 8's `scoreFafYaml`: all 33 slots, one Rust kernel. The hosted endpoint below scores with the same kernel.
-          - **Your 21 slots, and the 12 enterprise slots in view.** faf-cli fills the 21 base slots; the 12 enterprise slots (infra, app, ops) are marked `slotignored` unless your app-type uses them. Scored against all 33; `slotignored` slots drop out of the denominator.
-          - **ZEPH is opt-in** (`USE_ZEPH=1`, or `FAF_ZEPH=1` / `ZEPH=1`) until the Zig engine gives the always-33 number on every file — fast never means a different score.
-          - **Scoring never uses a `faf` from your PATH** — `faf_trust` and the resources run faf-cli in-process. `faf_init` writes a real project.faf and reports its real score.
-          - **Upgrading from 1.x:** a `.faf` without the 12 markers now scores against 33. `faf auto` writes the markers and re-scores.
+          - **Every tool is labelled.** All 20 tools carry MCP tool annotations, checked against what each handler really does: 7 read only, 3 can delete or overwrite (`faf_init` with `force`, `faf_clear`, `faf_write`), the rest write without losing anything. Only `rag_query` reaches the network (xAI Collections).
+          - **Honest about receipts.** `refresh_faf`, `refresh_fafm`, `refresh_blend`, `faf_orchestrate_recommendation` and the FRC tools (`faf_gate`, `faf_section`, `faf_memory`) append small receipt files to your project folder, so they are labelled as writers. `refresh_fafm` no longer says "Read-only".
+          - **Its own card.** Grok FAF now has a FAF passport (`agent.fafa`) at [grok.faf.one/.well-known/fafa](https://grok.faf.one/.well-known/fafa), with AI Catalog and ARD entries that point to it. The MCP Server Card is the hosted one, also at `grok.faf.one/.well-known/mcp/server-card.json`.
+          - **A new look.** [grok.faf.one](https://grok.faf.one) is redesigned, with the current facts: 19 tools hosted, 12 by default locally.
+          - **Node 22 or later**, like faf-cli 8 and the rest of the FAF family.
 
-          ⭐ Bookmarks it for you, helps other devs find it too.
+          > Earlier: v2.0.0 — **The Always33 Edition** — one engine, one number: every score is faf-cli 8's always-33 kernel, on npm and on mcpaas.live. ZEPH is opt-in until the Zig engine is always-33.
+
+          ☆ Bookmark [grok.faf.one](https://grok.faf.one) for later.
 
           **First v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md) — the open standard co-authored in public with @grok.
 
@@ -1469,8 +1485,10 @@ docs:
           | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
-      - heading: Status & known limitations (v2.0)
+      - heading: Status & known limitations (v2.1)
         body: |-
+          v2.1.0 — **The New Era Edition** — glass-box tools (every tool labelled read, write or rewrite), its own FAF passport at grok.faf.one, a new look. Scoring is unchanged from v2.0.0.
+
           v2.0.0 — **The Always33 Edition** — one engine, one number: faf-cli 8's always-33 kernel on npm and on mcpaas.live. ZEPH is opt-in until the Zig engine is always-33. FafCompiler upgraded to the Always33 fafb model — parity across frontier models, Enterprise/Teams ready.
 
           Everything below still applies; operating it honestly means surfacing what's NOT in here alongside what is.
@@ -2119,7 +2137,7 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 8364adf894984bb93136bd5ef0271d4c7243c68c
+    sha: 8bfdf0adc3afbee0ddb807e3b47bffb8629e4e3a
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
@@ -2130,13 +2148,13 @@ docs:
 
           **v0.8.1** — Security patch: rustls 0.23.45 closes RUSTSEC-2026-0285. See [CHANGELOG](./CHANGELOG.md#081---2026-09-20).
 
-          **FAF defines. MD instructs. AI codes.**
+          **FAF defines. AGENTS.md instructs. AI codes.**
 
           > Stop re-explaining your project to every AI session. One `.faf` file holds your persistent project context. Every AI reads it once and knows what you're building.
 
           [![Crates.io](https://img.shields.io/crates/v/rust-faf-mcp?style=flat-square)](https://crates.io/crates/rust-faf-mcp)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%E2%9C%AA%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/tests-171%20passing-brightgreen?style=flat-square)](https://github.com/Wolfe-Jam/rust-faf-mcp)
+          [![Tests](https://img.shields.io/badge/tests-191%20passing-brightgreen?style=flat-square)](https://github.com/Wolfe-Jam/rust-faf-mcp)
           [![IANA](https://img.shields.io/badge/IANA-registered-informational?style=flat-square)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![License](https://img.shields.io/crates/l/rust-faf-mcp?style=flat-square)](LICENSE)
 
@@ -2223,7 +2241,7 @@ docs:
           | `faf_auto` | Setup if missing, sync `CLAUDE.md`, score — Confirm setup (sweeps); does not invent 6Ws |
           | `faf_init` | Setup: first write from the tree. Refuses if the file exists. Confirm setup (sweeps). 6Ws stay empty |
           | `faf_go` | Table-of-8 + Confirm setup (sweeps). 6Ws score after ☑. Below 100: add Human Context. After 100: courtesy check every 30 days (90 max) |
-          | `faf_git` | Author `project.faf` from any GitHub repo URL — no clone needed |
+          | `faf_git` | Author `project.faf` from any GitHub repo URL — no clone needed. Uses the public GitHub API; returns the text, writes nothing |
           | `faf_discover` | Walk up the directory tree to find the nearest `project.faf` |
       - heading: Score & Validate
         body: |-
@@ -2245,6 +2263,8 @@ docs:
           |------|-------------|
           | `faf_dna` | Your FAF DNA journey from `.faf-dna`: Birth DNA to now, with history. `faf_init` births it, `faf_auto` records growth — the same file as faf-cli |
 
+          Every tool declares MCP annotations: `faf_read`, `faf_score`, `faf_compress`, `faf_discover`, `faf_tokens`, `faf_dna` and `faf_git` are read-only; the writers are non-destructive; only `faf_git` reaches the network.
+
           `faf_init` will not overwrite an existing file. Setup occupies mechanical facts; Confirm setup (sweeps) is the walk. Empty human slots stay empty until `faf_go`.
       - heading: Architecture
         body: |-
@@ -2257,16 +2277,16 @@ docs:
 
           - **Runtime**: `tokio` single-threaded (`current_thread`)
           - **HTTP**: `reqwest` async (only used by `faf_git` for GitHub API)
-          - **SDK**: `faf-rust-sdk` **3.1** (Cargo pin — the facade over `faf-kernel`/`faf-fafb` in [faf-rust](https://github.com/Wolfe-Jam/faf-rust); `score()` for the real Mk4 number, `validate()` for structural checks only)
+          - **SDK**: `faf-rust-sdk` **3.1** (Cargo pin — the facade over `faf-kernel`/`faf-fafb` in [faf-rust](https://github.com/Wolfe-Jam/faf-rust); `score()` for the always-33 number, `validate()` for structural checks only)
           - **Server**: **`rmcp` 3.0.1** with `#[tool_router]` / `#[tool_handler]` — JSON-RPC, JSON Schema from the param types, stdio transport (Tier-1 assessed SDK cut)
 
           Tools return `serde_json::Value`. The server adapts them to `Result<String, String>` for rmcp's `IntoCallToolResult`.
       - heading: Testing
         body: |-
-          190 tests (143 integration + 47 unit):
+          191 tests (144 integration + 47 unit):
 
           ```bash
-          cargo test    # runs all 190
+          cargo test    # runs all 191
       - heading: 'Optional: block push on red CI twin'
         body: |-
           bash scripts/install-hooks.sh
@@ -2274,7 +2294,7 @@ docs:
 
           | File | Tests | Coverage |
           |------|-------|----------|
-          | `mcp_protocol.rs` | 9 | Init handshake, tools/list, resources, schema validation, ID preservation |
+          | `mcp_protocol.rs` | 10 | Init handshake, tools/list, tool annotations, resources, schema validation, ID preservation |
           | `tools_functional.rs` | 31 | Tools — happy path, error paths, language detection, faf_go |
           | `tier1_security.rs` | 12 | Path traversal, null bytes, shell injection, oversized input, malformed JSON |
           | `tier2_engine.rs` | 36 | Corrupt YAML, sync replacement, pipelines, dual manifests, legacy filenames, direct paths |
