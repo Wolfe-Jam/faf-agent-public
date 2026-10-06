@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-05'
+generated: '2026-10-06'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: ea505c9dee106ba9ae11db727b29a328df4c0ffa
+    sha: 2f8a1a9605f1a3b0802a5673d72e751bf6825628
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -643,20 +643,18 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.1.1 — The Always33+ Edition
+      - heading: What's New in v8.2.0 — The Ladder Edition
         body: |-
-          **faf-cli reads SvelteKit 3 projects: SvelteKit, its adapter and its hosting, from vite.config and devDependencies.**
+          **One ladder for every card: agent.fafa builds the plain cards, and project.faf adds FAF's context.**
 
-          ```bash
-          npx faf-cli@latest auto     # in a SvelteKit 3 app
-          ```
+          | You have | `faf cards` gives you |
+          |---|---|
+          | `agent.fafa` (BETTER) | the plain cards its endpoints allow: A2A card, MCP Server Card, registry entry, AI Catalog and ARD rows |
+          | + `project.faf` (BEST) | the same cards, with FAF's context in each |
 
-          ```text
-          frontend: SvelteKit · backend: SvelteKit · hosting: Cloudflare · build: Vite 8
-          ```
-
-          - **SvelteKit 3 moved its config into `vite.config`.** faf-cli reads the adapter there (and still in `svelte.config.js` for SvelteKit 2), and finds the kit in devDependencies, where SvelteKit apps list it.
-          - **The build slot names Vite's major version:** `Vite 8`.
+          - **A card's identity comes from the `.fafa`.** An existing `server.json` keeps the name it was published under; renaming it takes `--force`.
+          - **The pack projector writes the same cards as `faf cards`** (`projectPack`, `buildPack`).
+          - **The full test suite runs on Windows** before every merge, alongside Ubuntu and macOS.
       - heading: The Always33+ Edition (8.1)
         body: |-
           **From nothing to listed in one command: `faf card init` asks seven questions and writes your agent.fafa, your AI Catalog entry and your ARD entry.**
@@ -694,6 +692,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.2.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.2.0) The Ladder Edition — one ladder for every card
           - ✪ [8.1.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.1.1) SvelteKit 3 read in full — kit, adapter, Vite 8
           - ✪ [8.1.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.1.0) The Always33+ Edition — from nothing to listed in one command
           - ✪ [8.0.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.0.1) pnpm installs work — faf-scoring-kernel from npm
@@ -1618,16 +1617,16 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 10c1deef838c4a66a7ce9ccb2d5f08d7d9a8550e
+    sha: 7bba24181da7317521b8dd03ec0dacaa29df60cc
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
-      - heading: gemini-faf-mcp — The Full-Facts Edition
+      - heading: gemini-faf-mcp v3.1 — The New Era Edition
         body: |-
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
 
-          **FAF defines. MD instructs. AI codes.**
+          **FAF defines. AGENTS.md instructs. AI codes.**
 
-          ⭐ **A star helps other devs discover gemini-faf-mcp** — despite the downloads, ~3 of 4 devs check stars first.
+          ☆ Bookmark [the gemini-faf-mcp page](https://wolfe-jam.github.io/gemini-faf-mcp/) for later.
 
           Stop re-explaining your project to every new Gemini session. Every Gemini conversation starts cold — you re-state your stack, your goals, your conventions every single time. `.faf` is one structured file that captures all of it. This package is the MCP server that lets Gemini read it.
 
@@ -1635,7 +1634,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-266%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-275%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1644,7 +1643,7 @@ docs:
       - heading: Before and after
         body: |-
           ```
-          Without FAF                           With FAF (.faf at 85%+ Bronze)
+          Without FAF                           With FAF (project.faf filled in) 
           ─────────────────────────             ─────────────────────────
           You: "I'm using FastAPI with...       You: "Add a /users/me endpoint"
                 PostgreSQL, pytest, and..."     Gemini: [writes correct code,
@@ -1656,11 +1655,17 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v3.0.0 — The Always33 Edition
+      - heading: What's New in v3.1.0 — The New Era Edition
         body: |-
-          One engine, one number: gemini-faf-mcp scores with the always-33 engine, exactly like faf-kernel — the same score faf-cli 8, claude-faf-mcp 7, faf-mcp 4 and grok-faf-mcp 2 give.
+          **Glass-box tools: every Gemini tool now says what it does — reads, writes or rewrites — so your client knows when to ask first. In Gemini CLI and Google Antigravity.**
 
-          Built on `faf-python-sdk>=2.0.0`. The 12 enterprise slots count unless marked `slotignored`: 21 slots filled with no markers scores 64% (21/33); the same file plus the 12 markers scores 100% (21/21). `faf auto` (faf-cli) writes the markers. The 15 `faf_model` templates carry them and stay 100% Trophy.
+          - **Every tool is labelled.** All 13 tools carry MCP tool annotations, matched to what each one does: 8 read only, 4 write without losing anything (`faf_init` never overwrites, `faf_auto` fills empty slots only, `faf_gemini` and `faf_agents` keep your own text), and `faf_migrate` rewrites the file. None reaches the network. Clients that read the labels can let reads run and ask before writes.
+          - **Its own card.** A refreshed FAF passport (`agent.fafa`, written with faf-cli 8.2's `card init`) and MCP Server Card, both 3.1.0 with all 13 tools and FAF's context.
+          - **Works in Google Antigravity**, local (`uvx`) or hosted (`serverUrl`). See [Google Antigravity](#google-antigravity) below.
+          - **A new look:** [the gemini-faf-mcp page](https://wolfe-jam.github.io/gemini-faf-mcp/), redesigned to feel at home for Google developers.
+          - **The hosted function scores always-33**, the same engine as everything else.
+
+          > Earlier: v3.0.0 — **The Always33 Edition** — one engine, one number: the same score as faf-cli 8, claude-faf-mcp 7, faf-mcp 4 and grok-faf-mcp 2.
       - heading: v2.8.2 — The Full-Facts Edition
         body: |-
           **Privacy patch — `FAFClient`'s start-up ping is now opt-in (`FAF_TELEMETRY=1`).**
@@ -1690,9 +1695,9 @@ docs:
           > /faf:setup
           ```
 
-          You should see: `Created project.faf — Score: 85% (BRONZE)`. From this point, every Gemini session in this project reads it automatically.
+          That writes a starter `project.faf` and scores it. Then ask Gemini to fill it in from your repo (it calls `faf_auto`), and run `/faf:score` to see what's left. From then on, every Gemini session in this project reads it automatically.
 
-          > **Tip:** A score of 85% (BRONZE) is the minimum where Gemini stops guessing. Run `/faf:score` to see what's missing and how to push to 100% (TROPHY).
+          > **Tip:** Trophy ✪ = 100%: AI is optimized to code. `/faf:score` shows exactly which slots are still empty.
 
           ---
       - heading: The "One-File" Advantage
@@ -1777,6 +1782,25 @@ docs:
           **Priority rule:** `pyproject.toml` / `Cargo.toml` / `go.mod` take priority over `package.json`. File-facts (a real compose service, a Makefile target) win over dependency guesses. Only sets values that are actually detected — no hardcoded defaults.
 
           ---
+      - heading: Google Antigravity
+        body: |-
+          Antigravity reads one MCP config file, `~/.gemini/config/mcp_config.json`, and takes both modes.
+
+          Local (stdio):
+
+          ```json
+          { "mcpServers": { "gemini-faf": { "command": "uvx", "args": ["gemini-faf-mcp"] } } }
+          ```
+
+          Hosted:
+
+          ```json
+          { "mcpServers": { "gemini-faf": { "serverUrl": "https://mcpaas.live/gemini/mcp/v1" } } }
+          ```
+
+          Antigravity expects `serverUrl`, not `url` or `httpUrl`.
+      - heading: All 13 Tools
+        body: 'Every tool carries MCP tool annotations: **read only** (`faf_read`, `faf_validate`, `faf_score`, `faf_discover`, `faf_stringify`, `faf_context`, `faf_about`, `faf_model`), **writes without losing anything** (`faf_init`, `faf_auto`, `faf_gemini`, `faf_agents`), **rewrites the file** (`faf_migrate`).'
       - heading: Create & Detect
         body: |-
           | Tool | What it does |
@@ -1837,7 +1861,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v3.0.0
+          gemini-faf-mcp v3.1.0
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1857,7 +1881,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          266 tests passing across the FastMCP server, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          275 tests passing across the FastMCP server, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
