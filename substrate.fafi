@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-14'
+generated: '2026-10-15'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 6922692b6454c900349a17efa60b259f216f818e
+    sha: d7b46267c9757336d55f8eeeda8880d9b889bd41
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -559,6 +559,7 @@ docs:
           [![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
           [![downloads](https://img.shields.io/npm/dt/faf-cli?color=008B8B&label=downloads)](https://www.npmjs.com/package/faf-cli)
           [![npm](https://img.shields.io/npm/v/faf-cli?color=00CCFF)](https://www.npmjs.com/package/faf-cli)
+          [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/faf-cli)
 
           <br>
 
@@ -642,7 +643,20 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.2.0 — The Ladder Edition
+      - heading: What's New in v8.3.0 — The Business Card Edition
+        body: |-
+          **Business cards say what the repo is: a package can be a CLI or a library, from npm, PyPI or crates.io, and only an MCP server gets MCP cards.**
+
+          ```bash
+          npx faf-cli@latest card init --package pypi:my-lib --kind library
+          ```
+
+          - **`--kind mcp|cli|library`** says what `--package` is. `mcp` stays the default.
+          - **`npm:`, `pypi:` and `crates:`** name the registry. A bare name is still npm.
+          - **`--homepage <url>`** sets the business card's homepage.
+          - **`faf cards` writes MCP cards only for an MCP server.** A CLI or a library gets its plain cards and a one-line reason.
+          - **`faf init` offers the business card** when the repo has none: `next: 'faf card init'`. It writes nothing for it.
+      - heading: The Ladder Edition (8.2)
         body: |-
           **One ladder for every card: agent.fafa builds the plain cards, and project.faf adds FAF's context.**
 
@@ -691,6 +705,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.3.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.3.0) The Business Card Edition — CLI, library or MCP server, from npm, PyPI or crates.io
           - ✪ [8.2.2](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.2.2) Markdown never writes project.faf — `sync` is one way, `recover` is gone
           - ✪ [8.2.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.2.1) Cards stay honest — `updatedAt` moves only on a change; whole http(s) URLs
           - ✪ [8.2.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.2.0) The Ladder Edition — one ladder for every card
@@ -828,7 +843,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 4077f3ce66d75222be22367982c6fe68604f595c
+    sha: b7d954bc71a023247af12ccfb925757b0ec84a2c
     intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
@@ -849,6 +864,7 @@ docs:
           [![NPM Downloads](https://img.shields.io/npm/dt/claude-faf-mcp?label=downloads&color=00CCFF)](https://www.npmjs.com/package/claude-faf-mcp)
           [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
           [![Chat to FAFA live](https://img.shields.io/badge/Chat_to_FAFA_live-008B8B?style=flat&labelColor=000)](https://faf-voice.vercel.app/agent)
+          [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/claude-faf-mcp)
 
           **FAF defines. MD instructs. AI codes.**
 
@@ -1166,7 +1182,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 00027850435b0eb6e55971bba5da6aa0c52a0e4d
+    sha: c4ff62752de95d6dd7d10cd970f00829fd34d5a7
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp v2.1 — The New Era Edition
@@ -1201,6 +1217,7 @@ docs:
           </div>
 
           [![Stars](https://img.shields.io/github/stars/Wolfe-Jam/grok-faf-mcp)](https://github.com/Wolfe-Jam/grok-faf-mcp/stargazers) [![Downloads](https://img.shields.io/npm/dt/grok-faf-mcp)](https://www.npmjs.com/package/grok-faf-mcp)
+          [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/grok-faf-mcp)
 
           **FAF defines. AGENTS.md instructs. AI codes.**
       - heading: v2.1.0 — The New Era Edition
@@ -1618,7 +1635,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 7bba24181da7317521b8dd03ec0dacaa29df60cc
+    sha: f408f9d8c93c7a996755ef51e6c755b695bd92e7
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp v3.1 — The New Era Edition
@@ -1641,6 +1658,7 @@ docs:
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
           [![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.20348942)
           [![DOI: Agents paper](https://img.shields.io/badge/DOI-Agents%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.21951641)
+          [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/gemini-faf-mcp)
       - heading: Before and after
         body: |-
           ```
@@ -1953,7 +1971,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: be511624a94241b6e9f5b8016658c744d2097625
+    sha: 0d9111b15dc206951a1cfa0122f0167629c56084
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
       - heading: What's New in 4.0.0 — The Always33 Edition
@@ -2162,7 +2180,7 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 8e6e269c5c49fc0f2ba71d15ff78c5445414290b
+    sha: bdf8a3e75fd34927edd33e9feb6b501f771080d7
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
@@ -2182,6 +2200,7 @@ docs:
           [![Tests](https://img.shields.io/badge/tests-193%20passing-brightgreen?style=flat-square)](https://github.com/Wolfe-Jam/rust-faf-mcp)
           [![IANA](https://img.shields.io/badge/IANA-registered-informational?style=flat-square)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![License](https://img.shields.io/crates/l/rust-faf-mcp?style=flat-square)](LICENSE)
+          [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/rust-faf-mcp)
 
           Rust-native [MCP](https://modelcontextprotocol.io) (Model Context Protocol) server for [FAF](https://faf.one) — structured AI project context in YAML (`application/vnd.faf+yaml`). Single binary, stdio transport, 4.3 MB stripped. Built on [`rmcp`](https://crates.io/crates/rmcp) and [`faf-rust-sdk`](https://crates.io/crates/faf-rust-sdk).
       - heading: Claude Code
