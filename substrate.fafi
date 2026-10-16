@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-15'
+generated: '2026-10-16'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: d7b46267c9757336d55f8eeeda8880d9b889bd41
+    sha: d5f0fa9b44c0f554e0d2660863d91de4f6723d0a
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -705,6 +705,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.3.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.3.1) `faf cards` gives MCP cards to a project.faf alone only when its type is mcp
           - ✪ [8.3.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.3.0) The Business Card Edition — CLI, library or MCP server, from npm, PyPI or crates.io
           - ✪ [8.2.2](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.2.2) Markdown never writes project.faf — `sync` is one way, `recover` is gone
           - ✪ [8.2.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.2.1) Cards stay honest — `updatedAt` moves only on a change; whole http(s) URLs
@@ -1635,7 +1636,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: f408f9d8c93c7a996755ef51e6c755b695bd92e7
+    sha: 6dfc67ee402434ca38667d8a4976eceb11e881c4
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp v3.1 — The New Era Edition
@@ -1652,7 +1653,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-275%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-281%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1674,7 +1675,12 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v3.1.0 — The New Era Edition
+      - heading: What's New in v3.1.1
+        body: |-
+          **`gemini-faf-mcp --version` and `--help` answer and exit. Before, both started the server.**
+
+          - `--version` (`-V`) prints the version; `--help` (`-h`) prints usage and a client config. Anything else starts the server as before, so your client config doesn't change.
+      - heading: v3.1.0 — The New Era Edition
         body: |-
           **Glass-box tools: every Gemini tool now says what it does — reads, writes or rewrites — so your client knows when to ask first. In Gemini CLI and Google Antigravity.**
 
@@ -1880,7 +1886,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v3.1.0
+          gemini-faf-mcp v3.1.1
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1900,7 +1906,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          275 tests passing across the FastMCP server, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          281 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
