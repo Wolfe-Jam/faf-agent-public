@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-26'
+generated: '2026-10-27'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: cdeba66769daa7e8f26dd82a158c1a416d254db8
+    sha: fab067ef3d2af1f30b3cc814939159f17fefc54f
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -643,7 +643,16 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.4.0 — The Skills Edition
+      - heading: What's New in v8.5.0 — The Agent Skills Edition
+        body: |-
+          **faf knows a skills repo when it sees one, and the skills types name their framework: `skills` is 10 slots, `skills-plugin` is 14.**
+
+          - **`faf init` detects skills repos**: `SKILL.md` folders make a repo `skills`; add a Claude Code plugin manifest and it's `skills-plugin`. A CLI or library that ships a skill keeps its type.
+          - **`skills`**: project + human, plus the framework (the skills format, such as Agent Skills or a Claude Code plugin).
+          - **`skills-plugin`**: project + human + universal, plus the framework and the runtime.
+          - **`faf auto` fills a slot the type adds**, even where an older file says `slotignored`.
+          - **Check the skills themselves with [skills-ladder](https://www.npmjs.com/package/skills-ladder):** it rates each `SKILL.md` GOOD, BETTER or BEST. `npx skills-ladder .`
+      - heading: The Skills Edition (8.4)
         body: |-
           FAF has known Skills for a while; we both speak YAML. Now it's official: FAF adds Skills to the CLI.
 
@@ -720,6 +729,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.5.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.5.0) The Agent Skills Edition — faf detects skills repos; `skills` (10) and `skills-plugin` (14) name their framework
           - ✪ [8.4.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.4.0) The Skills Edition — `skills` (9) and `skills-plugin` (12) app-types
           - ✪ [8.3.2](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.3.2) `faf check` warns when a key_files path no longer exists
           - ✪ [8.3.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.3.1) `faf cards` gives MCP cards to a project.faf alone only when its type is mcp
