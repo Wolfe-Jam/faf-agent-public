@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-27'
+generated: '2026-10-28'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -871,7 +871,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: b7d954bc71a023247af12ccfb925757b0ec84a2c
+    sha: 9fa23fbeef6631b0ed3aab19b48bb1ab0f69f60b
     intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
@@ -913,12 +913,14 @@ docs:
           Core 14 MCP tools (30 with `FAF_TOOLS=all`). IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`).
 
           ---
-      - heading: What's New in v7.0.1 — The Always33 Edition
+      - heading: What's New in v7.1.0 — The Instructions Edition
         body: |-
-          **faf-cli 8.0.1 inside: pnpm installs work, and fast-uri is out of two moderate advisories.**
+          **claude-faf-mcp now tells Claude how its tools fit together: server instructions in initialize (637 characters), plus faf-cli 8.5.0, which knows a skills repo when it sees one.**
 
-          - **pnpm installs work.** faf-cli 8.0.1 gets its scoring kernel from npm, so pnpm (and Glama's build) install claude-faf-mcp cleanly. The Claude Desktop `.mcpb` carries it too.
-          - **fast-uri 4.2.1**, out of two moderate advisories; `npm audit` is clean.
+          - **Server instructions.** When Claude connects, the server says how its tools fit together, in five short lines: one project at a time, read project.faf first, ask the user for the human answers, project.faf is the source, remember only when asked.
+          - **faf-cli 8.5.0 inside.** `faf_init` and `faf_auto` detect a skills repo: `SKILL.md` folders make it `skills` (10 slots), and a Claude Code plugin manifest makes it `skills-plugin` (14).
+          - **`--version` and `--help`** print and exit, instead of starting the server.
+          - **Three advisories cleared:** the MCP SDK, zod and hono.
       - heading: The Always33 Edition (7.0)
         body: |-
           **One engine, one number: claude-faf-mcp 7 scores with faf-cli 8's always-33 kernel — the same score faf-cli and faf-kernel give.**
@@ -989,7 +991,7 @@ docs:
           ---
       - heading: Claude Desktop — one click
         body: |-
-          [**⬇ Download `claude-faf-mcp-7.0.1.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.0.1/claude-faf-mcp-7.0.1.mcpb)
+          [**⬇ Download `claude-faf-mcp-7.1.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.1.0/claude-faf-mcp-7.1.0.mcpb)
 
           Open it in Claude Desktop. The extension runs the server bundled inside it (no npx, no network at start) and lists the Core 14 tools.
       - heading: Claude Desktop — config
@@ -1210,7 +1212,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: c4ff62752de95d6dd7d10cd970f00829fd34d5a7
+    sha: 618c8ae5047a3a635b13867781a7d40b1d6884af
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp v2.1 — The New Era Edition
@@ -1248,16 +1250,16 @@ docs:
           [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/grok-faf-mcp)
 
           **FAF defines. AGENTS.md instructs. AI codes.**
-      - heading: v2.1.0 — The New Era Edition
+      - heading: v2.2.0 — The Instructions Edition
         body: |-
-          **Glass-box tools: every Grok tool now says what it does — reads, writes or rewrites — so your client knows when to ask first. New card, new look at grok.faf.one.**
+          **grok-faf-mcp now tells Grok how its tools fit together, context and memory: server instructions in initialize (615 characters), plus faf-cli 8.5.0, which knows a skills repo when it sees one.**
 
-          - **Every tool is labelled.** All 20 tools carry MCP tool annotations, checked against what each handler really does: 7 read only, 3 can delete or overwrite (`faf_init` with `force`, `faf_clear`, `faf_write`), the rest write without losing anything. Only `rag_query` reaches the network (xAI Collections).
-          - **Honest about receipts.** `refresh_faf`, `refresh_fafm`, `refresh_blend`, `faf_orchestrate_recommendation` and the FRC tools (`faf_gate`, `faf_section`, `faf_memory`) append small receipt files to your project folder, so they are labelled as writers. `refresh_fafm` no longer says "Read-only".
-          - **Its own card.** Grok FAF now has a FAF passport (`agent.fafa`) at [grok.faf.one/.well-known/fafa](https://grok.faf.one/.well-known/fafa), with AI Catalog and ARD entries that point to it. The MCP Server Card is the hosted one, also at `grok.faf.one/.well-known/mcp/server-card.json`.
-          - **A new look.** [grok.faf.one](https://grok.faf.one) is redesigned, with the current facts: 19 tools hosted, 12 by default locally.
-          - **Node 22 or later**, like faf-cli 8 and the rest of the FAF family.
+          - **Server instructions.** When Grok connects, the server says how its tools fit together: context (project.faf) and memory (.fafm), which tool checks, creates or syncs, the refresh tools, and that `rag_query` needs an xAI Collection.
+          - **faf-cli 8.5.0 inside.** `faf_init` detects a skills repo: `SKILL.md` folders make it `skills` (10 slots), and a Claude Code plugin manifest makes it `skills-plugin` (14).
+          - **Advisories cleared** in the MCP SDK, proxy-addr and hono.
 
+          > Earlier: v2.1.0 — **The New Era Edition** — glass-box tools: every tool says if it reads, writes or rewrites; its own FAF passport at grok.faf.one; a new look.
+          >
           > Earlier: v2.0.0 — **The Always33 Edition** — one engine, one number: every score is faf-cli 8's always-33 kernel, on npm and on mcpaas.live. ZEPH is opt-in until the Zig engine is always-33.
 
           ☆ Bookmark [grok.faf.one](https://grok.faf.one) for later.
@@ -1530,8 +1532,10 @@ docs:
           | `visibility` | Tool visibility (core/advanced filtering) |
 
           ---
-      - heading: Status & known limitations (v2.1)
+      - heading: Status & known limitations (v2.2)
         body: |-
+          v2.2.0 — **The Instructions Edition** — server instructions in initialize (615 characters) and faf-cli 8.5.0, which detects skills repos. Scoring is unchanged from v2.0.0.
+
           v2.1.0 — **The New Era Edition** — glass-box tools (every tool labelled read, write or rewrite), its own FAF passport at grok.faf.one, a new look. Scoring is unchanged from v2.0.0.
 
           v2.0.0 — **The Always33 Edition** — one engine, one number: faf-cli 8's always-33 kernel on npm and on mcpaas.live. ZEPH is opt-in until the Zig engine is always-33. FafCompiler upgraded to the Always33 fafb model — parity across frontier models, Enterprise/Teams ready.
@@ -2004,10 +2008,17 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 00436c46d546324588df2c7763e4346c32b0bd7c
+    sha: ed378b425d6a969ee9123f7c52108a5d10c18782
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
-      - heading: What's New in 4.0.1
+      - heading: What's New in 4.1.0 — The Instructions Edition
+        body: |-
+          **faf-mcp now tells the model how its tools fit together: server instructions in initialize (642 characters), plus faf-cli 8.5.0, which knows a skills repo when it sees one.**
+
+          - **Server instructions.** When your editor's AI connects, the server says how its tools fit together: one project at a time, start with `faf_doctor` or `faf_score`, ask the user for the human answers, and project.faf is the source for CLAUDE.md, AGENTS.md, .cursorrules and GEMINI.md.
+          - **faf-cli 8.5.0 inside.** `faf_init` and `faf_auto` detect a skills repo: `SKILL.md` folders make it `skills` (10 slots), and a Claude Code plugin manifest makes it `skills-plugin` (14).
+          - **hono advisory cleared** (serveStatic double-decode).
+      - heading: 4.0.1
         body: |-
           **`faf-mcp --version` and `--help` answer and exit. Before, both started the server.**
 
