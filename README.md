@@ -10,6 +10,8 @@
 
 > 📖 **Public About Repo** — this is the public face of [`Wolfe-Jam/faf-agent`](https://github.com/Wolfe-Jam/faf-agent) (source private). Spec, README, format docs, skill manifest, project.faf — no source code. Same shape as Anthropic's [`claude-code`](https://github.com/anthropics/claude-code) repo: public face, private engine.
 
+⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/faf-agent-public): bookmarks it for you, helps other devs find it too.
+
 
 **The Voice of FAF.**
 
