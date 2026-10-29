@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-28'
+generated: '2026-10-29'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1212,7 +1212,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 618c8ae5047a3a635b13867781a7d40b1d6884af
+    sha: 12c2c023dbb36962e321b2bab9970d2591ccd4ba
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp v2.1 — The New Era Edition
@@ -1250,7 +1250,11 @@ docs:
           [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/grok-faf-mcp)
 
           **FAF defines. AGENTS.md instructs. AI codes.**
-      - heading: v2.2.0 — The Instructions Edition
+      - heading: v2.2.2 — The Instructions Edition
+        body: '**Cleanup: removes leftover two-way sync wording.** Two-way sync was dropped by design long ago: project.faf pushes structured data out, and prose doesn''t come back. The last strings that still said two-way now match. `faf_bi_sync` still works as the old name for `faf_sync`.'
+      - heading: v2.2.1
+        body: '**One rule for project questions: read project.faf first.** New line 2 of the server instructions: "For questions about the project (stack, goal, commands), read project.faf first and answer from it." The same rule in faf-mcp moved Grok Build from 0 of 3 to 2 of 3 runs reading project.faf first, on a repo where project.faf and package.json disagree (3-run pilot). 715 characters.'
+      - heading: v2.2.0
         body: |-
           **grok-faf-mcp now tells Grok how its tools fit together, context and memory: server instructions in initialize (615 characters), plus faf-cli 8.5.0, which knows a skills repo when it sees one.**
 
@@ -1435,8 +1439,7 @@ docs:
 
           | Tool | Purpose |
           |------|---------|
-          | `faf_sync` | Sync .faf → CLAUDE.md |
-          | `faf_bi_sync` | Bi-directional .faf ↔ platform context |
+          | `faf_sync` | Write CLAUDE.md, AGENTS.md, .cursorrules and GEMINI.md from project.faf. One way: it never writes project.faf. (`faf_bi_sync`, the old name, still works.) |
           | `faf_trust` | Validate .faf integrity |
 
           **Read & Write**
@@ -2008,10 +2011,15 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: ed378b425d6a969ee9123f7c52108a5d10c18782
+    sha: 7d47ed5416783e80be7725e223d588ceb0812079
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
-      - heading: What's New in 4.1.0 — The Instructions Edition
+      - heading: What's New in 4.1.1 — The Instructions Edition
+        body: |-
+          **One rule for project questions: read project.faf first.**
+
+          - **Server instructions, line 2.** "For questions about the project (stack, goal, commands), read project.faf first and answer from it. faf_score shows what is missing; faf_doctor says why." It replaces "start with `faf_doctor` or `faf_score`", which agents read as a hint. In a 3-run pilot on a repo where project.faf and package.json disagree, Claude Code read project.faf first 3 of 3 and Grok Build 2 of 3 with the new line, against 0 of 3 for both with the old one. 712 characters.
+      - heading: 4.1.0 — The Instructions Edition
         body: |-
           **faf-mcp now tells the model how its tools fit together: server instructions in initialize (642 characters), plus faf-cli 8.5.0, which knows a skills repo when it sees one.**
 
@@ -2444,7 +2452,7 @@ docs:
           > Wolfe, J. (2026). *Why Agents Need a Passport: .fafa — Portable Identity for the Agentic Era*. Zenodo. https://doi.org/10.5281/zenodo.21951641
   - repo: Wolfe-Jam/xai-faf-zeph
     path: README.md
-    sha: 34219160c1c0352cebcf7b1d15099afd154a02a2
+    sha: 9de9f232dd9bde72cc61b199043881ad02417dd2
     intro: 'ZEPH — Ultra Context Layer for FAF: microsecond context ops via pure Zig → WASM, 2.7 KB ghost binary'
     sections:
       - heading: ZEPH💨 — Ultra Context Layer (UCL)
@@ -2507,7 +2515,7 @@ docs:
           ZEPH makes it **native everywhere** — browser, edge, Node, Bun — while multiplying reasoning, memory, multimodality, and inference efficiency for Grok specifically and frontier agents generally.
 
           **Current public substrate (MIT, on registries):**
-          - `faf-rust-sdk` v2 (crates.io) — parse / validate / score / FAFb binary
+          - `faf-rust-sdk` v3 (crates.io) — parse / validate / score / FAFb binary
           - `faf-wasm-sdk` v2 (npm) — same engine, browser / edge / Node / Bun
           - `grok-faf-mcp` — live MCP server (first MCP for Grok)
 
