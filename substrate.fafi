@@ -1,11 +1,11 @@
 format: faf
 type: substrate-bundle
-generated: '2026-10-29'
+generated: '2026-10-30'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: bdbb63970a6411253f084017dc3d2ef4b1231e99
+    sha: c1a5f3fd291cc434ee82f8f60de6b26322ade207
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Portable, shareable AI-context for any AI, human, or team.
     sections:
       - heading: '🏆 Historic Milestones: Three IANA Registrations'
@@ -55,7 +55,7 @@ docs:
           - **[FAFipedia](https://github.com/Wolfe-Jam/fafipedia)** — the canonical knowledge base we're shipping page-by-page
           - **[ZEPH💨](https://github.com/Wolfe-Jam/xai-faf-zeph)** — page 3 Ultra Context Layer (Pure Zig → WASM 2.7 KB)
 
-          Page four dropping next. Star the repos if you're riding with us ⚡️x12
+          ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/faf): bookmarks it for you, helps other devs find it too.
 
           **Full conversation:** [x.com/wolfe_jam/status/2057226405017010686](https://x.com/wolfe_jam/status/2057226405017010686)
 
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: fab067ef3d2af1f30b3cc814939159f17fefc54f
+    sha: 2ed1623addbd53eb96c60d21cb41245526a90e7f
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -565,7 +565,7 @@ docs:
 
           [![FAF downloads](https://img.shields.io/endpoint?url=https://faf.one/api/downloads.json)](https://faf.one/downloads) · across npm, PyPI and crates.io · **IANA-registered · Anthropic-merged (#2759)**
 
-          ⭐ Bookmarks it for you, helps other devs find it too.
+          ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/faf-cli): bookmarks it for you, helps other devs find it too.
 
           <!-- ② papers · funnel · testing — one line -->
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)
@@ -871,7 +871,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 9fa23fbeef6631b0ed3aab19b48bb1ab0f69f60b
+    sha: 9f7cf844b84ec3a7b636d1e10cb25d6924b2e91a
     intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
@@ -896,7 +896,7 @@ docs:
 
           **FAF defines. MD instructs. AI codes.**
 
-          ⭐ Bookmarks it for you, helps other devs find it too.
+          ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/claude-faf-mcp): bookmarks it for you, helps other devs find it too.
 
           **v0.2-conformant reader** of the [FAF Context Ingestion Contract](https://github.com/Wolfe-Jam/faf/blob/main/CONTEXT-INGESTION.md).
 
@@ -1212,7 +1212,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 12c2c023dbb36962e321b2bab9970d2591ccd4ba
+    sha: 49beff826d54b25c27a73943c8f42f202fd8e1ae
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp v2.1 — The New Era Edition
@@ -1232,6 +1232,8 @@ docs:
 
           **Home:** [faf.one/grok](https://faf.one/grok)
           **Live demo:** [grok.faf.one](https://grok.faf.one)
+
+          ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/grok-faf-mcp): bookmarks it for you, helps other devs find it too.
 
           ![grok-faf-mcp hero](https://raw.githubusercontent.com/Wolfe-Jam/grok-faf-mcp/main/assets/grok-faf-mcp-hero.png)
 
@@ -1670,12 +1672,14 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 4493251709589aeebe7054184774992bdb31c2b4
+    sha: 401a3bb7b8d0c13ca20e6c7ffe83a76935276351
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp v3.1 — The New Era Edition
         body: |-
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
+
+          ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/gemini-faf-mcp): bookmarks it for you, helps other devs find it too.
 
           **FAF defines. AGENTS.md instructs. AI codes.**
 
@@ -2011,7 +2015,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 7d47ed5416783e80be7725e223d588ceb0812079
+    sha: 84d8b2b4a09f03e88cd9eb522e261913f63afb4a
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
       - heading: What's New in 4.1.1 — The Instructions Edition
@@ -2237,12 +2241,14 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: bdf8a3e75fd34927edd33e9feb6b501f771080d7
+    sha: 52ec55e3c902dffe9cff6f20b45936059409ab68
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary, stdio transport, 4.3 MB stripped. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
         body: |-
           **Persistent Project Context for Rust MCP clients. Native. Fast. cargo install**
+
+          ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/rust-faf-mcp): bookmarks it for you, helps other devs find it too.
 
           **The Lineage Edition (v0.8.3)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · **faf-rust-sdk 3.1.1** (the same always-33 kernel `faf-wasm-sdk` uses) · solid cargo-native Rust MCP for Rust devs
 
