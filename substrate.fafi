@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-04'
+generated: '2026-11-05'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 4f118a2fe4ec2bc105f1d3f359f9c56d3bd950da
+    sha: b46a90c7d7b7af99de6710575a54a1e0199df803
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -645,7 +645,15 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.7.0 — The Receipts Edition
+      - heading: What's New in v8.8.0 — The Polyglot Edition
+        body: |-
+          **`faf taf setup` writes the Test Receipt workflow for Rust, Java (Maven, Gradle) and .NET too: each run joins its reports into one JUnit file, and faf-taf-git counts it.**
+
+          - **Rust** (`Cargo.toml`): `cargo nextest run`, every test (`--no-fail-fast`), across the workspace. The workflow adds nextest's JUnit profile only when your repo has no nextest config.
+          - **Java**: Maven (`pom.xml`) and Gradle (`build.gradle`, `settings.gradle`), with the wrapper when you have one. A failing module doesn't stop the others, and the per-class reports are joined into one file.
+          - **.NET** (`.sln`, `.slnx`, `.csproj`, `.fsproj`): the JUnit logger is added in CI only, so your project files don't change. It installs the SDKs your projects target, and names the solution when there's more than one at the top.
+          - **Proved in faf-cli's own CI**: for each language, a fixture with passing, failing and skipped tests runs the written recipe, and the receipt must match the runner's own counts.
+      - heading: The Receipts Edition (8.7)
         body: |-
           **Your Test Receipts, in your terminal: `faf taf receipts` shows them, `taf setup` writes the recipe for JavaScript (Jest, Vitest, Bun), Python and Go, and every test run on your default branch gets one, red ones too.**
 
@@ -752,6 +760,7 @@ docs:
 
           **Recent sprint**
 
+          - ✪ [8.8.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.8.0) The Polyglot Edition — `taf setup` for Rust, Java (Maven, Gradle) and .NET
           - ✪ [8.7.1](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.7.1) `taf setup` for node:test and mocha; Python test extras; colour follows `FORCE_COLOR` and stderr
           - ✪ [8.7.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.7.0) The Receipts Edition — `faf taf receipts`; `taf setup` for JavaScript, Python and Go; red runs get a receipt
           - ✪ [8.6.0](https://github.com/Wolfe-Jam/faf-cli/releases/tag/v8.6.0) The Birth Certificate Edition — `init --new` keeps `.faf-dna`; `go`/`edit` record growth; `faf dna --json`
@@ -1238,7 +1247,7 @@ docs:
           **Zero-Config. Context that's just there — every session.**
   - repo: Wolfe-Jam/grok-faf-mcp
     path: README.md
-    sha: 49beff826d54b25c27a73943c8f42f202fd8e1ae
+    sha: b14f8bae878e4d33476550b248f5ea3eaf460f08
     intro: First MCP server for Grok — URL-based AI context, FAST⚡️AF
     sections:
       - heading: grok-faf-mcp v2.1 — The New Era Edition
@@ -1278,7 +1287,9 @@ docs:
           [![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/grok-faf-mcp)
 
           **FAF defines. AGENTS.md instructs. AI codes.**
-      - heading: v2.2.2 — The Instructions Edition
+      - heading: v2.2.3 — The Instructions Edition
+        body: '**faf_write can no longer overwrite the birth certificate or your context files.** `.faf-dna` is refused in every spelling and route, existing `project.faf`, `CLAUDE.md` and `AGENTS.md` need `overwrite: true`, and writes stay inside the project folder.'
+      - heading: v2.2.2
         body: '**Cleanup: removes leftover two-way sync wording.** Two-way sync was dropped by design long ago: project.faf pushes structured data out, and prose doesn''t come back. The last strings that still said two-way now match. `faf_bi_sync` still works as the old name for `faf_sync`.'
       - heading: v2.2.1
         body: '**One rule for project questions: read project.faf first.** New line 2 of the server instructions: "For questions about the project (stack, goal, commands), read project.faf first and answer from it." The same rule in faf-mcp moved Grok Build from 0 of 3 to 2 of 3 runs reading project.faf first, on a repo where project.faf and package.json disagree (3-run pilot). 715 characters.'
@@ -1475,7 +1486,7 @@ docs:
           | Tool | Purpose |
           |------|---------|
           | `faf_read` | Read any file |
-          | `faf_write` | Write any file |
+          | `faf_write` | Write a file inside the project. Never writes `.faf-dna`; replacing an existing `*.faf`, `CLAUDE.md` or `AGENTS.md` needs `overwrite: true` |
           | `faf_list` | Discover projects with .faf files |
 
           **RAG & Grok-Exclusive**
@@ -2041,7 +2052,7 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 84d8b2b4a09f03e88cd9eb522e261913f63afb4a
+    sha: 41c060590da14bb22419a994b82f45320f0f2607
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
       - heading: What's New in 4.1.1 — The Instructions Edition
@@ -2231,7 +2242,7 @@ docs:
           | `faf_gemini` | Import GEMINI.md into `project.faf`, or write it from `project.faf` |
           | `faf_git` | Author a `project.faf` from a public GitHub repo URL |
 
-          **+14 more with `FAF_TOOLS=all`:** `faf_status` · `faf_what` · `faf_guide` · `faf_debug` · `faf_clear` · `faf_list` · `faf_read` (read a file within the allowed roots: cwd, the OS temp dir, or `FAF_ALLOWED_ROOTS`) · `faf_write` (write a file within the same roots) · `faf_readme` · `faf_human_add` · `faf_quick` · `faf_formats` · `faf_dna` · `faf_conductor`
+          **+14 more with `FAF_TOOLS=all`:** `faf_status` · `faf_what` · `faf_guide` · `faf_debug` · `faf_clear` · `faf_list` · `faf_read` (read a file within the allowed roots: cwd, the OS temp dir, or `FAF_ALLOWED_ROOTS`) · `faf_write` (write a file within cwd or `FAF_ALLOWED_ROOTS`; never `.faf-dna` or `.git/`; an existing `*.faf`, `CLAUDE.md` or `AGENTS.md` needs `overwrite: true`) · `faf_readme` · `faf_human_add` · `faf_quick` · `faf_formats` · `faf_dna` · `faf_conductor`
 
           **Built on faf-cli.** Every tool composes the bundled [faf-cli](https://www.npmjs.com/package/faf-cli) in-process — the same scorer, the same renderers, the same block injector the CLI uses. Nothing shells out to a `faf` on your PATH.
 
