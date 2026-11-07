@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-06'
+generated: '2026-11-07'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -1926,10 +1926,12 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: 8731cfb77838c4e6527648924a4e4c5069fb34d4
+    sha: b18809f937ec4e116d1cd039931e9dbf8192057c
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
-      - heading: What's New in 4.1.2 — The Instructions Edition
+      - heading: What's New in 4.1.3 — The Instructions Edition
+        body: '**faf-mcp now says what faf-cli''s writer did: the note when faf''s block goes above older faf text, and each file it could not write.** When a context file starts with older faf text, the reply carries faf-cli''s note that the old text is left as you had it; `faf_claude` names any chained file it could not write, with the reason.'
+      - heading: 4.1.2
         body: '**faf_write can no longer overwrite the birth certificate or your context files, and faf_dna never issues a second one.** `.faf-dna` is refused in every spelling and route, existing context files need `overwrite: true`, and `faf_dna` refuses rather than reissue when git shows a certificate existed.'
       - heading: 4.1.1
         body: |-
