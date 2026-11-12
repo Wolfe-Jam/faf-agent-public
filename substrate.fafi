@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-11'
+generated: '2026-11-12'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -543,7 +543,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: aa003945af5bf0836463983ca175a6078da951b5
+    sha: 4946c10245fde27b45090848b2f2e4b96cda716f
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -597,11 +597,23 @@ docs:
           No setup, no drift, no re-explaining.
 
           ---
+      - heading: Install
+        body: |-
+          ```bash
+          bunx faf auto                 # Bun — zero install, fastest path
+          npx faf auto                  # npm — works everywhere
+          pnpm dlx faf auto             # pnpm — zero install
+          brew install wolfe-jam/faf/faf-cli && faf auto   # Homebrew (auto-taps)
+          ```
+
+          > `faf` with no arguments shows your project's score. `faf auto` fills what it detects in the repo, and suggests the goal and six W's for you to confirm in `faf go`.
+
+          ---
       - heading: Your own project
         body: |-
           bunx faf-cli init              # Create .faf
-          bunx faf-cli auto              # Fill every tech slot from the repo, then score
-          bunx faf-cli go                # Interactive interview to gold code
+          bunx faf-cli auto              # Fill the tech slots from the repo, then score
+          bunx faf-cli go                # Confirm the goal and six W's, suggested in gray
           ```
 
           ---
@@ -618,17 +630,17 @@ docs:
         body: |-
           | Command | What it does |
           |---------|--------------|
-          | `faf init` | Create `project.faf` from your local project |
+          | `faf init` | Create `project.faf` from your local project; suggest the goal and six W's |
           | `faf git <url>` | Instant `.faf` from any GitHub repo (a shallow clone) |
-          | `faf auto` | Detect stack, fill every slot it can, score |
-          | `faf go` | Guided interview to fill the human-only slots |
+          | `faf auto` | Detect the stack, fill the slots it detects, score; suggest the goal and six W's |
+          | `faf go` | Fill the human slots: each suggestion in gray, Tab to edit, Enter to confirm |
           | `faf score` | Check AI-readiness (0–100%) |
           | `faf export` | Author `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules` |
-          | `faf sync` | `.faf` → `CLAUDE.md` (pull: Trophy-gated backfill) |
+          | `faf sync` | `.faf` → `CLAUDE.md`, one way (faf's block only) |
           | `faf memory` | `.fafm` soul ops — convert Claude memory, etch, recall, ls, show |
           | `faf diff` / `log` | Semantic context diff + score timeline across git history |
           | `faf hooks --install` | Pre-commit guard against context regression |
-          | `faf taf setup` | Write the CI workflow that prints a Test Receipt for every run (JavaScript with Jest, Vitest or Bun; Python; Go) |
+          | `faf taf setup` | Write the CI workflow that prints a Test Receipt for every run (JavaScript with Jest, Vitest or Bun; Python; Go; Rust; Java with Maven or Gradle; .NET) |
           | `faf taf receipts` | Your Test Receipts in the terminal, newest first |
           | `faf compile` / `decompile` | `.faf` → `.fafb` **v2** sealed brick; `decompile` shows sections as JSON |
           | `faf check` | Validate a `.faf` file |
@@ -645,16 +657,15 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.9.0 — The Write-Once Edition
+      - heading: What's New in v8.10.0 — The Human Slots Edition
         body: |-
-          **A birth certificate that can't be reissued. `faf dna --verify` checks it against the commit that first saved it. Plus a lighter install, and every command documented.**
+          **AI suggests, you confirm. faf no longer writes your project's goal or six W's: it suggests them, and you confirm each one in `faf go`.**
 
-          - **Write-once.** `.faf-dna`, your project's birth certificate, is written once. Nothing in faf replaces it, and `faf init --force` now works like `--new`: a fresh `project.faf`, the certificate kept.
-          - **`faf dna --verify`** compares the certificate with the commit that first added `.faf-dna`. Exit 0 if they match, 1 if they differ, 2 if there is nothing to check against yet. `faf init` and `faf dna` tell you when it isn't committed yet, with the command to run. faf never commits for you.
-          - **A lighter install.** The package is under half its old size (2.35 MB unpacked, was 5.34 MB), and npm no longer installs an unused 6.4 MB copy of the Anthropic SDK.
-          - **Every command documented**: the ones the README doesn't cover are on [docs.faf.one/more-commands](https://docs.faf.one/more-commands).
-          - **Named skips.** `faf taf receipts` shows `+N newly skipped` when a receipt names a test that wasn't skipped before (faf-taf-git 2.5.0).
-          - **Cleaned up.** Help flags that did nothing are gone, `init --output` keeps `.faf-dna` beside its file, `card init` won't overwrite a card written during its questions, and `faf wjttc` sees tiers on `.skipIf` / `.each` blocks.
+          - **Suggestions in gray.** `faf go` shows each suggestion with where it came from (`README.md § Why`, `package.json description`). Tab to edit, Enter to confirm, type to replace, `skip` to leave it empty. `faf init`, `faf auto` and `faf git` say how many are waiting.
+          - **Only facts are suggested.** Markup, greetings, install lines and fragments are rejected; a notice (deprecated, sponsored by, requires…) is never the goal; a long first paragraph gives its first sentence, whole. The README leads the goal.
+          - **faf-facts.** The six W's ask for one line where every word earns its place. `how` is how it works; `when` is the stage it is at, and since when.
+          - **Breaking for library users:** `assembleFreshFaf`, `updateExistingFaf` and `authorFafFromRepo` return the goal and six W's empty. Files you already have are not changed.
+          - **`faf go` input.** Backspace removes a whole character (emoji, CJK), other questions use readline again, and piped answers are read in order.
 
           Earlier editions: [CHANGELOG.md](./CHANGELOG.md) · [Releases](https://github.com/Wolfe-Jam/faf-cli/releases)
 
@@ -701,6 +712,7 @@ docs:
         body: |-
           Pivotal releases — full history in [CHANGELOG.md](./CHANGELOG.md):
 
+          - **v8.10 — Human Slots** — AI suggests the goal and six W's; you confirm each one in `faf go`.
           - **v8.9 — Write-Once** — a birth certificate that can't be reissued, checked against its birth commit.
           - **v8.0 — Always33** — one engine, one number: the same score everywhere.
           - **v7.1 — AGENTS.md** — `faf export --agents` authors a complete, non-destructive `AGENTS.md`.
@@ -730,7 +742,7 @@ docs:
           > **Robust. Reliable. Next-level WJTTC tested.** — The Foundation Edition.
 
           ```bash
-          bun test                       # extensive WJTTC + e2e suite
+          npm test                       # extensive WJTTC + e2e suite
           ```
 
           - **WJTTC Build Resilience** — regression classes locked.
@@ -1578,7 +1590,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: eecf9e7a27419db800d3b7f2e5289aaba48c810d
+    sha: 5e06de20a50ff70348efb624a44d03ca36ed6011
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp v3.2 — The Straight Answers Edition
@@ -1597,7 +1609,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-320%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-345%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1619,7 +1631,14 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v3.2.0 — The Straight Answers Edition
+      - heading: What's New in v3.2.1 — The Straight Answers Edition
+        body: |-
+          **3.2.1 lifts gemini-faf-mcp into Antigravity CLI: it installs as a plugin and works in your project.**
+
+          - **Installs in Antigravity CLI** (`agy`, Google's successor to Gemini CLI): `agy plugin install https://github.com/Wolfe-Jam/gemini-faf-mcp`. Moving from Gemini CLI, `agy plugin import gemini` now converts the extension cleanly.
+          - **Works in your project there.** `agy` starts a plugin's server in the plugin's own folder; gemini-faf-mcp now finds your project and writes there, never to a folder broader than it.
+          - **The skills are `/setup`, `/score` and `/export` in `agy`** (`/faf:setup` and so on in Gemini CLI).
+      - heading: v3.2.0 — The Straight Answers Edition
         body: |-
           **Every gemini-faf-mcp failure now reaches your client as an error: MCP's isError is set, the reason text is unchanged, and /faf:setup checks before it creates.**
 
@@ -1683,11 +1702,11 @@ docs:
           Still on Gemini CLI through work? `gemini extensions install https://github.com/Wolfe-Jam/gemini-faf-mcp` installs the same extension.
       - heading: 3. Author your project context
         body: |-
-          Ask the agent to run the **setup** skill (in Gemini CLI: `/faf:setup`).
+          Run `/setup` (in Gemini CLI: `/faf:setup`).
 
-          That writes a starter `project.faf` and scores it. Then ask Gemini to fill it in from your repo (it calls `faf_auto`), and run the **score** skill (`/faf:score` in Gemini CLI) to see what's left. From then on, every Gemini session in this project reads it automatically.
+          That writes a starter `project.faf` and scores it. Then ask Gemini to fill it in from your repo (it calls `faf_auto`), and run `/score` (`/faf:score` in Gemini CLI) to see what's left. From then on, every Gemini session in this project reads it automatically.
 
-          > **Tip:** Trophy ✪ = 100%: AI is optimized to code. The score skill shows exactly which slots are still empty.
+          > **Tip:** Trophy ✪ = 100%: AI is optimized to code. `/score` shows exactly which slots are still empty.
 
           ---
       - heading: The "One-File" Advantage
@@ -1721,7 +1740,7 @@ docs:
 
           ```bash
           > /faf:export
-      - heading: Authors GEMINI.md from project.faf (Gemini CLI; in Antigravity, ask for the export skill)
+      - heading: 'Authors GEMINI.md from project.faf (in Antigravity: /export)'
         body: |-
           ```
 
@@ -1851,7 +1870,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v3.2.0
+          gemini-faf-mcp v3.2.1
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1871,7 +1890,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          320 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          345 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
