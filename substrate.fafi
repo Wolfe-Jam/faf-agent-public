@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-13'
+generated: '2026-11-14'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -785,7 +785,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 7bf57464a0834fe14b955974160b83e7bf30249d
+    sha: 6ca5139a4fb67855ddfcecbf5e60de53464b80e4
     intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
@@ -827,7 +827,16 @@ docs:
           Core 14 MCP tools (30 with `FAF_TOOLS=all`). IANA-registered formats (`application/vnd.faf+yaml` · `application/vnd.fafm+yaml`).
 
           ---
-      - heading: What's New in v7.1.0 — The Instructions Edition
+      - heading: What's New in v7.2.0 — The Human Slots Edition
+        body: |-
+          **Claude suggests, you confirm. claude-faf-mcp no longer writes your project's goal or six W's: faf_go shows each suggestion with its source, and only what you confirm is written.**
+
+          - **Suggestions with their source.** `faf_go` offers faf-cli's suggestion for each empty goal or W, with where it came from (`README.md § Why`, `package.json description`). Claude shows it for you to accept or edit; only your answers are written.
+          - **faf-cli 8.10.0 inside.** `faf_init`, `faf_auto` and `faf_git` leave the goal and six W's empty, so a new project.faf scores lower, honestly, and they say how many suggestions are waiting. Files you already have are not changed.
+          - **`faf_readme` suggests and never writes**, from README, package.json or Cargo.toml. `faf_git` returns the repo's suggestions before its temporary clone is gone.
+          - **CI on the faf-cli users get.** A daily run tests the server against `faf-cli@latest`.
+          - **7.2.1:** `faf_go`'s closing line keeps the goal and six W's apart from stack slots: they are the user's to give, never "no fact in repo".
+      - heading: v7.1.0 — The Instructions Edition
         body: |-
           **claude-faf-mcp now tells Claude how its tools fit together: server instructions in initialize (637 characters), plus faf-cli 8.5.0, which knows a skills repo when it sees one.**
 
@@ -896,7 +905,7 @@ docs:
 
           ```yaml
             where: "mobile app, iOS and Android"    # where does it live?
-            when: "launch in 3 months"              # when is it shipping?
+            when: "beta since March 2026"           # what stage, and since when?
             how: "GPS matching, real-time pricing"  # how does it work?
           ```
 
@@ -905,7 +914,7 @@ docs:
           ---
       - heading: Claude Desktop — one click
         body: |-
-          [**⬇ Download `claude-faf-mcp-7.1.0.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.1.0/claude-faf-mcp-7.1.0.mcpb)
+          [**⬇ Download `claude-faf-mcp-7.2.1.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.2.1/claude-faf-mcp-7.2.1.mcpb)
 
           Open it in Claude Desktop. The extension runs the server bundled inside it (no npx, no network at start) and lists the Core 14 tools.
       - heading: Claude Desktop — config
@@ -970,7 +979,7 @@ docs:
         body: |-
           | Tier | Score | What it means |
           |------|-------|---------------|
-          | ✪ **TROPHY** | 100% | Gold Code — AI is optimized |
+          | ✪ **TROPHY** | 100% | AI is optimized to code |
           | ★ **GOLD** | 99%+ | Near-perfect context |
           | ◆ **SILVER** | 95%+ | Excellent |
           | ◇ **BRONZE** | 85%+ | Production ready |
@@ -993,7 +1002,7 @@ docs:
           |------|---------|
           | `faf_init` | Create project.faf for a folder (faf-cli detects the stack) |
           | `faf_auto` | Fill project.faf from the repo's own files, then CLAUDE.md |
-          | `faf_go` | The goal and the 6Ws, by question and answer |
+          | `faf_go` | The goal and the 6Ws: suggestions from the repo, with their source, for you to confirm |
           | `faf_score` | AI-readiness score (0-100%), from faf-cli |
           | `faf_bench` | Benchmark AI grounding — cold vs with the .faf, graded mechanically, with a receipt |
           | `faf_doctor` | Diagnose project.faf: each finding with the tool that fixes it |
@@ -1011,10 +1020,10 @@ docs:
           |------|---------|
           | `faf` | Start here: the project, its score and the steps to 100% (reads only) |
           | `faf_quick` | Create project.faf from one line: name, goal, language, framework, hosting |
-          | `faf_readme` | Read the 6Ws from README.md; `apply` fills only empty slots |
-          | `faf_human_add` | Set one 6W slot in project.faf |
+          | `faf_readme` | Suggest the goal and 6Ws from README, package.json and Cargo.toml, each with its source; writes nothing |
+          | `faf_human_add` | Set one 6W slot in project.faf to text you confirmed |
           | `faf_formats` | The formats faf-cli finds in the folder, and what faf_auto would write (dry run) |
-          | `faf_git` | Author a project.faf from a repo URL (clones it with git — uses the network) |
+          | `faf_git` | Author a project.faf from a repo URL (clones it with git — uses the network); the goal and 6Ws stay empty, and the repo's suggestions are returned |
           | `faf_check` | faf-cli's validateFaf and the state of every slot |
           | `faf_dna` | The project's .faf-dna lineage (reads only) |
           | `faf_status` | Whether the project has a .faf, with its first lines |
@@ -1590,7 +1599,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: 5e06de20a50ff70348efb624a44d03ca36ed6011
+    sha: d63f7469b707c4e98981c7365c867c673ff5289a
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp v3.2 — The Straight Answers Edition
@@ -1609,7 +1618,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-345%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-347%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1631,7 +1640,15 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v3.2.1 — The Straight Answers Edition
+      - heading: What's New in v3.3.0 — The Antigravity Edition 🚀
+        body: |-
+          **3.3.0 brings gemini-faf-mcp to Antigravity CLI: install it as a plugin and it works in your project. Simple.**
+
+          - **Install it as a plugin** in Antigravity CLI (`agy`, Google's successor to Gemini CLI): `agy plugin install https://github.com/Wolfe-Jam/gemini-faf-mcp`, then run `/setup` in your project. Moving from Gemini CLI, `agy plugin import gemini` converts the extension.
+          - **It works in your project.** `agy` starts a plugin's server in the plugin's own folder. The plugin now starts Python directly, so the server sees the folder you ran `agy` in, and finds your `project.faf` and writes there. In 3.2.1 this only worked when the server was started by hand.
+          - **Safe to start anywhere.** A `server.py` (or any module) in your project is never run in place of the server's own, files are read and written as UTF-8 on every platform, and an older installed copy without the fix is never used.
+          - **The skills are `/setup`, `/score` and `/export` in `agy`** (`/faf:setup` and so on in Gemini CLI).
+      - heading: v3.2.1 — The Straight Answers Edition
         body: |-
           **3.2.1 lifts gemini-faf-mcp into Antigravity CLI: it installs as a plugin and works in your project.**
 
@@ -1870,7 +1887,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v3.2.1
+          gemini-faf-mcp v3.3.0
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1890,7 +1907,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          345 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          347 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
@@ -1961,10 +1978,19 @@ docs:
           **Anthropic MCP [#2759](https://github.com/modelcontextprotocol/servers/pull/2759)** · **IANA Registered:** `application/vnd.faf+yaml` · [faf.one](https://faf.one) · [npm](https://www.npmjs.com/package/faf-cli)
   - repo: Wolfe-Jam/faf-mcp
     path: README.md
-    sha: b18809f937ec4e116d1cd039931e9dbf8192057c
+    sha: 146d0b4438c4f757602bf1a0b8571291687623ac
     intro: The Interop MCP for Context — the Cursor / IDE Edition. Persistent context for Cursor, VS Code, and every MCP-compatible IDE. IANA-registered application/vnd.faf+yaml. Start with "Use FAF".
     sections:
-      - heading: What's New in 4.1.3 — The Instructions Edition
+      - heading: What's New in 4.2.0 — The Human Slots Edition
+        body: |-
+          **AI suggests, you confirm. faf-mcp no longer writes your project's goal or six W's: faf_go shows each suggestion with its source, and only what you confirm is written.**
+
+          - **`faf_go` offers the suggestions.** Each empty goal or W comes with faf-cli's suggestion and where it came from (`README.md § Why`, `package.json description`). Your editor's AI asks you; only the answers you confirm are written.
+          - **`faf_init` and `faf_auto` leave them empty** and say how many suggestions are waiting, so a new project.faf scores lower, honestly. Files you already have are not changed.
+          - **`faf_readme` suggests and never writes; `faf_sync` never writes the goal.** `faf_sync` still updates the name and stack from package.json.
+          - **`faf_go` answers are real slots, as text.** Any other key refuses the call and nothing is written.
+          - **faf-cli 8.10.0 inside.** Not changed yet: `faf_git` still writes the goal from the GitHub description; it moves to faf-cli's pipeline in a later release.
+      - heading: 4.1.3 — The Instructions Edition
         body: '**faf-mcp now says what faf-cli''s writer did: the note when faf''s block goes above older faf text, and each file it could not write.** When a context file starts with older faf text, the reply carries faf-cli''s note that the old text is left as you had it; `faf_claude` names any chained file it could not write, with the reason.'
       - heading: 4.1.2
         body: '**faf_write can no longer overwrite the birth certificate or your context files, and faf_dna never issues a second one.** `.faf-dna` is refused in every spelling and route, existing context files need `overwrite: true`, and `faf_dna` refuses rather than reissue when git shows a certificate existed.'
@@ -2021,7 +2047,7 @@ docs:
 
           **faf-mcp is the dedicated MCP server for Cursor, Windsurf, Cline, VS Code, and every non-Claude platform.** One `.faf` file in your repo, synced to every format your team needs.
 
-          **Context for Cursor & IDE agents:** faf-cli (v7.12) authors the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+          **Context for Cursor & IDE agents:** faf-cli authors the files this server syncs — `bunx faf export --agents`, zero-install and git-native. See [FAF-CLI for Cursor & IDE agents 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
           ```
                                 project.faf
@@ -2074,7 +2100,7 @@ docs:
           | `faf_cursor` | Cursor IDE | Import/export/sync .cursorrules |
           | `faf_gemini` | Google Gemini | Import/export/sync GEMINI.md |
           | `faf_conductor` | Conductor | Import/export directory structure |
-          | `faf_git` | GitHub | Author .faf from any repo URL |
+          | `faf_git` | GitHub | Author .faf from a public GitHub repo URL |
 
           ```text
       - heading: Author .faf from any GitHub repo
@@ -2082,15 +2108,15 @@ docs:
           faf_git { url: "https://github.com/facebook/react" }
           ```
 
-          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **26 test suites** · **7 bundled parsers**
+          **Core tier:** 15 essential tools shown by default; set `FAF_TOOLS=all` for the full **29** (every tool stays callable by name either way) · **7 bundled parsers**
 
           ---
       - heading: Eternal Sync
         body: |-
-          `project.faf` is the source. faf-mcp writes every tool's context file from it in milliseconds.
+          `project.faf` is the source. faf-mcp writes every tool's context file from it.
 
           ```
-          project.faf  ──── 8ms ───→  CLAUDE.md / AGENTS.md / .cursorrules / GEMINI.md
+          project.faf  ──────────→  CLAUDE.md / AGENTS.md / .cursorrules / GEMINI.md
                               Single source of truth
           ```
 
@@ -2126,7 +2152,7 @@ docs:
           Use FAF to initialize my project
           Use FAF to score my AI-readiness
           Use FAF to sync my context
-          Use FAF to enhance my project
+          Use FAF to ask me for my goal
           ```
 
           Works on all platforms — stops web search, forces tool usage.
@@ -2138,14 +2164,14 @@ docs:
 
           | Tool | Purpose |
           |------|---------|
-          | `faf_init` | Create a new `project.faf` (use `faf_auto` to enhance an existing one) |
+          | `faf_init` | Create a new `project.faf` (use `faf_auto` to fill an existing one) |
           | `faf_auto` | One-call setup: init or merge, stack detection, CLAUDE.md, score |
-          | `faf_go` | Guided interview that fills the missing human-context and goal fields toward 100% |
+          | `faf_go` | The goal and six W's: each empty one with faf-cli's suggestion and its source, for you to confirm; only what you confirm is written |
           | `faf_score` | AI-readiness score (0-100%) and tier; `details:true` adds a slot-by-slot breakdown |
           | `faf_doctor` | Diagnose a low score: missing files, slot counts, config issues, each with a fix |
           | `faf_check` | Rate each `human_context` field empty / generic / good |
           | `faf_trust` | Validate the required fields and `about.*` block with faf-cli's validator |
-          | `faf_sync` | Reconcile `project.faf` with package.json (dry-run; `apply:true` writes) |
+          | `faf_sync` | Reconcile `project.faf` with package.json: name and stack, never the goal (dry-run; `apply:true` writes) |
           | `faf_context` | Set or show the active project path |
           | `faf_about` | What the IANA-registered `.faf` format is, in plain language |
           | **Interop Tools** | |
