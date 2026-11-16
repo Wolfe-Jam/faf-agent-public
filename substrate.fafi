@@ -1,14 +1,14 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-15'
+generated: '2026-11-16'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
     path: README.md
-    sha: b093c2123f4d6f097d44200d4aef6bc6a30733bc
+    sha: 7f76b1930ebfe210d633ce4ab148b7d337148033
     intro: .faf — the IANA-registered Foundational AI-context Format (application/vnd.faf+yaml). Portable, shareable AI-context for any AI, human, or team.
     sections:
-      - heading: '🏆 Historic Milestones: Three IANA Registrations'
+      - heading: '✪ Historic Milestones: Three IANA Registrations'
         body: |-
           **`.faf`**, **`.fafm`**, and **`.fafa`** are now officially recognized Internet standard formats — registered alongside PDF, JSON, XML, and other Internet standards.
 
@@ -53,7 +53,7 @@ docs:
 
           **Live repos:**
           - **[FAFipedia](https://github.com/Wolfe-Jam/fafipedia)** — the canonical knowledge base we're shipping page-by-page
-          - **[ZEPH💨](https://github.com/Wolfe-Jam/xai-faf-zeph)** — page 3 Ultra Context Layer (Pure Zig → WASM 2.7 KB)
+          - **[ZEPH💨](https://github.com/Wolfe-Jam/xai-faf-zeph)** — page 3 Ultra Context Layer (Pure Zig → WASM)
 
           ⭐ [Star faf-cli on GitHub](https://github.com/Wolfe-Jam/faf-cli), the CLI that writes your project.faf: bookmarks it for you, helps other devs find it too.
 
@@ -120,7 +120,7 @@ docs:
           | **WHAT** is it? | The `package.json` for AI context — IANA-registered format (`application/vnd.faf+yaml`) |
           | **WHERE** does it work? | Everywhere AI needs context (Claude Code, Gemini CLI, Cursor, OpenAI Codex, etc.) |
           | **WHY** do you need it? | Context persists across sessions. Bi-syncs to AGENTS.md, CLAUDE.md, .cursorrules, GEMINI.md automatically. Stop re-explaining your project. |
-          | **WHEN** should you use it? | New projects (day one), existing projects (now), exploring repos (`faf git <url>` — 2 seconds) |
+          | **WHEN** should you use it? | New projects (day one), existing projects (now), exploring repos (`faf git <url>` — one shallow clone, no install) |
           | **HOW** does it work? | `npx faf-cli init` — or `npx faf-cli git <url>` for any GitHub repo, no install, no clone |
 
           ---
@@ -143,21 +143,20 @@ docs:
           | **Machine-readable** | Yes (schema) | No (free text) | No (free text) | No (free text) | No (free text) |
           | **Authors others** | Yes (all 4) | No | No | No | No |
 
-          FAF is the structured source. The others are prose outputs. `faf bi-sync --all` authors all four from one `project.faf`.
+          FAF is the structured source. The others are prose outputs. `faf export --all` authors them from one `project.faf`; `faf sync` writes CLAUDE.md.
 
           ---
       - heading: The Problem
         body: AI tools need context. Files have context. But there's no standard way to measure or structure that context for optimal AI understanding.
       - heading: project.faf
         body: |-
-          faf_version: 2.5.0
-
-          app_type: cli
+          faf_version: "3.0"
 
           project:
             name: my-project
             goal: Ship a fast command-line tool
             main_language: TypeScript
+            type: cli
 
           human_context:
             who: Developers who live in the terminal
@@ -174,9 +173,9 @@ docs:
           ```
       - heading: 🩵 [faf-cli](https://npmjs.com/package/faf-cli)
         body: |-
-          **Command-Line Tool** - v6.7.1
+          **Command-Line Tool**
 
-          - 50+ championship commands
+          - 38 commands ([every command, with an example](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/COMMANDS.md))
           - AI interop: authors AGENTS.md, .cursorrules, CLAUDE.md, GEMINI.md
           - TURBO-CAT format discovery
           - Downloads: [faf.one/downloads](https://faf.one/downloads)
@@ -189,10 +188,10 @@ docs:
           <td width="50%">
       - heading: 🧡 [claude-faf-mcp](https://npmjs.com/package/claude-faf-mcp)
         body: |-
-          **Claude Desktop MCP** - v5.5.2
+          **Claude Desktop MCP**
 
-          - 38 tools for Claude
-          - Championship scoring (0-100% Trophy)
+          - Core 14 tools for Claude, 30 with `FAF_TOOLS=all`
+          - Scoring 0–100%, ✪ Trophy at 100%
           - Anthropic MCP Registry (PR #2759)
           - Downloads: [faf.one/downloads](https://faf.one/downloads)
 
@@ -239,14 +238,13 @@ docs:
 
           **Output:** `project.faf`
           ```yaml
-          faf_version: 2.5.0
-
-          app_type: frontend
+          faf_version: "3.0"
 
           project:
             name: my-app
             goal: A dashboard people actually want to open
             main_language: TypeScript
+            type: frontend
 
           stack:
             frontend: React
@@ -265,20 +263,23 @@ docs:
           - **🤖 AI-Ready** - Optimized for LLM consumption
       - heading: Scoring
         body: |-
-          33 slots. `app_type` decides which a project is asked about; the rest are marked
+          33 slots. The app type (`project.type`) decides which a project is asked about; the rest are marked
           `slotignored` and leave the denominator.
 
           ```
           score = populated / active × 100
           ```
 
-          | Score | Reading |
-          |-------|---------|
-          | 0-60% | Incomplete |
-          | 61-80% | Basic |
-          | 81-90% | Good |
-          | 91-99% | Excellent |
+          | Score | Tier |
+          |-------|------|
           | 100% | ✪ Trophy |
+          | 99% | ★ Gold |
+          | 95% | ◆ Silver |
+          | 85% | ◇ Bronze |
+          | 70% | ● Green |
+          | 55% | ● Yellow |
+          | 1% | ○ Red |
+          | 0% | ♡ White |
 
           See [SPECIFICATION.md](SPECIFICATION.md) for the slot list and the rule.
       - heading: Use Cases
@@ -287,18 +288,25 @@ docs:
           - **Onboarding:** a newcomer — human or AI — reads one file instead of twenty
           - **Build Integration:** Companies can create custom implementations
           - **AI Optimization:** Perfect context for any AI tool
+      - heading: 📚 Learn More
+        body: |-
+          1. **[Specification](SPECIFICATION.md)** - Complete format documentation
+          2. **[.faf by example](docs/EXAMPLES.md)** - One task per section: valid, invalid, 100%, schema, .fafm, .fafa
+          3. **[Examples](examples/)** - Real-world .faf and .fafm files
+          4. **[Implementations](IMPLEMENTATIONS.md)** - All tools, SDKs, and servers
       - heading: Status
         body: |-
-          🏆 **IANA-Registered Internet Standards** — Two registered media types in the FAF family
+          ✪ **IANA-Registered Internet Standards** — Three registered media types in the FAF family
           - ✅ **IANA Registration** — `application/vnd.faf+yaml` (October 30, 2025)
           - ✅ **IANA Registration** — `application/vnd.fafm+yaml` (May 13, 2026)
+          - ✅ **IANA Registration** — `application/vnd.fafa+yaml` (June 26, 2026)
           - ✅ **Anthropic Official** - MCP Registry PR #2759 merged (October 17, 2025)
           - ✅ **Google Chrome Verified** - Web Store approved 2x (Sep 11 & Oct 29, 2025)
           - ✅ Format specification complete
           - ✅ Enhanced with project-level context and AI workflows
           - ✅ Production tools available (faf-cli, claude-faf-mcp)
           - ✅ Over 110k+ downloads; see [faf.one/downloads](https://faf.one/downloads) for latest stats
-          - ✅ WJTTC Championship-grade testing across ecosystem packages
+          - ✅ WJTTC testing across ecosystem packages
           - ✅ Open source (MIT License)
       - heading: Major Milestones
         body: |-
@@ -310,8 +318,8 @@ docs:
           - **Feb 2, 2026** - FAFb v1 pre-release wire (retired). Live spec is **wire v2** in [faf-rust](https://github.com/Wolfe-Jam/faf-rust/blob/main/crates/faf-fafb/BINARY-FORMAT.md)
           - **Jan 2026** - gemini-faf-mcp v1.0.2 on PyPI (Google MCP bridge)
           - **Nov 2025** - IETF standardization in progress (`vnd` prefix removal)
-          - **May 13, 2026** - 🏆 **IANA Registration #2** (`application/vnd.fafm+yaml` — Voice Memory Layer)
-          - **Oct 30, 2025** - 🏆 **IANA Registration #1** (`application/vnd.faf+yaml` — Foundational Context Layer)
+          - **May 13, 2026** - ✪ **IANA Registration #2** (`application/vnd.fafm+yaml` — Voice Memory Layer)
+          - **Oct 30, 2025** - ✪ **IANA Registration #1** (`application/vnd.faf+yaml` — Foundational Context Layer)
           - **Oct 29, 2025** - Google Chrome Web Store approval (2nd)
           - **Oct 17, 2025** - Official Anthropic MCP Registry merger (PR #2759)
           - **Oct 12, 2025** - Specification v1.1.0 published
@@ -352,7 +360,7 @@ docs:
           Let's RACE 🏎️⚡️🏁
   - repo: Wolfe-Jam/faf
     path: SPECIFICATION.md
-    sha: 97614239c6fdaf1777c40261a162ee5d6d4f3497
+    sha: 4b5c30bfcd59a4bd74ec5f92c8c7bdce459cc3aa
     intro: .faf Format Specification — the authoritative source for application/vnd.faf+yaml. Defines the file, the 33 slots, and how a score is worked out.
     sections:
       - heading: .faf Format Specification
@@ -378,15 +386,17 @@ docs:
           Required: `faf_version`, and a `project` block with a `name`. Everything else is
           optional — you write what is true and leave the rest.
 
+          `faf_version` is `"3.0"` for files written today. Files stamped `2.5.0`, the earlier
+          series, still parse; `faf migrate` moves one to `"3.0"`.
+
           ```yaml
-          faf_version: 2.5.0
+          faf_version: "3.0"
 
           project:
             name: awesome-ai-project
             goal: Next-generation AI context optimization engine
             main_language: TypeScript
-
-          app_type: fullstack
+            type: fullstack
 
           human_context:
             who: Developers building AI-assisted tooling
@@ -416,8 +426,7 @@ docs:
           | Key | Holds |
           |-----|-------|
           | `faf_version` | format version of this file |
-          | `project` | `name` · `goal` · `main_language` |
-          | `app_type` | what kind of app this is — see below |
+          | `project` | `name` · `goal` · `main_language` · `type` (the app type — see below) |
           | `stack` | the scored technology slots |
           | `human_context` | the six Ws |
           | `tech_stack` | flat list of technologies |
@@ -460,7 +469,7 @@ docs:
           - **slotignored** — not required for this app type. Labelled, and does not score.
           - **populated** — holds a verified fact.
 
-          **`app_type` decides which slots are required.** A CLI tool is not asked about its CSS
+          **The app type (`project.type`) decides which slots are required.** A CLI tool is not asked about its CSS
           framework; a documentation repo is not asked about a database. Slots the type does not
           require are labelled `slotignored` and leave the calculation entirely. Nothing is held
           against a project for lacking something it was never meant to have.
@@ -484,24 +493,24 @@ docs:
 
           Tiers label the number: 100 is ✪ Trophy, with Gold, Silver, Bronze, Green, Yellow,
           Red and White below it.
-      - heading: 21 or 33
+      - heading: 33 slots, one number
         body: |-
-          **[faf-cli](https://www.npmjs.com/package/faf-cli) (MIT, free) scores 21 slots, for
-          every app type.** That is the whole picture for a single application, and it costs
-          nothing.
+          Every FAF scorer counts the same 33 slots, and a file gets the same score from each
+          of them. For a single application, 12 of the 33 are not required: monorepo
+          infrastructure, team application and team operations. They are `slotignored` and
+          leave the calculation. They become required once a project is a monorepo or a team.
 
-          **The full 33** adds 12 slots that only matter once a project becomes a monorepo or a
-          team: how packages are organised, what orchestrates the build, how versioning and
-          shared configuration work. Tools built for monorepos and teams score all 33.
+          **[faf-cli](https://www.npmjs.com/package/faf-cli) (MIT, free)** fills the 21 slots a
+          single application can have; the other 12 stay in the file, marked.
 
-          Both are honest, and they agree. Scoring this repository's `example.faf`:
+          Scoring this repository's `example.faf`:
 
           ```
-          33-slot   33 total · 12 slotignored · 21 active · 21 populated → 100
-          faf-cli   21 total ·  1 slotignored · 20 active · 20 populated → 100
+          33-slot engine   33 total · 12 slotignored · 21 active · 21 populated → 100
+          faf-cli 8.10.0   ✪ TROPHY 100% 21/21 slots — example.faf
           ```
 
-          Same file, same answer, different universe.
+          Same file, same number.
       - heading: scores is carried, not computed
         body: |-
           If a `.faf` contains a `scores` block, it is a **claim recorded at the time the file
@@ -519,6 +528,8 @@ docs:
           4. Uses only `populated`, `empty` or `slotignored` as slot state
 
           Schema: <https://faf.one/schemas/faf.schema.json>
+
+          Worked examples, one task each (valid, invalid, 100%, slotignored, schema validation, `.fafm`, `.fafa`): [docs/EXAMPLES.md](docs/EXAMPLES.md).
 
           Siblings, each IANA-registered in its own right: `.fafm` (memory), `.fafa` (agents).
           The compiled binary form is `.fafb` — `application/vnd.fafb`. That one is private and
@@ -543,7 +554,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 807aa8f248a9f8ddf0111709579540a9e29a9489
+    sha: 844182fd19618b47a50e5503ed6ffc1ddd5cee68
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -704,6 +715,7 @@ docs:
           - [Getting started](https://docs.faf.one/getting-started) — install · run · use
           - [Cards](https://docs.faf.one/cards) — one `.fafa` → A2A · Server Card · registry · AI Catalog · ARD
           - [Custom rules](https://docs.faf.one/custom-rules) — pin instructions your AI must follow
+          - [Every command](docs/COMMANDS.md) — one section per command, with real output
 
           For a specific agent: [Grok, xAI & Cursor 👀](docs/faf-cli-for-agents.md) · [Claude Code 👀](docs/faf-cli-for-claude.md) · [Bun 👀](docs/faf-cli-for-bun.md)
 
@@ -1599,7 +1611,7 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: d63f7469b707c4e98981c7365c867c673ff5289a
+    sha: cdfc9a6c3f8cf383c079e85671c3780dbc778f2d
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
       - heading: gemini-faf-mcp v3.2 — The Straight Answers Edition
@@ -1618,7 +1630,7 @@ docs:
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
           [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-347%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![Tests](https://img.shields.io/badge/Tests-354%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1640,7 +1652,14 @@ docs:
           ```
 
           `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v3.3.0 — The Antigravity Edition 🚀
+      - heading: What's New in v3.3.1 — The Antigravity Edition 🚀
+        body: |-
+          **3.3.1: /setup detects your stack; your goal and six W's stay yours.**
+
+          - **`/setup` detects your stack first.** It now creates `project.faf` with `faf_auto`, so a new project starts with its language, framework, API type, package manager and test runner filled in. Before, it wrote a starter file that locked the stack, and filling it in afterwards wrote nothing.
+          - **Your goal and the six W's are yours** (the Human Slots rule, as in faf-cli 8.10). No placeholders or defaults are written into them. A description found in `pyproject.toml` is offered as a suggested goal for you to confirm, not written. Scores now match faf-cli on the same project; a new file scores lower until you fill these in, because empty slots no longer count as filled.
+          - **`faf_auto` says what it really wrote:** the slots it filled, "unchanged" when none, and detected values it skipped because the slot was already set.
+      - heading: v3.3.0 — The Antigravity Edition 🚀
         body: |-
           **3.3.0 brings gemini-faf-mcp to Antigravity CLI: install it as a plugin and it works in your project. Simple.**
 
@@ -1721,7 +1740,7 @@ docs:
         body: |-
           Run `/setup` (in Gemini CLI: `/faf:setup`).
 
-          That writes a starter `project.faf` and scores it. Then ask Gemini to fill it in from your repo (it calls `faf_auto`), and run `/score` (`/faf:score` in Gemini CLI) to see what's left. From then on, every Gemini session in this project reads it automatically.
+          That detects your stack from the repo's own files (it calls `faf_auto`), writes `project.faf` and scores it. Then fill in what only you know (the goal, who it's for, why it exists), and run `/score` (`/faf:score` in Gemini CLI) to see what's left. From then on, every Gemini session in this project reads it automatically.
 
           > **Tip:** Trophy ✪ = 100%: AI is optimized to code. `/score` shows exactly which slots are still empty.
 
@@ -1826,7 +1845,10 @@ docs:
 
           Antigravity expects `serverUrl`, not `url` or `httpUrl`.
       - heading: All 13 Tools
-        body: 'Every tool carries MCP tool annotations: **read only** (`faf_read`, `faf_validate`, `faf_score`, `faf_discover`, `faf_stringify`, `faf_context`, `faf_about`, `faf_model`), **writes without losing anything** (`faf_init`, `faf_auto`, `faf_gemini`, `faf_agents`), **rewrites the file** (`faf_migrate`).'
+        body: |-
+          Real input and output for every tool: [docs/TOOLS.md](docs/TOOLS.md). Install, first run and fixes: [docs/SETUP.md](docs/SETUP.md).
+
+          Every tool carries MCP tool annotations: **read only** (`faf_read`, `faf_validate`, `faf_score`, `faf_discover`, `faf_stringify`, `faf_context`, `faf_about`, `faf_model`), **writes without losing anything** (`faf_init`, `faf_auto`, `faf_gemini`, `faf_agents`), **rewrites the file** (`faf_migrate`).
       - heading: Create & Detect
         body: |-
           | Tool | What it does |
@@ -1887,7 +1909,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v3.3.0
+          gemini-faf-mcp v3.3.1
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1907,7 +1929,7 @@ docs:
           python -m pytest tests/ -v
           ```
 
-          347 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          354 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
 
           ---
       - heading: FAF Ecosystem
