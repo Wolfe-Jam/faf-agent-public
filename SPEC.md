@@ -306,7 +306,7 @@ Validation/scoring queries route to deterministic WASM (zero LLM, confidence imp
 | **Retrieval (primary)** | **FAF-RAG (LazyRAG)** | **Structured retrieval, sub-ms, FAF-native** |
 | **Retrieval (vector tail)** | **Weaviate and/or Google embeddings** | **Pluggable for when structured retrieval isn't enough** |
 | **Retrieval hosting note** | **xAI Collections is incidental** | **Where some content lives today, not architectural commitment** |
-| **Rust IP integration** | **Via WASM bridge (xai-faf-rust Mk4, faf-rust-sdk FAFb)** | **"Rust defines, WASM runs everywhere" doctrine — same bridge faf-cli uses; consumed from Python via wasmtime/wasmer or HTTP/RPC** |
+| **Rust IP integration** | **Via WASM bridge (fafb Mk4, faf-rust-sdk FAFb)** | **"Rust defines, WASM runs everywhere" doctrine — same bridge faf-cli uses; consumed from Python via wasmtime/wasmer or HTTP/RPC** |
 | LLM (default) | xAI Grok | Partnership; voice infra wired |
 | LLM (cost-route) | Slash | FAF-native cost optimizer |
 | LLM (fallback) | Any host LLM with system prompt | Pluggable; identity owned by FAF |
