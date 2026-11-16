@@ -40,7 +40,7 @@ Layer order: `Soul.md (voice) → SPEC.md (architecture) → project.faf (slots)
 - **WJTTC 4-tier** — `🛡️ Brake` (refusals) · `⚙️ Engine` (correctness) · `🌀 Aero` (polish) · `🛞 Tyres` (live probes). Pytest markers, not separate files. `pytest -m wjttc` aggregates.
 - **Citation-or-silence** — every answer cites the spec or returns the "I don't know" refusal template (per Soul.md voice grammar).
 - **Apophatic guard** (Day 9) — keyword + `rapidfuzz` pattern-match against `src/citations.json`; refusal template on no-match.
-- **Rust IP via WASM bridge** — `xai-faf-rust` (Mk4 scoring) + `faf-rust-sdk` (FAFb spec) consumed via `wasmtime`. Same bridge `faf-cli` uses.
+- **Rust IP via WASM bridge** — `fafb` (Mk4 scoring) + `faf-rust-sdk` (FAFb spec) consumed via `wasmtime`. Same bridge `faf-cli` uses.
 - **Sealed contracts** — `Soul.md` + `SPEC.md` + `README.md` are byte-equal to `.approval-packets/v0.1.0-setup/` copies; `test_repo_integrity.py` asserts this on every commit.
 
 ## Commands (planned, Day 6-7)
