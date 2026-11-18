@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-17'
+generated: '2026-11-18'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -289,7 +289,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: 844182fd19618b47a50e5503ed6ffc1ddd5cee68
+    sha: ea1f06f686c3cc65affacb91871743e4ed8abf01
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -369,7 +369,7 @@ docs:
 
           ![faf](./nelly.png)
 
-          > **faf-cli dogfoods itself** — [project.faf](./project.faf) is source DNA; [CLAUDE.md](./CLAUDE.md), [GEMINI.md](./GEMINI.md) and [AGENTS.md](./AGENTS.md) are authored from it via `faf export`; AGENTS.md keeps a hand-written section below faf's block.
+          > **faf-cli dogfoods itself** — [project.faf](./project.faf) is source DNA; [CLAUDE.md](./CLAUDE.md), [GEMINI.md](./GEMINI.md) and [AGENTS.md](./AGENTS.md) are authored from it (`faf export`, and `faf sync` for CLAUDE.md); AGENTS.md keeps a hand-written section below faf's block.
 
           ---
       - heading: Commands
@@ -381,12 +381,12 @@ docs:
           | `faf auto` | Detect the stack, fill the slots it detects, score; suggest the goal and six W's |
           | `faf go` | Fill the human slots: each suggestion in gray, Tab to edit, Enter to confirm |
           | `faf score` | Check AI-readiness (0–100%) |
-          | `faf export` | Author `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules` |
+          | `faf export` | Author `AGENTS.md`, `GEMINI.md`, `.cursorrules` and the Copilot instructions |
           | `faf sync` | `.faf` → `CLAUDE.md`, one way (faf's block only) |
           | `faf memory` | `.fafm` soul ops — convert Claude memory, etch, recall, ls, show |
           | `faf diff` / `log` | Semantic context diff + score timeline across git history |
           | `faf hooks --install` | Pre-commit guard against context regression |
-          | `faf taf setup` | Write the CI workflow that prints a Test Receipt for every run (JavaScript with Jest, Vitest or Bun; Python; Go; Rust; Java with Maven or Gradle; .NET) |
+          | `faf taf setup` | Write the CI workflow that prints a Test Receipt for every run: a test job with a read-only token, then a receipt job (JavaScript with Jest, Vitest or Bun; Python; Go; Rust; Java with Maven or Gradle; .NET) |
           | `faf taf receipts` | Your Test Receipts in the terminal, newest first |
           | `faf compile` / `decompile` | `.faf` → `.fafb` **v2** sealed brick; `decompile` shows sections as JSON |
           | `faf check` | Validate a `.faf` file |
@@ -403,22 +403,22 @@ docs:
           faf memory etch "a durable fact" --id my-fact
           faf memory show
           ```
-      - heading: What's New in v8.10.0 — The Human Slots Edition
+      - heading: What's New in v8.11.0 — The Project Facts Edition
         body: |-
-          **AI suggests, you confirm. faf no longer writes your project's goal or six W's: it suggests them, and you confirm each one in `faf go`.**
+          **The six W's now reach every agent: AGENTS.md points to project.faf, and CLAUDE.md, GEMINI.md, .cursorrules, Copilot and llms.txt carry them, one rule, one line each.**
 
-          - **Suggestions in gray.** `faf go` shows each suggestion with where it came from (`README.md § Why`, `package.json description`). Tab to edit, Enter to confirm, type to replace, `skip` to leave it empty. `faf init`, `faf auto` and `faf git` say how many are waiting.
-          - **Only facts are suggested.** Markup, link and label rows, greetings, install lines and fragments are rejected; a notice or callout (deprecated, sponsored by, `Warning:`…) is never the goal; a long first paragraph gives its first sentence, whole. The README leads the goal.
-          - **faf-facts.** The six W's ask for one line where every word earns its place. `how` is how it works; `when` is the stage it is at, and since when.
-          - **Breaking for library users:** `assembleFreshFaf`, `updateExistingFaf` and `authorFafFromRepo` return the goal and six W's empty. Files you already have are not changed.
-          - **`faf go` input.** Backspace removes a whole character (emoji, CJK), other questions use readline again, and piped answers are read in order.
+          - **AGENTS.md points to the facts.** A `## Project facts` section names `project.faf`, by its real path from AGENTS.md (a legacy `.faf`, a file one folder up, `--output`). The only pointer before was an HTML comment, which agents skip. AGENTS.md still doesn't copy the six W's.
+          - **The six W's in every context file.** GEMINI.md and .cursorrules gain a Context section, as CLAUDE.md and the Copilot instructions have. `llms.txt` and Claude Code's MEMORY.md block (Pro) show the same values.
+          - **One rule, the score's.** A slot the score counts as empty (empty, `slotignored`, TBD, N/A) is left out; numbers, dates and lists show as text; each fact is one line. CLAUDE.md no longer shows `slotignored` or placeholders.
+          - **`faf taf setup` writes two jobs** (faf-taf-git 2.7.0): the tests run with a read-only token, only the receipt job can write, and a red run on the default branch is recorded as a `FAILED` receipt.
+          - **Why:** [the evidence](https://github.com/Wolfe-Jam/context7-faf-receipt#round-4-what-agentsmd-carries-opencode-and-codex). On tasks whose deciding fact was only in the six W's, Codex and OpenCode found the team's decision 4/22 times with the old AGENTS.md, 12/21 with the pointer, 19/20 with the six W's in the file.
 
           Earlier editions: [CHANGELOG.md](./CHANGELOG.md) · [Releases](https://github.com/Wolfe-Jam/faf-cli/releases)
 
           ---
       - heading: Custom instructions
         body: |-
-          Your own rules for the AI — *"use full words in identifiers," "use bun, not npm"* — go in `project.faf` under `ai_instructions.warnings`. They land at the top of every `AGENTS.md` faf writes, verbatim and non-destructive.
+          Your own rules for the AI — *"use full words in identifiers," "use bun, not npm"* — go in `project.faf` under `ai_instructions.warnings`. They lead the Guardrails section of every `AGENTS.md` faf writes, verbatim and non-destructive.
 
           **→ [How to add custom rules](https://docs.faf.one/custom-rules)** · [docs.faf.one](https://docs.faf.one)
 
@@ -459,6 +459,7 @@ docs:
         body: |-
           Pivotal releases — full history in [CHANGELOG.md](./CHANGELOG.md):
 
+          - **v8.11 — Project Facts** — the six W's reach every agent file; AGENTS.md points to project.faf.
           - **v8.10 — Human Slots** — AI suggests the goal and six W's; you confirm each one in `faf go`.
           - **v8.9 — Write-Once** — a birth certificate that can't be reissued, checked against its birth commit.
           - **v8.0 — Always33** — one engine, one number: the same score everywhere.
@@ -1354,10 +1355,10 @@ docs:
           ---
   - repo: Wolfe-Jam/gemini-faf-mcp
     path: README.md
-    sha: ebfddfb472420c5286c58fcfe66d4ee864fbbf3d
+    sha: c7610c80c43074a227b44e3ffd78952075c7727f
     intro: FAF MCP server for Google Gemini — persistent project context via PyPI
     sections:
-      - heading: gemini-faf-mcp v3.2 — The Straight Answers Edition
+      - heading: gemini-faf-mcp v3.3 — The Antigravity Edition 🚀
         body: |-
           **Persistent Project Context for Google Gemini. Define once. Sync everywhere.**
 
@@ -1372,8 +1373,8 @@ docs:
           <!-- mcp-name: one.faf/gemini-faf-mcp -->
 
           [![PyPI](https://img.shields.io/pypi/v/gemini-faf-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/gemini-faf-mcp/)
-          [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
-          [![Tests](https://img.shields.io/badge/Tests-354%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
+          [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%E2%9C%AA%20100%25-000000?labelColor=FF6B35)](https://faf.one)
+          [![Tests](https://img.shields.io/badge/Tests-390%20passing-brightgreen?style=for-the-badge)](https://github.com/Wolfe-Jam/gemini-faf-mcp)
           [![IANA: vnd.faf+yaml](https://img.shields.io/badge/IANA-vnd.faf%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.faf+yaml)
           [![IANA: vnd.fafm+yaml](https://img.shields.io/badge/IANA-vnd.fafm%2Byaml-00D4D4?style=for-the-badge)](https://www.iana.org/assignments/media-types/application/vnd.fafm+yaml)
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35?style=for-the-badge)](https://doi.org/10.5281/zenodo.18251362)
@@ -1394,8 +1395,15 @@ docs:
           Gemini: [now ready to help]
           ```
 
-          `.faf` is read once at session start. Every tool call lands on a Gemini that already knows your project.
-      - heading: What's New in v3.3.1 — The Antigravity Edition 🚀
+          Gemini reads `project.faf` through the faf tools, and `GEMINI.md` written from it loads at session start, so a new session starts with your project.
+      - heading: What's New in v3.3.3 — The Antigravity Edition 🚀
+        body: |-
+          **3.3.3: one engine, one number, in the Python SDK too.**
+
+          - **`validate_faf` gives the same score and tier as `faf_score` and faf-cli** (the always-33 kernel). It used to count its own 10 slots. `valid` now means what it means in `faf_validate` (the structure is valid), `issues` lists each empty slot, and `tier` is upper case (`TROPHY` … `WHITE`). It scores data already parsed; for a file's exact score, use `faf_score`. See the [CHANGELOG](./CHANGELOG.md) for every key that changed.
+          - **The hosted badge uses faf-cli's tiers** (✪ ★ ◆ ◇ ● ○ ♡), not the retired emoji ladder.
+          - **The FAQ says only what the code does**, and the Big Orange 🍊 is described as a planned honor, not a score.
+      - heading: v3.3.1 — The Antigravity Edition 🚀
         body: |-
           **3.3.1: /setup detects your stack; your goal and six W's stay yours.**
 
@@ -1483,7 +1491,7 @@ docs:
         body: |-
           Run `/setup` (in Gemini CLI: `/faf:setup`).
 
-          That detects your stack from the repo's own files (it calls `faf_auto`), writes `project.faf` and scores it. Then fill in what only you know (the goal, who it's for, why it exists), and run `/score` (`/faf:score` in Gemini CLI) to see what's left. From then on, every Gemini session in this project reads it automatically.
+          That detects your stack from the repo's own files (it calls `faf_auto`), writes `project.faf` and scores it. Then fill in what only you know (the goal, who it's for, why it exists), and run `/score` (`/faf:score` in Gemini CLI) to see what's left. From then on, Gemini reads it through the faf tools; `/export` writes `GEMINI.md` from it, which Gemini loads at the start of every session.
 
           > **Tip:** Trophy ✪ = 100%: AI is optimized to code. `/score` shows exactly which slots are still empty.
 
@@ -1510,7 +1518,7 @@ docs:
             why: Replace legacy PHP service
           ```
 
-          **Result:** Gemini reads this once and knows your project. No 20-minute onboarding. No wrong assumptions. Every session starts aligned.
+          **Result:** Gemini knows your stack and goal from the file, not from you re-typing them each session.
 
           > **FAF defines. MD instructs. AI codes.**
       - heading: What about my `GEMINI.md`?
@@ -1538,21 +1546,20 @@ docs:
           {
             "detected": {
               "main_language": "Python",
-              "package_manager": "uv",
+              "package_manager": "pip",
               "framework": "FastAPI",
               "api_type": "REST",
               "database": "PostgreSQL",
               "cache": "Redis",
               "hosting": "Docker Compose",
-              "cicd": "GitHub Actions",
               "commands": { "test": "make test", "build": "make build", "lint": "make check-all" }
             },
-            "score": 79,
-            "tier": "GREEN"
+            "score": 56,
+            "tier": "YELLOW"
           }
           ```
 
-          `database` and `cache` came from `docker-compose.yml`, `commands` from the `Makefile`, `cicd` from `.github/workflows/` — none of which the manifest scan sees. Fill in the six W's and you are at Trophy.
+          Shortened output from a real 3.3.3 run on a FastAPI project. `database` and `cache` came from `docker-compose.yml` and `commands` from the `Makefile`; `cicd: GitHub Actions` (from `.github/workflows/`) is written to the file too. None of these come from the manifest. The goal and the six W's are yours to fill in.
 
           **What it scans:**
 
@@ -1652,7 +1659,7 @@ docs:
       - heading: Architecture
         body: |-
           ```
-          gemini-faf-mcp v3.3.1
+          gemini-faf-mcp v3.3.3
           ├── server.py              → FastMCP MCP server (13 tools, dual-transport, Mk4 scoring)
           ├── safe_path.py           → path confinement for caller-supplied `path` args
           ├── inject.py              → non-destructive faf-managed-block injection
@@ -1667,12 +1674,9 @@ docs:
           ---
       - heading: Testing
         body: |-
-          ```bash
-          pip3 install -e ".[dev]"
-          python -m pytest tests/ -v
-          ```
+          Clone, dev install and the full suite: [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-          354 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC certified](https://github.com/Wolfe-Jam/WJTTC).
+          390 tests passing across the FastMCP server, CLI flags, Cloud Function, Mk4 WJTTC championship, Full-Facts grounding, path-confinement, write-guard, model-parity, Dart detection, and client-telemetry suites. Championship-grade test coverage — [WJTTC](https://github.com/Wolfe-Jam/wjttc-public).
 
           ---
       - heading: FAF Ecosystem
@@ -1734,7 +1738,7 @@ docs:
           > Wolfe, J. (2026). *Why Agents Need a Passport: .fafa — Portable Identity for the Agentic Era*. Zenodo. https://doi.org/10.5281/zenodo.21951641
       - heading: Get the CLI
         body: |-
-          > **faf-cli** — The original AI-Context CLI. A must-have for every builder.
+          > **faf-cli** — the original AI-context CLI.
 
           ```bash
           npx faf-cli auto
