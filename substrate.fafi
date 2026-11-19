@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-18'
+generated: '2026-11-19'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -533,7 +533,7 @@ docs:
           </div>
   - repo: Wolfe-Jam/claude-faf-mcp
     path: README.md
-    sha: 7161454138e297eebd750cb3ee9e04064770c2e5
+    sha: 9788eee59e77ebf24dc16297205d7ea2a19941a1
     intro: '**7.0.0 is a major release — scores can move.** claude-faf-mcp now scores with faf-cli 8''s always-33 engine. A .faf without the 12 enterprise slotignored markers counts them as empty (21 filled = 64%): run faf_auto and it writes the markers. The npx config and the SessionStart hook are not pinned to a version, so an install that runs npx -y claude-faf-mcp moves to 7.x on its next start. Every change is in the CHANGELOG.'
     sections:
       - heading: claude-faf-mcp
@@ -662,7 +662,7 @@ docs:
           ---
       - heading: Claude Desktop — one click
         body: |-
-          [**⬇ Download `claude-faf-mcp-7.2.1.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.2.1/claude-faf-mcp-7.2.1.mcpb)
+          [**⬇ Download `claude-faf-mcp-7.2.2.mcpb`**](https://github.com/Wolfe-Jam/claude-faf-mcp/releases/download/v7.2.2/claude-faf-mcp-7.2.2.mcpb)
 
           Open it in Claude Desktop. The extension runs the server bundled inside it (no npx, no network at start) and lists the Core 14 tools.
       - heading: Claude Desktop — config
