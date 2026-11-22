@@ -1,6 +1,6 @@
 format: faf
 type: substrate-bundle
-generated: '2026-11-21'
+generated: '2026-11-22'
 source: 'gen: build-substrate-bundle.mjs — READMEs are mobile doctrine, approved as published'
 docs:
   - repo: Wolfe-Jam/faf
@@ -289,7 +289,7 @@ docs:
           *[faf.one](https://faf.one) · MIT*
   - repo: Wolfe-Jam/faf-cli
     path: README.md
-    sha: df9bbdbbfadf2026ab25394932e1196ccbbe52ae
+    sha: dc4af7b99766cdebc355d41925e795ec92e89a78
     intro: CLI for the .faf and .fafm IANA-registered formats — AI context + memory that versions with your code
     sections:
       - heading: The context every AI coding agent reads — authored from your repo, never guessed.
@@ -317,7 +317,7 @@ docs:
           [![DOI: Context paper](https://img.shields.io/badge/DOI-Context%20paper-FF6B35)](https://doi.org/10.5281/zenodo.18251362)
           [![DOI: Memory paper](https://img.shields.io/badge/DOI-Memory%20paper-FF6B35)](https://doi.org/10.5281/zenodo.20348942)
           [![project.faf → faf](https://img.shields.io/badge/project.faf-inside-008B8B)](https://github.com/Wolfe-Jam/faf)
-          [![TAF](./badge.svg)](https://github.com/Wolfe-Jam/faf-taf-git)
+          [![TAF](./badge.svg)](https://github.com/Wolfe-Jam/taf-git)
           [![CI](https://github.com/Wolfe-Jam/faf-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/Wolfe-Jam/faf-cli/actions/workflows/ci.yml)
 
           FAF defines. AGENTS.md instructs. AI codes.
@@ -1986,7 +1986,7 @@ docs:
           *"It's so logical if it didn't exist, AI would have built it itself" — Claude*
   - repo: Wolfe-Jam/rust-faf-mcp
     path: README.md
-    sha: 8935f1c31c2a6ebbcf35e52ed523c8a55572f319
+    sha: 653799e62185a539eb4503a670afd19e6d42d4c7
     intro: RMCP — the Rust-native MCP server for FAF (Foundational AI-context Format). Single binary (about 5 MB), stdio transport. cargo install rust-faf-mcp. Built on the rmcp Rust MCP SDK + faf-rust-sdk.
     sections:
       - heading: rust-faf-mcp
@@ -1995,9 +1995,9 @@ docs:
 
           ⭐ [Star it on GitHub](https://github.com/Wolfe-Jam/rust-faf-mcp): bookmarks it for you, helps other devs find it too.
 
-          **The Your-Files-Stay-Yours Edition (v0.9.0)** — `one.faf/rust-faf-mcp` · **rmcp 3.0.1** (MCP Tier 1 foundation) · **faf-rust-sdk 3.1.1** (the same always-33 kernel `faf-wasm-sdk` uses) · solid cargo-native Rust MCP for Rust devs
+          **The Your-Files-Stay-Yours Edition (v0.9.1)** — `one.faf/rust-faf-mcp` · **rmcp 3.10.0** (MCP Tier 1 foundation) · **faf-rust-sdk 3.1.1** (the same always-33 kernel `faf-wasm-sdk` uses) · solid cargo-native Rust MCP for Rust devs
 
-          **v0.9.0** — `faf_sync` keeps your hand-written CLAUDE.md, refuses what it can't write safely, and says so. See [CHANGELOG](./CHANGELOG.md).
+          **v0.9.1** — rmcp 3.10.0 clears three rmcp security advisories (RUSTSEC-2026-0457, 0461, 0462); this server runs over stdio and never compiled the affected code. 0.9.0's change still leads: `faf_sync` keeps your hand-written CLAUDE.md, refuses what it can't write safely, and says so. See [CHANGELOG](./CHANGELOG.md).
 
           **FAF defines. AGENTS.md instructs. AI codes.**
 
@@ -2013,7 +2013,7 @@ docs:
           Rust-native [MCP](https://modelcontextprotocol.io) (Model Context Protocol) server for [FAF](https://faf.one) — structured AI project context in YAML (`application/vnd.faf+yaml`). Single binary (about 5 MB), stdio transport. Built on [`rmcp`](https://crates.io/crates/rmcp) and [`faf-rust-sdk`](https://crates.io/crates/faf-rust-sdk).
       - heading: Claude Code
         body: |-
-          claude mcp add faf -- npx --yes rust-faf-mcp@0.9.0
+          claude mcp add faf -- npx --yes rust-faf-mcp@0.9.1
           ```
 
           ```jsonc
@@ -2022,13 +2022,13 @@ docs:
             "mcpServers": {
               "faf": {
                 "command": "npx",
-                "args": ["--yes", "rust-faf-mcp@0.9.0"]
+                "args": ["--yes", "rust-faf-mcp@0.9.1"]
               }
             }
           }
           ```
 
-          After `cargo install rust-faf-mcp --version 0.9.0`, `"command": "rust-faf-mcp"` is the install. Until you have proven that binary, use the npx pin.
+          After `cargo install rust-faf-mcp --version 0.9.1`, `"command": "rust-faf-mcp"` is the install. Until you have proven that binary, use the npx pin.
 
           No flags, no config files, no network listener. Pure stdio JSON-RPC.
 
@@ -2187,7 +2187,7 @@ docs:
       - heading: Links
         body: |-
           - [crates.io/crates/rust-faf-mcp](https://crates.io/crates/rust-faf-mcp)
-          - [npmjs.com/package/rust-faf-mcp](https://www.npmjs.com/package/rust-faf-mcp) — `npx --yes rust-faf-mcp@0.9.0` (no Rust toolchain; downloads GH Release binary)
+          - [npmjs.com/package/rust-faf-mcp](https://www.npmjs.com/package/rust-faf-mcp) — `npx --yes rust-faf-mcp@0.9.1` (no Rust toolchain; downloads GH Release binary)
 
           - [Dual-package publish guide](https://github.com/Wolfe-Jam/mcp-better/blob/main/docs/DUAL-PACKAGE-RUST-MCP.md) — cargo + npm (this server is the product example)
           - [docs/DUAL-PACKAGE.md](./docs/DUAL-PACKAGE.md) — pointer + OIDC docs for this repo
